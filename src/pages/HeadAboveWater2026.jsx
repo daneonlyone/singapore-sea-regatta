@@ -51,17 +51,12 @@ export default function HeadAboveWater2026() {
             </span>
           </Reveal>
 
-          {/* Official HAW logo lockup */}
+          {/* Title */}
           <Reveal delay={100}>
-            <div className="mt-8 mb-4">
-              <Image
-                src={HAW_LOGO_WHITE}
-                alt="Head Above Water"
-                fittingType="fit"
-                className="w-auto"
-                style={{ height: 140 }}
-              />
-            </div>
+            <h1 className="mt-6 font-heading font-black text-5xl sm:text-7xl lg:text-8xl leading-[0.9] tracking-tight text-white">
+              Head<br />
+              <span style={{ color: "#9b93ff" }}>Above Water</span>
+            </h1>
           </Reveal>
 
           <Reveal delay={240}>
