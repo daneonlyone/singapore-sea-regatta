@@ -26,7 +26,7 @@ const LAVENDER = "#9b93ff";
 
 export default function HeadAboveWater2026() {
   return (
-    <div style={{ "--haw-plum": PLUM, "--haw-lavender": LAVENDER }}>
+    <div className="haw-theme" style={{ "--haw-plum": PLUM, "--haw-lavender": LAVENDER }}>
       {/* HERO — plum cinematic */}
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0">

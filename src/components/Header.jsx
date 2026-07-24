@@ -184,12 +184,16 @@ function NavItem({ item, active }) {
     <Link
       to={item.to}
       className={cn(
-        "relative px-3 py-2 rounded-lg text-sm font-medium transition-colors",
+        "group relative px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300",
         active ? "text-white" : "text-foreground/70 hover:text-white"
       )}
     >
-      {item.label}
-      {active && <span className="absolute inset-x-3 -bottom-px h-px gradient-blaze" />}
+      <span
+        className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+        style={{ boxShadow: "0 0 20px -4px rgba(155,147,255,0.55)", background: "rgba(155,147,255,0.08)" }}
+      />
+      <span className="relative">{item.label}</span>
+      {active && <span className="absolute inset-x-3 -bottom-px h-px" style={{ background: "linear-gradient(90deg, #9b93ff, #6d63e6)" }} />}
     </Link>
   );
 }

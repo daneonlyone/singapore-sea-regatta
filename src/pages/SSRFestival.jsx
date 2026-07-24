@@ -26,7 +26,7 @@ export default function SSRFestival() {
   const shown = useMemo(() => programme.filter((p) => p.day === activeDay && (filter === "All" || p.category === filter)), [programme, activeDay, filter]);
 
   return (
-    <div>
+    <div className="haw-theme">
       {/* HERO */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden">
         <div className="absolute inset-0">
@@ -36,7 +36,7 @@ export default function SSRFestival() {
         <div className="relative z-10 mx-auto max-w-7xl px-6 w-full pb-16 pt-28">
           <Reveal>
             <div className="mb-5">
-              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/ddb791c92_White.png" alt="Head Above Water" style={{ height: 56, objectFit: "contain" }} />
+              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png" alt="Head Above Water" style={{ height: 56, objectFit: "contain" }} />
             </div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>Head Above Water 2026</span>
             <h1 className="mt-3 text-5xl sm:text-6xl lg:text-7xl font-black">SSR Festival</h1>

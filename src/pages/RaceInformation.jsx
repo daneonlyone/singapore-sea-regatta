@@ -15,6 +15,14 @@ const TIMELINE = [
 const TABS = ["Day 1", "Day 2", "Morning", "Afternoon", "DB12", "DB22", "DB6", "Open", "Women", "Mixed", "Invitational"];
 
 export default function RaceInformation() {
+  return (
+    <div className="haw-theme">
+      <RaceInformationInner />
+    </div>
+  );
+}
+
+function RaceInformationInner() {
   const [cats, setCats] = useState([]);
   const [fees, setFees] = useState([]);
   const [specials, setSpecials] = useState([]);
@@ -57,7 +65,7 @@ export default function RaceInformation() {
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="flex items-center gap-4 mb-6">
-              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/ddb791c92_White.png" alt="Head Above Water" style={{ height: 64, objectFit: "contain" }} />
+              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png" alt="Head Above Water" style={{ height: 64, objectFit: "contain" }} />
             </div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>2026 · Head Above Water</span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Race Information</h1>

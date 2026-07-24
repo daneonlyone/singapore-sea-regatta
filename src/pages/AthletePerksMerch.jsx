@@ -9,7 +9,7 @@ const PERK_CATS = ["All", "Fitness", "Recovery", "Food & Beverage", "Wellness", 
 
 export default function AthletePerksMerch() {
   return (
-    <div>
+    <div className="haw-theme">
       {/* HERO */}
       <section className="relative pt-32 pb-12 overflow-hidden">
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(37,3,45,0.8) 0%, transparent 100%)" }} />

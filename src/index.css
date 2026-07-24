@@ -144,6 +144,36 @@
 }
 .mobile-nav-item:hover { background: rgba(255,255,255,0.05); color: #fff; }
 
+/* Head Above Water — purple campaign theme (scoped to .haw-theme) */
+.haw-theme {
+  --primary: 245 100% 79%;
+  --primary-foreground: 270 60% 6%;
+  --ring: 245 100% 79%;
+  --accent: 247 100% 85%;
+  --accent-foreground: 270 60% 6%;
+  --blaze: 245 100% 79%;
+  --gold: 247 100% 85%;
+  --ember: 270 60% 30%;
+}
+.haw-theme .gradient-blaze { background: linear-gradient(90deg, #9b93ff 0%, #6d63e6 100%); }
+.haw-theme .gradient-ignite { background: linear-gradient(90deg, #c4bdff 0%, #9b93ff 50%, #6d63e6 100%); }
+.haw-theme .text-gradient-ignite {
+  background: linear-gradient(90deg, #c4bdff 0%, #9b93ff 55%, #6d63e6 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.haw-theme .text-gradient-blaze {
+  background: linear-gradient(90deg, #9b93ff 0%, #6d63e6 100%);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+.haw-theme .glass-blaze {
+  background: rgba(37,3,45,0.6);
+  backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(155,147,255,0.22);
+  box-shadow: 0 0 24px -6px rgba(155,147,255,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 10px; height: 10px; }
 ::-webkit-scrollbar-track { background: #050505; }
