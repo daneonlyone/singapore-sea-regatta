@@ -53,12 +53,15 @@ export default function RaceInformation() {
     <div>
       {/* HERO */}
       <section className="relative pt-32 pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-background" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(37,3,45,0.7) 0%, transparent 100%)" }} />
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">2026 · Head Above Water</span>
+            <div className="flex items-center gap-4 mb-6">
+              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/ddb791c92_White.png" alt="Head Above Water" style={{ height: 64, objectFit: "contain" }} />
+            </div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>2026 · Head Above Water</span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Race Information</h1>
-            <p className="mt-4 max-w-2xl text-foreground/70">Everything athletes and team managers need — timelines, categories, fees, special races, registration and FAQs.</p>
+            <p className="mt-4 max-w-2xl text-foreground/70" style={{ fontFamily: "Poppins, sans-serif" }}>Everything athletes and team managers need — timelines, categories, fees, special races, registration and FAQs.</p>
           </Reveal>
         </div>
       </section>
@@ -98,10 +101,8 @@ export default function RaceInformation() {
               <button
                 key={t}
                 onClick={() => setActive(t)}
-                className={cn(
-                  "px-4 py-2 rounded-full text-sm font-medium transition-all",
-                  active === t ? "gradient-blaze text-white shadow-lg shadow-primary/30" : "glass text-foreground/70 hover:text-white"
-                )}
+                className={cn("px-4 py-2 rounded-full text-sm font-medium transition-all", active === t ? "text-white shadow-lg" : "glass text-foreground/70 hover:text-white")}
+                style={active === t ? { background: "linear-gradient(90deg, #25032d, #9b93ff)", boxShadow: "0 4px 18px rgba(155,147,255,0.35)" } : {}}
               >
                 {t}
               </button>
@@ -124,7 +125,7 @@ export default function RaceInformation() {
                   {items.map((c) => (
                     <div key={c.id} className="bg-card p-4 hover:bg-white/5 transition-colors">
                       <div className="flex items-center gap-2 mb-1">
-                        <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-primary/15 text-primary font-mono">{c.boat}</span>
+                        <span className="text-[10px] font-bold px-2 py-0.5 rounded font-mono" style={{ background: "rgba(155,147,255,0.15)", color: "#9b93ff" }}>{c.boat}</span>
                         <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{c.division}</span>
                       </div>
                       <div className="text-sm text-white font-medium leading-snug">{c.name}</div>

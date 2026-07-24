@@ -35,9 +35,12 @@ export default function SSRFestival() {
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 w-full pb-16 pt-28">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Head Above Water 2026</span>
+            <div className="mb-5">
+              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/ddb791c92_White.png" alt="Head Above Water" style={{ height: 56, objectFit: "contain" }} />
+            </div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>Head Above Water 2026</span>
             <h1 className="mt-3 text-5xl sm:text-6xl lg:text-7xl font-black">SSR Festival</h1>
-            <p className="mt-4 max-w-xl text-foreground/70">Where energy meets purpose. Set against the Marina Bay skyline, the Festival Zone is the heart of SSR — food, retail, wellness, performances and so much more.</p>
+            <p className="mt-4 max-w-xl text-foreground/70" style={{ fontFamily: "Poppins, sans-serif" }}>Where energy meets purpose. Set against the Marina Bay skyline, the Festival Zone is the heart of SSR — food, retail, wellness, performances and so much more.</p>
           </Reveal>
         </div>
       </section>
@@ -93,7 +96,8 @@ export default function SSRFestival() {
               <Reveal>
                 <div className="mt-8 flex flex-wrap gap-2 items-center">
                   {days.map((d) => (
-                    <button key={d} onClick={() => setActiveDay(d)} className={cn("px-4 py-2 rounded-full text-sm font-medium transition-all", activeDay === d ? "gradient-blaze text-white" : "glass text-foreground/70 hover:text-white")}>
+                    <button key={d} onClick={() => setActiveDay(d)} className={cn("px-4 py-2 rounded-full text-sm font-medium transition-all", activeDay === d ? "text-white" : "glass text-foreground/70 hover:text-white")}
+                    style={activeDay === d ? { background: "linear-gradient(90deg, #25032d, #9b93ff)", boxShadow: "0 4px 16px rgba(155,147,255,0.3)" } : {}}>
                       {d}
                     </button>
                   ))}
@@ -161,7 +165,8 @@ export default function SSRFestival() {
               <Send className="w-10 h-10 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white">Follow our Telegram channel</h3>
               <p className="mt-2 text-foreground/70 max-w-md mx-auto">For the latest deals and happenings at the IHH×SSR Festival.</p>
-              <a href="https://t.me/SGSeaRegatta" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-6 py-3 rounded-xl hover:-translate-y-0.5 transition-all">
+              <a href="https://t.me/SGSeaRegatta" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-xl hover:-translate-y-0.5 transition-all"
+                    style={{ background: "linear-gradient(90deg, #25032d, #9b93ff)", boxShadow: "0 4px 20px rgba(155,147,255,0.35)" }}>
                 Join Telegram Channel <Send className="w-4 h-4" />
               </a>
             </div>

@@ -12,12 +12,15 @@ export default function AthletePerksMerch() {
     <div>
       {/* HERO */}
       <section className="relative pt-32 pb-12 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-background" />
+        <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(37,3,45,0.8) 0%, transparent 100%)" }} />
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
-            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Head Above Water 2026</span>
-            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Athlete Perks & Merchandise</h1>
-            <p className="mt-4 max-w-2xl text-foreground/70">Unlock September-long privileges with your SSR athlete card, and shop the official 2026 collection.</p>
+            <div className="mb-6">
+              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/ddb791c92_White.png" alt="Head Above Water" style={{ height: 64, objectFit: "contain" }} />
+            </div>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>Head Above Water 2026</span>
+            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Athlete Perks &amp; Merchandise</h1>
+            <p className="mt-4 max-w-2xl text-foreground/70" style={{ fontFamily: "Poppins, sans-serif" }}>Unlock September-long privileges with your SSR athlete card, and shop the official 2026 collection.</p>
           </Reveal>
         </div>
       </section>
@@ -60,7 +63,8 @@ function PrivilegeProgramme() {
             </div>
             <div className="flex flex-wrap gap-2">
               {PERK_CATS.map((c) => (
-                <button key={c} onClick={() => setCat(c)} className={cn("px-3 py-1.5 rounded-full text-xs font-medium transition-all", cat === c ? "gradient-blaze text-white" : "glass text-foreground/70 hover:text-white")}>
+                <button key={c} onClick={() => setCat(c)} className={cn("px-3 py-1.5 rounded-full text-xs font-medium transition-all", cat === c ? "text-white" : "glass text-foreground/70 hover:text-white")}
+                style={cat === c ? { background: "linear-gradient(90deg, #25032d, #9b93ff)" } : {}}>
                   {c}
                 </button>
               ))}
@@ -73,7 +77,7 @@ function PrivilegeProgramme() {
             <Reveal key={p.id} delay={i * 60}>
               <div className="glass rounded-2xl p-6 h-full flex flex-col hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-primary/15 text-primary">{p.category}</span>
+                  <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "rgba(155,147,255,0.15)", color: "#9b93ff" }}>{p.category}</span>
                   {p.website && <a href={p.website} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary"><ExternalLink className="w-4 h-4" /></a>}
                 </div>
                 <h3 className="font-bold text-white text-lg">{p.brand}</h3>
