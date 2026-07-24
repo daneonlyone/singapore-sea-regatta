@@ -179,7 +179,13 @@ export default function Header() {
   );
 }
 
+const HAW_PATHS = ["/head-above-water-2026", "/race-information", "/ssr-festival", "/athlete-perks-merch"];
+
 function NavItem({ item, active }) {
+  const purple = HAW_PATHS.includes(item.to);
+  const glow = purple ? "rgba(155,147,255,0.55)" : "rgba(255,92,0,0.55)";
+  const tint = purple ? "rgba(155,147,255,0.08)" : "rgba(255,92,0,0.08)";
+  const line = purple ? "linear-gradient(90deg, #9b93ff, #6d63e6)" : "linear-gradient(90deg, #FF5C00, #D62828)";
   return (
     <Link
       to={item.to}
@@ -190,10 +196,10 @@ function NavItem({ item, active }) {
     >
       <span
         className="absolute inset-0 rounded-lg opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ boxShadow: "0 0 20px -4px rgba(155,147,255,0.55)", background: "rgba(155,147,255,0.08)" }}
+        style={{ boxShadow: `0 0 20px -4px ${glow}`, background: tint }}
       />
       <span className="relative">{item.label}</span>
-      {active && <span className="absolute inset-x-3 -bottom-px h-px" style={{ background: "linear-gradient(90deg, #9b93ff, #6d63e6)" }} />}
+      {active && <span className="absolute inset-x-3 -bottom-px h-px" style={{ background: line }} />}
     </Link>
   );
 }
