@@ -5,6 +5,7 @@ import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
+import Countdown from "@/components/Countdown";
 import { Image } from "@/components/ui/image";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/eebc986ff_generated_b13211d1.png";
@@ -147,6 +148,10 @@ export default function Home() {
                     <InfoTile icon={Clock} label="Time" value="0800H – 1900H" />
                     <InfoTile icon={MapPin} label="Venue" value="Bayfront Event Space" />
                     <InfoTile icon={Users} label="Cause" value="Dementia Awareness" />
+                  </div>
+
+                  <div className="mt-8">
+                    <Countdown />
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3">
