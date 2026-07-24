@@ -57,7 +57,7 @@ export default function HeadAboveWater2026() {
                 src={HAW_LOGO_WHITE}
                 alt="Head Above Water"
                 className="h-auto w-auto"
-                style={{ maxHeight: 150, objectFit: "contain" }}
+                style={{ maxHeight: 260, objectFit: "contain" }}
               />
               <span className="hidden sm:block h-px w-16 mb-8" style={{ background: "linear-gradient(to right, rgba(155,147,255,0.6), transparent)" }} />
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-[0.9] tracking-tight text-white pb-2">
