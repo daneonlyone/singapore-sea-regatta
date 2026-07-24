@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import BrandMark from "@/components/BrandMark";
+import Logo from "@/components/Logo";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -52,12 +52,8 @@ export default function Header() {
           )}
         >
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 group">
-            <BrandMark size={34} className="transition-transform duration-500 group-hover:rotate-6" />
-            <div className="leading-none hidden sm:block">
-              <div className="font-heading font-extrabold text-white text-[13px] tracking-tight">SINGAPORE</div>
-              <div className="font-heading font-bold text-gradient-ignite text-[13px] tracking-tight">SEA REGATTA</div>
-            </div>
+          <Link to="/" className="flex items-center group">
+            <Logo height={34} className="transition-transform duration-500 group-hover:scale-105" />
           </Link>
 
           {/* Desktop nav */}

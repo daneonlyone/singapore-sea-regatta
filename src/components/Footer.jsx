@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { Instagram, Facebook, Mail, MapPin, ArrowUpRight } from "lucide-react";
-import BrandMark from "@/components/BrandMark";
+import Logo from "@/components/Logo";
 
 const QUICK = [
   { label: "Head Above Water 2026", to: "/head-above-water-2026" },
@@ -23,12 +23,8 @@ export default function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           {/* Brand */}
           <div className="lg:col-span-4">
-            <Link to="/" className="flex items-center gap-3">
-              <BrandMark size={44} />
-              <div>
-                <div className="font-heading font-extrabold text-white text-sm tracking-tight">SINGAPORE</div>
-                <div className="font-heading font-bold text-gradient-ignite text-sm tracking-tight">SEA REGATTA</div>
-              </div>
+            <Link to="/" className="flex items-center">
+              <Logo height={44} />
             </Link>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed max-w-xs">
               Singapore's premier international dragon boat race and community festival — uniting sport, health and purpose at Marina Bay.
