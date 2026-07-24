@@ -6,8 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/6c893ed46_generated_71914506.png";
 const CAUSE_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/7f82390ed_generated_46f74eb8.png";
-const HAW_LOGO_WHITE = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/ddb791c92_White.png";
-const HAW_LOGO_LILAC = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/d26da6ee7_Lilac.png";
+const HAW_LOGO_WHITE = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png";
 
 const QUICK_ACCESS = [
   { label: "Race Information", to: "/race-information", icon: Info },
@@ -51,12 +50,21 @@ export default function HeadAboveWater2026() {
             </span>
           </Reveal>
 
-          {/* Title */}
+          {/* Official Head Above Water logo + title */}
           <Reveal delay={100}>
-            <h1 className="mt-6 font-heading font-black text-5xl sm:text-7xl lg:text-8xl leading-[0.9] tracking-tight text-white">
-              Head<br />
-              <span style={{ color: "#9b93ff" }}>Above Water</span>
-            </h1>
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-end gap-6">
+              <img
+                src={HAW_LOGO_WHITE}
+                alt="Head Above Water"
+                className="h-auto w-auto"
+                style={{ maxHeight: 150, objectFit: "contain" }}
+              />
+              <span className="hidden sm:block h-px w-16 mb-8" style={{ background: "linear-gradient(to right, rgba(155,147,255,0.6), transparent)" }} />
+              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-[0.9] tracking-tight text-white pb-2">
+                2026<br />
+                <span style={{ color: "#9b93ff" }}>Campaign</span>
+              </h1>
+            </div>
           </Reveal>
 
           <Reveal delay={240}>
