@@ -25,8 +25,8 @@ export default function AthletePerksMerch() {
         </div>
       </section>
 
-      <PrivilegeProgramme />
       <Merchandise />
+      <PrivilegeProgramme />
     </div>
   );
 }
@@ -120,10 +120,6 @@ function Merchandise() {
                     ) : (
                       <ShoppingBag className="w-12 h-12 text-muted-foreground/40" />
                     )}
-                    <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full"
-                      style={{ background: "rgba(37,3,45,0.85)", color: "#9b93ff", border: "1px solid rgba(155,147,255,0.4)" }}>
-                      {m.availability}
-                    </span>
                     {imgs.length > 1 && (
                       <div className="absolute inset-x-0 bottom-0 flex justify-center gap-1.5 p-2">
                         {imgs.map((_, j) => (
