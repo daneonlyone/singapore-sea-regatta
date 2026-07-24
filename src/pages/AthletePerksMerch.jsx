@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { Search, MapPin, Clock, ExternalLink, ShoppingBag, Tag, ChevronLeft, ChevronRight } from "lucide-react";
+import { Search, MapPin, Clock, ExternalLink, ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
@@ -16,7 +16,7 @@ export default function AthletePerksMerch() {
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="mb-6">
-              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/ddb791c92_White.png" alt="Head Above Water" style={{ height: 64, objectFit: "contain" }} />
+              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png" alt="Head Above Water" style={{ height: 64, objectFit: "contain" }} />
             </div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>Head Above Water 2026</span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Athlete Perks &amp; Merchandise</h1>
@@ -105,9 +105,9 @@ function Merchandise() {
   return (
     <section id="merch" className="relative py-20 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading eyebrow="Official SSR Merchandise" title="The 2026 collection" description="Premium race jerseys, apparel, accessories and limited-edition items — designed for athletes and supporters alike." />
+        <SectionHeading eyebrow="Official SSR Merchandise" title="The 2026 collection" description="Premium race jerseys, apparel, accessories and limited-edition items — designed for athletes and supporters alike. Showcasing the official collection; items are not available for online purchase." />
 
-        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((m, i) => {
             const imgs = m.images && m.images.length ? m.images : [];
             const idx = active[m.id] || 0;
@@ -120,8 +120,8 @@ function Merchandise() {
                     ) : (
                       <ShoppingBag className="w-12 h-12 text-muted-foreground/40" />
                     )}
-                    <span className={cn("absolute top-3 right-3 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full",
-                      m.availability === "Coming Soon" ? "bg-white/10 text-foreground/80" : "gradient-blaze text-white")}>
+                    <span className="absolute top-3 right-3 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full"
+                      style={{ background: "rgba(37,3,45,0.85)", color: "#9b93ff", border: "1px solid rgba(155,147,255,0.4)" }}>
                       {m.availability}
                     </span>
                     {imgs.length > 1 && (
@@ -133,13 +133,9 @@ function Merchandise() {
                     )}
                   </div>
                   <div className="p-5 flex flex-col flex-1">
-                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground">{m.category}</span>
-                    <h3 className="mt-1 font-bold text-white">{m.name}</h3>
-                    {m.description && <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">{m.description}</p>}
-                    <div className="mt-auto pt-3 flex items-center justify-between">
-                      <span className="font-heading font-bold text-gradient-ignite">{m.price}</span>
-                      <Tag className="w-4 h-4 text-muted-foreground" />
-                    </div>
+                    <span className="text-[10px] uppercase tracking-widest" style={{ color: "#9b93ff" }}>{m.category}</span>
+                    <h3 className="mt-1 font-bold text-white" style={{ fontFamily: "Poppins, sans-serif" }}>{m.name}</h3>
+                    {m.description && <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-3">{m.description}</p>}
                   </div>
                 </div>
               </Reveal>
