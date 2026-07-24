@@ -45,18 +45,12 @@ export default function Countdown() {
         {UNITS.map(({ key, label }) => (
           <div
             key={key}
-            className="flex flex-col items-center justify-center rounded-2xl bg-white shadow-lg shadow-black/30 w-[72px] h-[72px] sm:w-[96px] sm:h-[96px]"
+            className="flex flex-col items-center justify-center rounded-2xl glass-blaze w-[72px] h-[72px] sm:w-[96px] sm:h-[96px]"
           >
-            <span
-              className="font-heading font-black text-3xl sm:text-4xl leading-none tabular-nums"
-              style={{ color: "#403B72" }}
-            >
+            <span className="font-heading font-black text-3xl sm:text-4xl leading-none tabular-nums text-gradient-ignite">
               {String(t[key]).padStart(2, "0")}
             </span>
-            <span
-              className="mt-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em]"
-              style={{ color: "#0066FF" }}
-            >
+            <span className="mt-1 text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.15em] text-primary">
               {label}
             </span>
           </div>
