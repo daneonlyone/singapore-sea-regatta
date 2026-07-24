@@ -52,15 +52,15 @@ export default function HeadAboveWater2026() {
 
           {/* Official Head Above Water logo + title */}
           <Reveal delay={100}>
-            <div className="mt-6 flex flex-col sm:flex-row sm:items-end gap-6">
+            <div className="mt-6 flex flex-col sm:flex-row sm:items-center gap-6">
               <img
                 src={HAW_LOGO_WHITE}
                 alt="Head Above Water"
                 className="h-auto w-auto"
                 style={{ maxHeight: 260, objectFit: "contain" }}
               />
-              <span className="hidden sm:block h-px w-16 mb-8" style={{ background: "linear-gradient(to right, rgba(155,147,255,0.6), transparent)" }} />
-              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-[0.9] tracking-tight text-white pb-2">
+              <span className="hidden sm:block h-px w-16" style={{ background: "linear-gradient(to right, rgba(155,147,255,0.6), transparent)" }} />
+              <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-[0.9] tracking-tight text-white">
                 2026<br />
                 <span style={{ color: "#9b93ff" }}>Campaign</span>
               </h1>
