@@ -1,0 +1,49 @@
+{
+  "name": "PrivilegePartner",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "description": "Fitness, Recovery, Food & Beverage, Wellness, Retail, Lifestyle"
+    },
+    "offer": {
+      "type": "string",
+      "description": "The perk description"
+    },
+    "validity": {
+      "type": "string",
+      "description": "e.g. September 2026"
+    },
+    "outlet": {
+      "type": "string",
+      "description": "Outlet or location"
+    },
+    "terms": {
+      "type": "string",
+      "description": "Redemption terms"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "logo": {
+      "type": "string",
+      "format": "uri"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "brand",
+    "offer"
+  ]
+}

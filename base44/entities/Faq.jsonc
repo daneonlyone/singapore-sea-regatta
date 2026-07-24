@@ -1,0 +1,24 @@
+{
+  "name": "Faq",
+  "type": "object",
+  "properties": {
+    "question": {
+      "type": "string"
+    },
+    "answer": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "description": "e.g. Registration, Race Day, Festival, Merchandise"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "question",
+    "answer"
+  ]
+}

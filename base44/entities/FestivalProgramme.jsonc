@@ -1,0 +1,40 @@
+{
+  "name": "FestivalProgramme",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "day": {
+      "type": "string",
+      "description": "e.g. Saturday, 5 September"
+    },
+    "start_time": {
+      "type": "string"
+    },
+    "end_time": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "description": "Performance, Workshop, Panel Talk, Wellness, Kids, Race"
+    },
+    "location": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "title"
+  ]
+}

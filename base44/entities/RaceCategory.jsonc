@@ -1,0 +1,52 @@
+{
+  "name": "RaceCategory",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string",
+      "description": "Edition year e.g. 2026"
+    },
+    "day": {
+      "type": "string",
+      "enum": [
+        "Day 1",
+        "Day 2"
+      ],
+      "description": "Saturday / Sunday"
+    },
+    "session": {
+      "type": "string",
+      "enum": [
+        "Morning",
+        "Afternoon"
+      ]
+    },
+    "boat": {
+      "type": "string",
+      "enum": [
+        "DB12",
+        "DB22",
+        "DB6"
+      ]
+    },
+    "division": {
+      "type": "string",
+      "description": "Open, Women, Mixed, Invitational, Premier, etc."
+    },
+    "name": {
+      "type": "string",
+      "description": "Full category name"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "day",
+    "session",
+    "boat",
+    "name"
+  ]
+}

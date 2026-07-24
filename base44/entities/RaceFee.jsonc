@@ -1,0 +1,38 @@
+{
+  "name": "RaceFee",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "label": {
+      "type": "string",
+      "description": "e.g. Athlete fee, DB12 crew, DB22 crew, DB6 Tidebreaker crew"
+    },
+    "amount": {
+      "type": "string",
+      "description": "Display amount e.g. SGD 18"
+    },
+    "unit": {
+      "type": "string",
+      "description": "e.g. per unique paddler, per crew"
+    },
+    "note": {
+      "type": "string",
+      "description": "Extra info e.g. includes goodie bag"
+    },
+    "includes_gst": {
+      "type": "boolean",
+      "default": true
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "label",
+    "amount"
+  ]
+}

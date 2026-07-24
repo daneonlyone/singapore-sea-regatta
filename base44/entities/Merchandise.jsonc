@@ -1,0 +1,42 @@
+{
+  "name": "Merchandise",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string",
+      "description": "Race Jersey, Apparel, Accessories, Limited Edition"
+    },
+    "price": {
+      "type": "string",
+      "description": "Display price e.g. SGD 45"
+    },
+    "description": {
+      "type": "string"
+    },
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "availability": {
+      "type": "string",
+      "description": "In Stock, Coming Soon, Sold Out, Limited Edition"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "name"
+  ]
+}

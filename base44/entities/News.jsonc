@@ -1,0 +1,39 @@
+{
+  "name": "News",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "date": {
+      "type": "string",
+      "format": "date"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "image": {
+      "type": "string",
+      "format": "uri"
+    },
+    "link": {
+      "type": "string",
+      "format": "uri"
+    },
+    "category": {
+      "type": "string",
+      "description": "Festival, Race, Announcement, Community"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "title",
+    "summary"
+  ]
+}

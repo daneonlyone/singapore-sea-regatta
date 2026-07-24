@@ -1,0 +1,40 @@
+{
+  "name": "SpecialRace",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string",
+      "description": "Tagline e.g. Where the Best Rise to the Occasion"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Short summary for the card"
+    },
+    "description": {
+      "type": "string",
+      "description": "Full description shown on expand"
+    },
+    "image": {
+      "type": "string",
+      "format": "uri"
+    },
+    "accent_color": {
+      "type": "string"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "title",
+    "summary"
+  ]
+}

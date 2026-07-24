@@ -1,0 +1,70 @@
+{
+  "name": "EventYear",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string"
+    },
+    "campaign_name": {
+      "type": "string"
+    },
+    "campaign_short": {
+      "type": "string",
+      "description": "Short tag e.g. 'Head Above Water'"
+    },
+    "theme": {
+      "type": "string",
+      "description": "e.g. Dementia Awareness & Caregiver Support"
+    },
+    "cause": {
+      "type": "string",
+      "description": "Health/community cause for this edition"
+    },
+    "summary": {
+      "type": "string",
+      "description": "Edition overview paragraph"
+    },
+    "hero_image": {
+      "type": "string",
+      "format": "uri"
+    },
+    "logo": {
+      "type": "string",
+      "format": "uri"
+    },
+    "color_primary": {
+      "type": "string",
+      "description": "Hex accent for this edition"
+    },
+    "color_secondary": {
+      "type": "string"
+    },
+    "date_range": {
+      "type": "string",
+      "description": "e.g. 5-6 September 2026"
+    },
+    "time_range": {
+      "type": "string",
+      "description": "e.g. 0800H-1900H"
+    },
+    "venue": {
+      "type": "string"
+    },
+    "is_current": {
+      "type": "boolean",
+      "default": false
+    },
+    "is_archive": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "campaign_name"
+  ]
+}

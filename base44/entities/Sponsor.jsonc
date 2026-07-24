@@ -1,0 +1,29 @@
+{
+  "name": "Sponsor",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "tier": {
+      "type": "string",
+      "description": "Title Sponsor, Event Organiser, Official Partners, Community Partners, Supporting Organisations"
+    },
+    "logo": {
+      "type": "string",
+      "format": "uri"
+    },
+    "website": {
+      "type": "string",
+      "format": "uri"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "tier"
+  ]
+}

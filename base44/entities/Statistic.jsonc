@@ -1,0 +1,31 @@
+{
+  "name": "Statistic",
+  "type": "object",
+  "properties": {
+    "label": {
+      "type": "string",
+      "description": "e.g. Athletes, Participating Teams, Community Partners, Festival Visitors"
+    },
+    "value": {
+      "type": "number",
+      "description": "Numeric value for animated counter"
+    },
+    "suffix": {
+      "type": "string",
+      "description": "e.g. + or K"
+    },
+    "is_placeholder": {
+      "type": "boolean",
+      "default": false,
+      "description": "Marks as editable CMS placeholder"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "label",
+    "value"
+  ]
+}

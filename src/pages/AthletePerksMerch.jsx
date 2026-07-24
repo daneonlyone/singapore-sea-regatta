@@ -1,0 +1,148 @@
+import { useEffect, useMemo, useState } from "react";
+import { Search, MapPin, Clock, ExternalLink, ShoppingBag, Tag, ChevronLeft, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { base44 } from "@/api/base44Client";
+import Reveal from "@/components/Reveal";
+import SectionHeading from "@/components/SectionHeading";
+
+const PERK_CATS = ["All", "Fitness", "Recovery", "Food & Beverage", "Wellness", "Retail", "Lifestyle"];
+
+export default function AthletePerksMerch() {
+  return (
+    <div>
+      {/* HERO */}
+      <section className="relative pt-32 pb-12 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 to-background" />
+        <div className="relative mx-auto max-w-7xl px-6">
+          <Reveal>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Head Above Water 2026</span>
+            <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Athlete Perks & Merchandise</h1>
+            <p className="mt-4 max-w-2xl text-foreground/70">Unlock September-long privileges with your SSR athlete card, and shop the official 2026 collection.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      <PrivilegeProgramme />
+      <Merchandise />
+    </div>
+  );
+}
+
+function PrivilegeProgramme() {
+  const [partners, setPartners] = useState([]);
+  const [query, setQuery] = useState("");
+  const [cat, setCat] = useState("All");
+
+  useEffect(() => { base44.entities.PrivilegePartner.list("order", 200).then(setPartners).catch(() => {}); }, []);
+
+  const filtered = useMemo(() => partners.filter((p) => {
+    const q = query.toLowerCase();
+    const matchQ = !q || (p.brand + p.offer + p.outlet).toLowerCase().includes(q);
+    const matchC = cat === "All" || p.category === cat;
+    return matchQ && matchC;
+  }), [partners, query, cat]);
+
+  return (
+    <section id="perks" className="relative py-20 scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeading eyebrow="SSR Athlete Privilege Programme" title="Your card. September unlocked." description="Every registered paddler receives an SSR athlete card that unlocks exclusive offers across fitness, recovery, food, wellness and lifestyle partners throughout September." />
+
+        <Reveal>
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 sm:items-center">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+              <input
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                placeholder="Search partners, offers, outlets..."
+                className="w-full glass rounded-xl pl-10 pr-4 py-3 text-sm text-white placeholder:text-muted-foreground focus:outline-none focus:border-primary/40"
+              />
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {PERK_CATS.map((c) => (
+                <button key={c} onClick={() => setCat(c)} className={cn("px-3 py-1.5 rounded-full text-xs font-medium transition-all", cat === c ? "gradient-blaze text-white" : "glass text-foreground/70 hover:text-white")}>
+                  {c}
+                </button>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          {filtered.map((p, i) => (
+            <Reveal key={p.id} delay={i * 60}>
+              <div className="glass rounded-2xl p-6 h-full flex flex-col hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full bg-primary/15 text-primary">{p.category}</span>
+                  {p.website && <a href={p.website} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary"><ExternalLink className="w-4 h-4" /></a>}
+                </div>
+                <h3 className="font-bold text-white text-lg">{p.brand}</h3>
+                <p className="mt-2 text-sm text-foreground/80 leading-relaxed">{p.offer}</p>
+                <div className="mt-4 space-y-1.5 text-xs text-muted-foreground">
+                  {p.outlet && <div className="flex items-center gap-1.5"><MapPin className="w-3 h-3" />{p.outlet}</div>}
+                  {p.validity && <div className="flex items-center gap-1.5"><Clock className="w-3 h-3" />{p.validity}</div>}
+                </div>
+                {p.terms && <p className="mt-3 text-[11px] text-muted-foreground/70 border-t border-white/5 pt-3">{p.terms}</p>}
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function Merchandise() {
+  const [items, setItems] = useState([]);
+  const [active, setActive] = useState({});
+
+  useEffect(() => { base44.entities.Merchandise.list("order", 100).then(setItems).catch(() => {}); }, []);
+
+  return (
+    <section id="merch" className="relative py-20 scroll-mt-24">
+      <div className="mx-auto max-w-7xl px-6">
+        <SectionHeading eyebrow="Official SSR Merchandise" title="The 2026 collection" description="Premium race jerseys, apparel, accessories and limited-edition items — designed for athletes and supporters alike." />
+
+        <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {items.map((m, i) => {
+            const imgs = m.images && m.images.length ? m.images : [];
+            const idx = active[m.id] || 0;
+            return (
+              <Reveal key={m.id} delay={i * 60}>
+                <div className="glass rounded-2xl overflow-hidden h-full flex flex-col group hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
+                  <div className="relative aspect-square bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center overflow-hidden">
+                    {imgs.length ? (
+                      <img src={imgs[idx]} alt={m.name} className="w-full h-full object-cover" />
+                    ) : (
+                      <ShoppingBag className="w-12 h-12 text-muted-foreground/40" />
+                    )}
+                    <span className={cn("absolute top-3 right-3 text-[10px] font-bold uppercase tracking-widest px-2 py-1 rounded-full",
+                      m.availability === "Coming Soon" ? "bg-white/10 text-foreground/80" : "gradient-blaze text-white")}>
+                      {m.availability}
+                    </span>
+                    {imgs.length > 1 && (
+                      <div className="absolute inset-x-0 bottom-0 flex justify-center gap-1.5 p-2">
+                        {imgs.map((_, j) => (
+                          <button key={j} onClick={() => setActive({ ...active, [m.id]: j })} className={cn("w-1.5 h-1.5 rounded-full transition-all", idx === j ? "bg-primary w-4" : "bg-white/40")} />
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                  <div className="p-5 flex flex-col flex-1">
+                    <span className="text-[10px] uppercase tracking-widest text-muted-foreground">{m.category}</span>
+                    <h3 className="mt-1 font-bold text-white">{m.name}</h3>
+                    {m.description && <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-2">{m.description}</p>}
+                    <div className="mt-auto pt-3 flex items-center justify-between">
+                      <span className="font-heading font-bold text-gradient-ignite">{m.price}</span>
+                      <Tag className="w-4 h-4 text-muted-foreground" />
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}

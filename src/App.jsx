@@ -6,6 +6,15 @@ import PageNotFound from './lib/PageNotFound';
 import { AuthProvider, useAuth } from '@/lib/AuthContext';
 import UserNotRegisteredError from '@/components/UserNotRegisteredError';
 import ScrollToTop from './components/ScrollToTop';
+import Layout from '@/components/Layout';
+import Home from '@/pages/Home';
+import HeadAboveWater2026 from '@/pages/HeadAboveWater2026';
+import RaceInformation from '@/pages/RaceInformation';
+import SSRFestival from '@/pages/SSRFestival';
+import AthletePerksMerch from '@/pages/AthletePerksMerch';
+import PinkWave2024 from '@/pages/PinkWave2024';
+import RiseAboveTheWaves2025 from '@/pages/RiseAboveTheWaves2025';
+import AboutSSR from '@/pages/AboutSSR';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -35,6 +44,16 @@ const AuthenticatedApp = () => {
   return (
     <Routes>
       {/* Add your page Route elements here */}
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/head-above-water-2026" element={<HeadAboveWater2026 />} />
+        <Route path="/race-information" element={<RaceInformation />} />
+        <Route path="/ssr-festival" element={<SSRFestival />} />
+        <Route path="/athlete-perks-merch" element={<AthletePerksMerch />} />
+        <Route path="/pink-wave-2024" element={<PinkWave2024 />} />
+        <Route path="/rise-above-the-waves-2025" element={<RiseAboveTheWaves2025 />} />
+        <Route path="/about" element={<AboutSSR />} />
+      </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
   );
