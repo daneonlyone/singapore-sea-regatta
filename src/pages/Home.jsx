@@ -62,7 +62,7 @@ export default function Home() {
           </Reveal>
           <Reveal delay={360}>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/head-above-water-2026" className="group inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:-translate-y-0.5 transition-all">
+              <Link to="/head-above-water-2026" className="group btn-haw inline-flex items-center gap-2 text-white font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5">
                 Explore Head Above Water 2026
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
@@ -150,8 +150,8 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3">
-                    <Link to="/head-above-water-2026" className="inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-5 py-3 rounded-xl hover:-translate-y-0.5 transition-all">
-                      Explore Head Above Water 2026 <ArrowRight className="w-4 h-4" />
+                    <Link to="/head-above-water-2026" className="group btn-haw inline-flex items-center gap-2 text-white font-semibold px-5 py-3 rounded-xl hover:-translate-y-0.5">
+                      Explore Head Above Water 2026 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </Link>
                     <Link to="/race-information" className="inline-flex items-center gap-2 glass text-white font-semibold px-5 py-3 rounded-xl hover:border-white/20 transition-all">
                       View Race Information
