@@ -1,7 +1,7 @@
 import { Image } from "@/components/ui/image";
 import { cn } from "@/lib/utils";
 
-const LOGO_URL = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/abd9745b8_White.png";
+const LOGO_URL = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/ebc72c78b_White.png";
 
 // Official IHH × Singapore Sea Regatta logo lockup (black background).
 export default function Logo({ className, height = 40 }) {
