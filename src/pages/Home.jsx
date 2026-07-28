@@ -122,7 +122,7 @@ export default function Home() {
           <Reveal>
             <div className="text-center mb-10">
               <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Current Edition · 2026</span>
-              <h2 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Head Above Water</h2>
+              <h2 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black text-foreground">Head Above Water</h2>
             </div>
           </Reveal>
 
