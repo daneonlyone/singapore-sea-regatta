@@ -144,37 +144,6 @@
 }
 .mobile-nav-item:hover { background: rgba(255,255,255,0.05); color: #fff; }
 
-/* Light theme — accessibility alternate (scoped to .light on <html>) */
-.light {
-  --background: 0 0% 98%;
-  --foreground: 0 0% 12%;
-  --card: 0 0% 100%;
-  --card-foreground: 0 0% 8%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 0 0% 8%;
-  --secondary: 0 0% 94%;
-  --secondary-foreground: 0 0% 12%;
-  --muted: 0 0% 92%;
-  --muted-foreground: 0 0% 38%;
-  --accent: 41 100% 45%;
-  --accent-foreground: 0 0% 8%;
-  --border: 0 0% 86%;
-  --input: 0 0% 86%;
-  --glass: rgba(255, 255, 255, 0.72);
-  --glass-border: rgba(0, 0, 0, 0.08);
-}
-.light .glass-strong {
-  background: rgba(255, 255, 255, 0.85);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-}
-/* White text on now-light glass surfaces becomes dark for legibility */
-.light .glass .text-white,
-.light .glass-strong .text-white {
-  color: hsl(var(--foreground));
-}
-.light .mobile-nav-item { color: rgba(0, 0, 0, 0.7); }
-.light .mobile-nav-item:hover { background: rgba(0, 0, 0, 0.05); color: #000; }
-
 /* Head Above Water — purple campaign theme (scoped to .haw-theme) */
 .haw-theme {
   --primary: 245 100% 79%;

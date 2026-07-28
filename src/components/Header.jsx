@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/Logo";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -120,7 +119,6 @@ export default function Header() {
               View Race Information
               <ArrowUpRight className="w-4 h-4" />
             </Link>
-            <ThemeToggle />
             <button
               className="lg:hidden p-2 text-white"
               onClick={() => setOpen(!open)}

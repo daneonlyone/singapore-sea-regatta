@@ -14,17 +14,6 @@
     <title>Singapore Sea Regatta — Paddle With A Purpose</title>
   </head>
   <body>
-    <script>
-      (function () {
-        try {
-          var t = localStorage.getItem("ssr-theme");
-          var light = t === "light";
-          var e = document.documentElement;
-          e.classList.toggle("dark", !light);
-          e.classList.toggle("light", light);
-        } catch (e) {}
-      })();
-    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
