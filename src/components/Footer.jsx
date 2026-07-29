@@ -15,6 +15,13 @@ const PREV = [
   { label: "Rise Above The Waves 2025", to: "/rise-above-the-waves-2025" }
 ];
 
+const SOCIALS = [
+  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/singapore-sea-regatta/" },
+  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/sgsearegatta" },
+  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/people/Singapore-Sea-Regatta/61581244293472/" },
+  { icon: Send, label: "Telegram", href: "https://t.me/s/SGSeaRegatta" }
+];
+
 export default function Footer() {
   return (
     <footer className="relative mt-24 border-t border-white/5 bg-black">
@@ -76,8 +83,8 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex items-center gap-3 mt-5">
-              {[Linkedin, Instagram, Facebook, Send].map((Icon, i) => (
-                <a key={i} href="#" className="w-10 h-10 rounded-xl glass flex items-center justify-center text-foreground/70 hover:text-white hover:border-primary/40 transition-colors">
+              {SOCIALS.map(({ icon: Icon, href, label }) => (
+                <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="w-10 h-10 rounded-xl glass flex items-center justify-center text-foreground/70 hover:text-white hover:border-primary/40 transition-colors">
                   <Icon className="w-4 h-4" />
                 </a>
               ))}
