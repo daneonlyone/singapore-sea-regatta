@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
             </div>
             <div className="flex items-center gap-3 mt-5">
-              {[Instagram, Facebook, Telegram].map((Icon, i) => (
+              {[Instagram, Facebook].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 rounded-xl glass flex items-center justify-center text-foreground/70 hover:text-white hover:border-primary/40 transition-colors">
                   <Icon className="w-4 h-4" />
                 </a>
