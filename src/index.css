@@ -37,6 +37,43 @@
     --glass: rgba(20, 20, 20, 0.55);
     --glass-border: rgba(255, 255, 255, 0.08);
   }
+
+  /* Light mode — semantic token overrides (AA contrast on white) */
+  html.light {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
+    --card: 0 0% 99%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 20 96% 40%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 12%;
+    --muted: 0 0% 95%;
+    --muted-foreground: 0 0% 34%;
+    --accent: 34 92% 34%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 74% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 20 96% 40%;
+    --ember: 0 74% 42%;
+    --blaze: 20 96% 40%;
+    --gold: 34 92% 34%;
+    --glass: rgba(255, 255, 255, 0.72);
+    --glass-border: rgba(0, 0, 0, 0.10);
+  }
+  html.light .haw-theme {
+    --primary: 247 45% 45%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 247 45% 45%;
+    --accent: 247 40% 40%;
+    --accent-foreground: 0 0% 100%;
+    --blaze: 247 45% 45%;
+    --gold: 247 40% 40%;
+  }
 }
 
 @layer base {
@@ -49,11 +86,44 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.35s ease, color 0.35s ease;
   }
   h1, h2, h3, h4, h5 {
     @apply font-heading text-white;
     letter-spacing: -0.02em;
   }
+
+  /* Light mode: remap hardcoded white text/surfaces to semantic tokens */
+  html.light h1,
+  html.light h2,
+  html.light h3,
+  html.light h4,
+  html.light h5,
+  html.light .text-white:not([class*="gradient-"]):not([class*="btn-haw"]):not([class*="bg-"]) {
+    color: hsl(var(--foreground));
+  }
+  html.light .hover\:text-white:hover:not([class*="gradient-"]) { color: hsl(var(--foreground)); }
+  html.light .bg-black\/80 { background-color: rgba(0, 0, 0, 0.4); }
+  html.light .hover\:bg-white\/5:hover { background-color: rgba(0, 0, 0, 0.04); }
+  html.light .grain::after { opacity: 0.02; }
+  html.light .glass-strong {
+    background: rgba(255, 255, 255, 0.86);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+  }
+  html.light .glass-blaze {
+    background: rgba(255, 247, 242, 0.85);
+    border: 1px solid rgba(255, 92, 0, 0.25);
+    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.25);
+  }
+  html.light .haw-theme .glass-blaze {
+    background: rgba(247, 246, 255, 0.9);
+    border: 1px solid rgba(109, 99, 230, 0.25);
+    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.25);
+  }
+  html.light .mobile-nav-item { color: rgba(0, 0, 0, 0.7); }
+  html.light .mobile-nav-item:hover { background: rgba(0, 0, 0, 0.05); color: #111; }
+  html.light ::-webkit-scrollbar-track { background: #f4f4f5; }
+  html.light ::-webkit-scrollbar-thumb { background: #d4d4d8; }
 }
 
 @layer components {
