@@ -3,7 +3,6 @@ import { Link, useLocation } from "react-router-dom";
 import { ChevronDown, Menu, X, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Logo from "@/components/Logo";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const NAV = [
   { label: "Home", to: "/" },
@@ -113,7 +112,6 @@ export default function Header() {
 
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-2">
-            <ThemeToggle />
             <Link
               to="/race-information"
               className="hidden sm:inline-flex items-center gap-1.5 gradient-blaze text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
@@ -175,10 +173,6 @@ export default function Header() {
           <Link to="/race-information" className="mt-4 gradient-blaze text-white text-center font-semibold px-4 py-3.5 rounded-xl">
             View Race Information
           </Link>
-          <div className="mt-4 flex items-center justify-between px-3">
-            <span className="text-sm font-medium text-foreground/70">Appearance</span>
-            <ThemeToggle />
-          </div>
         </div>
       </div>
     </header>

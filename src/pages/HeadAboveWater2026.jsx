@@ -96,16 +96,16 @@ export default function HeadAboveWater2026() {
       </section>
 
       {/* ABOUT THE 2026 EDITION */}
-      <section className="relative py-24 haw-tint-section">
+      <section className="relative py-24" style={{ background: "linear-gradient(to bottom, #050505, rgba(37,3,45,0.3), #050505)" }}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <SectionHeading
                 eyebrow="The 2026 Edition"
-                title={<>More than a race. <span className="haw-accent">A movement.</span></>}
+                title={<>More than a race. <span style={{ color: LAVENDER }}>A movement.</span></>}
                 description="The IHH Healthcare × Singapore Sea Regatta unites global athletes, healthcare institutions and corporate partners in a celebration of sport, resilience and unity."
               />
-              <p className="mt-4 text-sm leading-relaxed haw-body" style={{ fontFamily: "Poppins, sans-serif" }}>
+              <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)", fontFamily: "Poppins, sans-serif" }}>
                 Beyond fierce competition across all age categories, the regatta features a vibrant festival footprint — wellness activations, recovery zones, and the exclusive SSR Athlete Privilege Programme.
               </p>
             </div>
@@ -117,10 +117,10 @@ export default function HeadAboveWater2026() {
                     { n: "02", t: "Public Festival", d: "Food, retail, wellness, performances and family-friendly activities at Marina Bay." },
                     { n: "03", t: "Health Advocacy", d: "Dementia awareness and caregiver support at the heart of the 2026 campaign." }
                   ].map((c) => (
-                    <div key={c.n} className="rounded-2xl p-5 haw-card">
-                      <div className="text-sm font-bold mb-2 font-mono haw-accent">{c.n}</div>
+                    <div key={c.n} className="rounded-2xl p-5 border" style={{ background: "rgba(37,3,45,0.55)", borderColor: "rgba(155,147,255,0.2)" }}>
+                      <div className="text-sm font-bold mb-2 font-mono" style={{ color: LAVENDER }}>{c.n}</div>
                       <h4 className="font-bold text-white text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>{c.t}</h4>
-                      <p className="mt-1.5 text-xs leading-relaxed haw-body" style={{ fontFamily: "Poppins, sans-serif" }}>{c.d}</p>
+                      <p className="mt-1.5 text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.55)", fontFamily: "Poppins, sans-serif" }}>{c.d}</p>
                     </div>
                   ))}
                 </div>

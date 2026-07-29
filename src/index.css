@@ -37,44 +37,6 @@
     --glass: rgba(20, 20, 20, 0.55);
     --glass-border: rgba(255, 255, 255, 0.08);
   }
-
-  /* Light mode — high-contrast slate/indigo mapping of the dark theme */
-  html.light {
-    --background: 210 40% 98%;      /* #F8FAFC */
-    --foreground: 222 47% 11%;      /* #0F172A */
-    --card: 0 0% 100%;              /* #FFFFFF */
-    --card-foreground: 222 47% 11%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
-    --primary: 20 96% 40%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 210 40% 96%;
-    --secondary-foreground: 222 47% 11%;
-    --muted: 210 40% 96%;
-    --muted-foreground: 215 25% 27%; /* #334155 */
-    --accent: 34 92% 34%;
-    --accent-foreground: 0 0% 100%;
-    --destructive: 0 74% 42%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 214 32% 91%;          /* #E2E8F0 */
-    --input: 214 32% 91%;
-    --ring: 243 75% 59%;
-    --ember: 0 74% 42%;
-    --blaze: 20 96% 40%;
-    --gold: 34 92% 34%;
-    --glass: rgba(255, 255, 255, 0.78);
-    --glass-border: rgba(226, 232, 240, 1);
-    --card-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-  }
-  html.light .haw-theme {
-    --primary: 243 75% 59%;         /* #4F46E5 */
-    --primary-foreground: 0 0% 100%;
-    --ring: 243 75% 59%;
-    --accent: 239 84% 67%;          /* #6366F1 */
-    --accent-foreground: 0 0% 100%;
-    --blaze: 243 75% 59%;
-    --gold: 239 84% 67%;
-  }
 }
 
 @layer base {
@@ -87,44 +49,11 @@
   body {
     @apply bg-background text-foreground font-body antialiased;
     -webkit-font-smoothing: antialiased;
-    transition: background-color 0.35s ease, color 0.35s ease;
   }
   h1, h2, h3, h4, h5 {
     @apply font-heading text-white;
     letter-spacing: -0.02em;
   }
-
-  /* Light mode: remap hardcoded white text/surfaces to semantic tokens */
-  html.light h1,
-  html.light h2,
-  html.light h3,
-  html.light h4,
-  html.light h5,
-  html.light .text-white:not([class*="gradient-"]):not([class*="btn-haw"]):not([class*="bg-"]) {
-    color: hsl(var(--foreground));
-  }
-  html.light .hover\:text-white:hover:not([class*="gradient-"]) { color: hsl(var(--foreground)); }
-  html.light .bg-black\/80 { background-color: rgba(0, 0, 0, 0.4); }
-  html.light .hover\:bg-white\/5:hover { background-color: rgba(0, 0, 0, 0.04); }
-  html.light .grain::after { opacity: 0.02; }
-  html.light .glass-strong {
-    background: rgba(255, 255, 255, 0.86);
-    border: 1px solid rgba(0, 0, 0, 0.10);
-  }
-  html.light .glass-blaze {
-    background: rgba(255, 247, 242, 0.85);
-    border: 1px solid rgba(255, 92, 0, 0.25);
-    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.25);
-  }
-  html.light .haw-theme .glass-blaze {
-    background: rgba(247, 246, 255, 0.9);
-    border: 1px solid rgba(109, 99, 230, 0.25);
-    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.25);
-  }
-  html.light .mobile-nav-item { color: rgba(0, 0, 0, 0.7); }
-  html.light .mobile-nav-item:hover { background: rgba(0, 0, 0, 0.05); color: #111; }
-  html.light ::-webkit-scrollbar-track { background: #f4f4f5; }
-  html.light ::-webkit-scrollbar-thumb { background: #d4d4d8; }
 }
 
 @layer components {
@@ -243,26 +172,6 @@
   backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
   border: 1px solid rgba(155,147,255,0.22);
   box-shadow: 0 0 24px -6px rgba(155,147,255,0.35), inset 0 1px 0 rgba(255,255,255,0.05);
-}
-
-/* HAW surfaces & text — theme-aware (dark defaults, light overrides below) */
-.haw-card {
-  background: rgba(37, 3, 45, 0.55);
-  border: 1px solid rgba(155, 147, 255, 0.2);
-}
-.haw-accent { color: #9b93ff; }
-.haw-body { color: rgba(255, 255, 255, 0.55); }
-.haw-tint-section { background: linear-gradient(to bottom, #050505, rgba(37,3,45,0.3), #050505); }
-
-html.light .haw-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-}
-html.light .haw-accent { color: #6366f1; }
-html.light .haw-body { color: #475569; }
-html.light .haw-tint-section {
-  background: linear-gradient(to bottom, #f8fafc, #eef2ff, #f8fafc);
 }
 
 /* Head Above Water — glowing purple CTA */
