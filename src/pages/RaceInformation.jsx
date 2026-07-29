@@ -232,7 +232,7 @@ function RaceInformationInner() {
       <Section id="documents" eyebrow="Race Documents & Quick Links" title="Everything in one place">
         <div id="travel" className="grid md:grid-cols-3 gap-4">
           <Reveal>
-            <DocCard icon={MapPin} title="Getting to the Venue" body="Bayfront Event Space is accessible via Bayfront MRT (CE1/DT16) and multiple bus services. More details to be confirmed closer to race day." />
+            <DocCard icon={MapPin} title="Getting to the Venue" body="Bayfront Event Space is accessible via Bayfront MRT (CC34/DT16) and multiple bus services. More details to be confirmed closer to race day." />
           </Reveal>
           <Reveal delay={100}>
             <DocCard icon={FileText} title="Race Documents" body="Race Bulletin, Registration Guide and Team Managers' Briefing materials — all editable and downloadable from the CMS." />
