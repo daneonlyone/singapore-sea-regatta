@@ -203,6 +203,7 @@ export default function Home() {
       <section className="relative py-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
+            align="center"
             eyebrow="Paddle With A Purpose"
             title={<>Three years. <span className="text-gradient-ignite">One mission.</span></>}
             description="Each edition channels the energy of dragon boat racing into a health or community cause — building a legacy of impact on and off the water."
