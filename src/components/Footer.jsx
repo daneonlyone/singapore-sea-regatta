@@ -11,8 +11,8 @@ const QUICK = [
 ];
 
 const PREV = [
-  { label: "Pink Wave 2024", to: "/pink-wave-2024" },
-  { label: "Rise Above The Waves 2025", to: "/rise-above-the-waves-2025" }
+  { label: "Rise Above The Waves 2025", to: "/rise-above-the-waves-2025" },
+  { label: "Pink Wave 2024", to: "/pink-wave-2024" }
 ];
 
 const SOCIALS = [
