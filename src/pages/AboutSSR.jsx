@@ -83,25 +83,67 @@ export default function AboutSSR() {
       </section>
 
       {/* SSR STORY */}
-      <section className="relative py-20">
-        <div className="mx-auto max-w-5xl px-6">
+      <section className="relative py-16 sm:py-24">
+        <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <SectionHeading align="center" eyebrow="The SSR Story" title="Three editions, one current" />
-          <div className="mt-12 space-y-8">
+          
+          {/* Increased space between cards to match the larger, centered layout */}
+          <div className="mt-12 sm:mt-16 space-y-8 sm:space-y-12">
             {[
               { y: "2024", n: "Pink Wave", c: "#EC4899", d: "The inaugural edition championed breast cancer awareness, uniting survivors, athletes and the community in a wave of solidarity." },
               { y: "2025", n: "Rise Above The Waves", c: "#00B4D8", d: "The second edition rallied behind mental health awareness, with panel talks, wellness activations and outreach supporting youth resilience." },
               { y: "2026", n: "Head Above Water", c: "#FF5C00", d: "Timed with World Alzheimer's Month, the 2026 edition shines a spotlight on dementia awareness and caregiver support.", current: true }
             ].map((e, i) => (
               <Reveal key={e.y} delay={i * 120}>
-                <div className={`glass rounded-3xl p-8 flex flex-col sm:flex-row sm:items-center gap-6 ${e.current ? "glass-blaze" : ""}`}>
-                  <div className="font-heading font-black text-5xl sm:text-6xl shrink-0" style={{ color: e.c }}>{e.y}</div>
-                  <div className="flex-1">
-                    <div className="flex items-center gap-2">
-                      <h3 className="text-xl font-bold text-white">{e.n}</h3>
-                      {e.current && <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full gradient-blaze text-white">Current</span>}
-                    </div>
-                    <p className="mt-2 text-foreground/70 leading-relaxed">{e.d}</p>
+                
+                {/* 
+                  Centered Card Container: 
+                  Added flex-col, items-center, and text-center.
+                  Increased internal padding (p-8 mobile, p-12 desktop).
+                */}
+                <div 
+                  className={`relative overflow-hidden rounded-3xl p-8 sm:p-12 flex flex-col items-center text-center transition-transform hover:-translate-y-1 ${
+                    e.current ? "glass-blaze border border-white/20 shadow-2xl" : "glass border border-white/5"
+                  }`}
+                >
+                  {/* Top Color Accent Bar (Balanced for centered layout) */}
+                  <div 
+                    className="absolute left-0 top-0 right-0 h-2 sm:h-3" 
+                    style={{ backgroundColor: e.c }} 
+                  />
+
+                  {/* Year Typography (Centered & bottom margin added) */}
+                  <div 
+                    className="font-heading font-black text-6xl sm:text-7xl tracking-tighter drop-shadow-md mb-4 sm:mb-6" 
+                    style={{ color: e.c }}
+                  >
+                    {e.y}
                   </div>
+
+                  {/* Title & Badge (Centered grouping) */}
+                  <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-5 sm:mb-6">
+                    <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
+                      {e.n}
+                    </h3>
+                    {e.current && (
+                      <span 
+                        className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full text-white shadow-sm mt-2 sm:mt-0"
+                        style={{ backgroundColor: e.c }}
+                      >
+                        Current
+                      </span>
+                    )}
+                  </div>
+                  
+                  {/* 
+                    Description: 
+                    Constrained max-width for easier reading.
+                    Added pb-4/pb-8 for the requested extra space below the text.
+                  */}
+                  <p className="text-white/80 text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto pb-4 sm:pb-8">
+                    {e.d}
+                  </p>
+                  
                 </div>
               </Reveal>
             ))}
