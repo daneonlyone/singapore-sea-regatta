@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Target, Eye, Heart, Mail, MapPin, Instagram, Facebook, ArrowRight } from "lucide-react";
+import { Target, Eye, Heart, Mail, MapPin, ArrowRight } from "lucide-react";
+import { SOCIALS } from "@/components/socials";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
@@ -153,8 +154,8 @@ export default function AboutSSR() {
                 <Heart className="w-6 h-6 text-primary mx-auto mb-3" />
                 <h4 className="font-bold text-white">Social</h4>
                 <div className="flex items-center justify-center gap-2 mt-2">
-                  {[Instagram, Facebook].map((Icon, i) => (
-                    <a key={i} href="#" className="w-9 h-9 rounded-lg glass flex items-center justify-center text-foreground/70 hover:text-white hover:border-primary/40 transition-colors">
+                  {SOCIALS.map(({ icon: Icon, href, label }) => (
+                    <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="w-9 h-9 rounded-lg glass flex items-center justify-center text-foreground/70 hover:text-white hover:border-primary/40 transition-colors">
                       <Icon className="w-4 h-4" />
                     </a>
                   ))}

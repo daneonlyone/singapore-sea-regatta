@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { Instagram, Facebook, Linkedin, Send, Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight } from "lucide-react";
 import Logo from "@/components/Logo";
+import { SOCIALS } from "@/components/socials";
 
 const QUICK = [
   { label: "Head Above Water 2026", to: "/head-above-water-2026" },
@@ -13,13 +14,6 @@ const QUICK = [
 const PREV = [
   { label: "Rise Above The Waves 2025", to: "/rise-above-the-waves-2025" },
   { label: "Pink Wave 2024", to: "/pink-wave-2024" }
-];
-
-const SOCIALS = [
-  { icon: Linkedin, label: "LinkedIn", href: "https://www.linkedin.com/company/singapore-sea-regatta/" },
-  { icon: Instagram, label: "Instagram", href: "https://www.instagram.com/sgsearegatta" },
-  { icon: Facebook, label: "Facebook", href: "https://www.facebook.com/people/Singapore-Sea-Regatta/61581244293472/" },
-  { icon: Send, label: "Telegram", href: "https://t.me/s/SGSeaRegatta" }
 ];
 
 export default function Footer() {
