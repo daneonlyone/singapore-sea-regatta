@@ -203,38 +203,47 @@ export default function Home() {
       <section className="relative py-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
-            align="center"
             eyebrow="Paddle With A Purpose"
             title={<>Three years. <span className="text-gradient-ignite">One mission.</span></>}
             description="Each edition channels the energy of dragon boat racing into a health or community cause — building a legacy of impact on and off the water."
           />
-          <div className="mt-16 relative">
-            <div className="absolute left-0 right-0 top-12 h-px bg-gradient-to-r from-pink/30 via-azure/30 to-primary hidden md:block" />
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="mt-10 relative">
+            {/* Oversized watermark year numerals */}
+            <div className="absolute inset-x-0 -top-14 h-32 hidden md:grid grid-cols-3 gap-6 overflow-hidden pointer-events-none select-none" aria-hidden="true">
+              {timeline.map((e) => (
+                <span
+                  key={e.id}
+                  className="font-heading font-black leading-none text-[7rem] tracking-tighter opacity-20 translate-y-2"
+                  style={{ color: e.color_primary }}
+                >
+                  {e.year}
+                </span>
+              ))}
+            </div>
+            {/* Connecting rule */}
+            <div className="absolute left-0 right-0 top-1/2 h-px bg-white/10 hidden md:block" />
+            <div className="relative grid md:grid-cols-3 gap-6">
               {timeline.map((e, i) => {
                 const isCurrent = e.is_current;
                 const color = e.color_primary;
                 return (
                   <Reveal key={e.id} delay={i * 150}>
-                    <Link to={editionLink(e)} className="block group">
-                      <div className="relative flex justify-center mb-6">
-                        <div
-                          className="relative w-6 h-6 rounded-full border-2 z-10"
-                          style={{ borderColor: color, background: isCurrent ? color : "#0a0a0a", boxShadow: isCurrent ? `0 0 20px ${color}` : "none" }}
-                        />
-                      </div>
+                    <Link to={editionLink(e)} className="block group h-full">
                       <div
-                        className={`rounded-2xl p-6 h-full transition-all duration-400 group-hover:-translate-y-1 ${isCurrent ? "glass-blaze" : "glass"}`}
-                        style={isCurrent ? {} : { borderColor: "rgba(255,255,255,0.06)" }}
+                        className="relative rounded-2xl p-6 h-full bg-[#080808] border transition-all duration-400 group-hover:-translate-y-1"
+                        style={{ borderColor: isCurrent ? "rgba(255,255,255,0.28)" : "rgba(255,255,255,0.12)" }}
                       >
-                        <div className="flex items-center gap-3 mb-3">
-                          <span className="font-mono text-2xl font-bold" style={{ color }}>{e.year}</span>
-                          {isCurrent && <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full gradient-blaze text-white">Current</span>}
-                          {e.is_archive && <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Archive</span>}
+                        <div className="flex items-start justify-between gap-3 mb-3">
+                          <span className="font-heading text-2xl font-bold" style={{ color }}>{e.year}</span>
+                          {isCurrent ? (
+                            <span className="text-[11px] font-medium px-3 py-1 rounded-full bg-white text-black">Current</span>
+                          ) : (
+                            <span className="text-[11px] font-medium px-3 py-1 rounded-full bg-white/10 text-foreground/70">Archive</span>
+                          )}
                         </div>
                         <h3 className="text-xl font-bold text-white">{e.campaign_short}</h3>
-                        <p className="mt-1 text-sm text-muted-foreground">{e.theme}</p>
-                        <p className="mt-3 text-sm text-foreground/70 leading-relaxed line-clamp-3">{e.summary}</p>
+                        <p className="mt-2 text-sm text-foreground/70">{e.theme}</p>
+                        <p className="mt-4 text-sm text-muted-foreground leading-relaxed line-clamp-3">{e.summary}</p>
                       </div>
                     </Link>
                   </Reveal>
