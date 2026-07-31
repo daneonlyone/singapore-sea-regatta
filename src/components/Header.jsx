@@ -20,7 +20,6 @@ const PREV_YEARS = [
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [prevOpen, setPrevOpen] = useState(false);
   const [mobilePrev, setMobilePrev] = useState(false);
   const loc = useLocation();
 
@@ -62,52 +61,6 @@ export default function Header() {
               <NavItem key={item.to} item={item} active={loc.pathname === item.to} />
             ))}
 
-            {/* Previous Years dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => setPrevOpen(true)}
-              onMouseLeave={() => setPrevOpen(false)}
-            >
-              <button
-                className={cn(
-                  "flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium transition-colors",
-                  loc.pathname.includes("pink-wave") || loc.pathname.includes("rise-above")
-                    ? "text-white" : "text-foreground/70 hover:text-white"
-                )}
-              >
-                Previous Years
-                <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-300", prevOpen && "rotate-180")} />
-              </button>
-              <div
-                className={cn(
-                  "absolute right-0 top-full pt-3 transition-all duration-300",
-                  prevOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-1 pointer-events-none"
-                )}
-              >
-                <div className="glass-strong rounded-xl p-2 w-72 shadow-2xl shadow-black/60">
-                  <div className="px-3 py-2 text-[10px] uppercase tracking-widest text-muted-foreground">Archived Editions</div>
-                  {PREV_YEARS.map((y) => (
-                    <Link
-                      key={y.year}
-                      to={y.to}
-                      className="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-white/5 transition-colors group"
-                    >
-                      <span
-                        className="w-1.5 h-10 rounded-full"
-                        style={{ background: y.color, boxShadow: `0 0 12px ${y.glow}` }}
-                      />
-                      <div className="flex-1">
-                        <div className="text-white font-semibold text-sm">{y.name}</div>
-                        <div className="text-muted-foreground text-xs">Singapore Sea Regatta {y.year}</div>
-                      </div>
-                      <span className="text-xs font-mono text-muted-foreground">{y.year}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <Link to="/about" className={cn("px-3 py-2 rounded-lg text-sm font-medium transition-colors", loc.pathname === "/about" ? "text-white" : "text-foreground/70 hover:text-white")}>About SSR</Link>
           </nav>
 
           {/* CTA + mobile toggle */}
