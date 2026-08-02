@@ -89,10 +89,10 @@ export default function Home() {
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden">
                   <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/81415c754_Singapore_Sea_Regatta_2025-1077.jpg" className="w-full h-full object-cover" fittingType="fill" />
                 </div>
-                <div className="absolute -bottom-6 -right-6 glass-blaze rounded-2xl p-5 max-w-[200px] hidden sm:block">
-                  <div className="text-3xl font-heading font-black text-gradient-ignite hidden">3</div>
-                  <div className="text-xs text-foreground/70 mt-1 hidden">Editions of purpose-driven racing since 2024</div>
-                </div>
+                
+
+
+                
               </div>
             </Reveal>
             <div>
