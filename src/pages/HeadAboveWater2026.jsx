@@ -4,7 +4,7 @@ import { Image } from "@/components/ui/image";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 
-const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/6c893ed46_generated_71914506.png";
+const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/211fa28ed_background4x.png";
 const CAUSE_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/7f82390ed_generated_46f74eb8.png";
 const HAW_LOGO_WHITE = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png";
 
