@@ -140,7 +140,7 @@ export default function HeadAboveWater2026() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <Reveal>
               <div className="rounded-3xl overflow-hidden border" style={{ borderColor: "rgba(155,147,255,0.25)" }}>
-                <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/08ff53ca4_Screenshot2026-08-02at91620PM.png" className="w-full aspect-[4/3] object-cover" fittingType="fill" />
+                <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/7f3c834c5_webhero_4x-8.png" className="w-full aspect-[4/3] object-cover" fittingType="fill" />
               </div>
             </Reveal>
             <div>
