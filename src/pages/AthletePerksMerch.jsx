@@ -105,7 +105,28 @@ function Merchandise() {
   return (
     <section id="merch" className="relative py-20 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6">
-        <SectionHeading eyebrow="Official SSR Merchandise" title="The 2026 collection" description="Premium race jerseys, apparel, accessories and limited-edition items — designed for athletes and supporters alike. Showcasing the official collection; items are not available for online purchase." />
+        <SectionHeading eyebrow="Official SSR Merchandise" title="The 2026 collection" description="Premium race jerseys, apparel, accessories and limited-edition items — designed for athletes and supporters alike. Browse the collection here, then head to our official online store to purchase." />
+
+        <Reveal delay={100}>
+          <a
+            href="https://www.sgsearegatta.com/merchandise"
+            target="_blank"
+            rel="noreferrer"
+            className="group mt-8 glass-blaze rounded-2xl p-6 flex flex-col sm:flex-row sm:items-center gap-4 hover:-translate-y-1 transition-all duration-300"
+          >
+            <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0" style={{ background: "linear-gradient(135deg, #9b93ff, #6d63e6)" }}>
+              <ShoppingBag className="w-6 h-6 text-white" />
+            </div>
+            <div className="flex-1">
+              <h3 className="font-bold text-white text-lg">Shop the Official SSR Store</h3>
+              <p className="mt-1 text-sm text-foreground/70">Secure checkout on sgsearegatta.com — jerseys, apparel and limited-edition drops.</p>
+            </div>
+            <span className="inline-flex items-center gap-2 btn-haw text-white text-sm font-semibold px-5 py-3 rounded-xl shrink-0">
+              Visit Store
+              <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+            </span>
+          </a>
+        </Reveal>
 
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((m, i) => {
