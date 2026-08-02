@@ -15,6 +15,8 @@ import AthletePerksMerch from '@/pages/AthletePerksMerch';
 import PinkWave2024 from '@/pages/PinkWave2024';
 import RiseAboveTheWaves2025 from '@/pages/RiseAboveTheWaves2025';
 import AboutSSR from '@/pages/AboutSSR';
+import PrivacyPolicy from '@/pages/PrivacyPolicy';
+import TermsOfUse from '@/pages/TermsOfUse';
 // Add page imports here
 
 const AuthenticatedApp = () => {
@@ -53,6 +55,8 @@ const AuthenticatedApp = () => {
         <Route path="/pink-wave-2024" element={<PinkWave2024 />} />
         <Route path="/rise-above-the-waves-2025" element={<RiseAboveTheWaves2025 />} />
         <Route path="/about" element={<AboutSSR />} />
+        <Route path="/privacy" element={<PrivacyPolicy />} />
+        <Route path="/terms" element={<TermsOfUse />} />
       </Route>
       <Route path="*" element={<PageNotFound />} />
     </Routes>
