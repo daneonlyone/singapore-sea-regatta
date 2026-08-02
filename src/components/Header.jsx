@@ -61,6 +61,25 @@ export default function Header() {
               <NavItem key={item.to} item={item} active={loc.pathname === item.to} />
             ))}
 
+            <div className="relative group">
+              <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:text-white transition-colors">
+                Previous Years
+                <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
+              </button>
+              <div className="absolute right-0 top-full pt-2 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200">
+                <div className="glass-strong rounded-xl p-2 w-64 shadow-2xl shadow-black/50">
+                  {PREV_YEARS.map((y) => (
+                    <Link key={y.year} to={y.to} className="flex items-center gap-2.5 py-2.5 px-3 rounded-lg hover:bg-white/5">
+                      <span className="w-1 h-8 rounded-full" style={{ background: y.color }} />
+                      <div>
+                        <div className="text-white text-sm font-medium">{y.name}</div>
+                        <div className="text-muted-foreground text-xs">{y.year} Archive</div>
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
           </nav>
 
           {/* CTA + mobile toggle */}
