@@ -13,8 +13,8 @@ const NAV = [
 ];
 
 const PREV_YEARS = [
-  { year: "2024", name: "Pink Wave", to: "/pink-wave-2024", color: "#EC4899", glow: "rgba(236,72,153,0.35)" },
-  { year: "2025", name: "Rise Above The Waves", to: "/rise-above-the-waves-2025", color: "#00B4D8", glow: "rgba(0,180,216,0.35)" }
+  { year: "2025", name: "Rise Above The Waves", to: "/rise-above-the-waves-2025", color: "#00B4D8", glow: "rgba(0,180,216,0.35)" },
+  { year: "2024", name: "Pink Wave", to: "/pink-wave-2024", color: "#EC4899", glow: "rgba(236,72,153,0.35)" }
 ];
 
 export default function Header() {
