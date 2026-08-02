@@ -9,16 +9,16 @@ const CAUSE_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135
 const HAW_LOGO_WHITE = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png";
 
 const QUICK_ACCESS = [
-  { label: "Race Information", to: "/race-information", icon: Info },
-  { label: "Race Categories", to: "/race-information#categories", icon: Ruler },
-  { label: "Race Fees", to: "/race-information#fees", icon: Ticket },
-  { label: "Race Bulletin", to: "/race-information#documents", icon: FileText },
-  { label: "SSR Festival", to: "/ssr-festival", icon: Users },
-  { label: "Athlete Privilege Programme", to: "/athlete-perks-merch#perks", icon: Users },
-  { label: "Official Merchandise", to: "/athlete-perks-merch#merch", icon: ShoppingBag },
-  { label: "Getting to the Venue", to: "/race-information#travel", icon: Navigation },
-  { label: "Frequently Asked Questions", to: "/race-information#faq", icon: HelpCircle }
-];
+{ label: "Race Information", to: "/race-information", icon: Info },
+{ label: "Race Categories", to: "/race-information#categories", icon: Ruler },
+{ label: "Race Fees", to: "/race-information#fees", icon: Ticket },
+{ label: "Race Bulletin", to: "/race-information#documents", icon: FileText },
+{ label: "SSR Festival", to: "/ssr-festival", icon: Users },
+{ label: "Athlete Privilege Programme", to: "/athlete-perks-merch#perks", icon: Users },
+{ label: "Official Merchandise", to: "/athlete-perks-merch#merch", icon: ShoppingBag },
+{ label: "Getting to the Venue", to: "/race-information#travel", icon: Navigation },
+{ label: "Frequently Asked Questions", to: "/race-information#faq", icon: HelpCircle }];
+
 
 // HAW brand colours
 const PLUM = "#25032d";
@@ -57,8 +57,8 @@ export default function HeadAboveWater2026() {
                 src={HAW_LOGO_WHITE}
                 alt="Head Above Water"
                 className="h-auto w-auto"
-                style={{ maxHeight: 260, objectFit: "contain" }}
-              />
+                style={{ maxHeight: 260, objectFit: "contain" }} />
+              
               <span className="hidden sm:block h-px w-16" style={{ background: "linear-gradient(to right, rgba(155,147,255,0.6), transparent)" }} />
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-[0.9] tracking-tight text-white">
                 2026<br />
@@ -82,12 +82,12 @@ export default function HeadAboveWater2026() {
           <Reveal delay={420}>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link to="/race-information"
-                className="inline-flex items-center gap-2 font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5 transition-all text-white"
-                style={{ background: `linear-gradient(90deg, ${LAVENDER} 0%, #7b6ff0 100%)`, boxShadow: `0 4px 24px rgba(155,147,255,0.35)` }}>
+              className="inline-flex items-center gap-2 font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5 transition-all text-white"
+              style={{ background: `linear-gradient(90deg, ${LAVENDER} 0%, #7b6ff0 100%)`, boxShadow: `0 4px 24px rgba(155,147,255,0.35)` }}>
                 View Race Information <ArrowRight className="w-4 h-4" />
               </Link>
               <Link to="/ssr-festival"
-                className="inline-flex items-center gap-2 font-semibold px-6 py-3.5 rounded-xl hover:border-white/20 transition-all text-white glass">
+              className="inline-flex items-center gap-2 font-semibold px-6 py-3.5 rounded-xl hover:border-white/20 transition-all text-white glass">
                 Explore SSR Festival
               </Link>
             </div>
@@ -103,8 +103,8 @@ export default function HeadAboveWater2026() {
               <SectionHeading
                 eyebrow="The 2026 Edition"
                 title={<>More than a race. <span style={{ color: LAVENDER }}>A movement.</span></>}
-                description="The IHH Healthcare × Singapore Sea Regatta unites global athletes, healthcare institutions and corporate partners in a celebration of sport, resilience and unity."
-              />
+                description="The IHH Healthcare × Singapore Sea Regatta unites global athletes, healthcare institutions and corporate partners in a celebration of sport, resilience and unity." />
+              
               <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)", fontFamily: "Poppins, sans-serif" }}>
                 Beyond fierce competition across all age categories, the regatta features a vibrant festival footprint — wellness activations, recovery zones, and the exclusive SSR Athlete Privilege Programme.
               </p>
@@ -113,16 +113,16 @@ export default function HeadAboveWater2026() {
               <Reveal>
                 <div className="grid sm:grid-cols-3 gap-4">
                   {[
-                    { n: "01", t: "International Racing", d: "Dragon boat crews competing across DB12, DB22 and DB6 categories over two days." },
-                    { n: "02", t: "Public Festival", d: "Food, retail, wellness, performances and family-friendly activities at Marina Bay." },
-                    { n: "03", t: "Health Advocacy", d: "Dementia awareness and caregiver support at the heart of the 2026 campaign." }
-                  ].map((c) => (
-                    <div key={c.n} className="rounded-2xl p-5 border" style={{ background: "rgba(37,3,45,0.55)", borderColor: "rgba(155,147,255,0.2)" }}>
+                  { n: "01", t: "International Racing", d: "Dragon boat crews competing across DB12, DB22 and DB6 categories over two days." },
+                  { n: "02", t: "Public Festival", d: "Food, retail, wellness, performances and family-friendly activities at Marina Bay." },
+                  { n: "03", t: "Health Advocacy", d: "Dementia awareness and caregiver support at the heart of the 2026 campaign." }].
+                  map((c) =>
+                  <div key={c.n} className="rounded-2xl p-5 border" style={{ background: "rgba(37,3,45,0.55)", borderColor: "rgba(155,147,255,0.2)" }}>
                       <div className="text-sm font-bold mb-2 font-mono" style={{ color: LAVENDER }}>{c.n}</div>
                       <h4 className="font-bold text-white text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>{c.t}</h4>
                       <p className="mt-1.5 text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.55)", fontFamily: "Poppins, sans-serif" }}>{c.d}</p>
                     </div>
-                  ))}
+                  )}
                 </div>
               </Reveal>
             </div>
@@ -140,7 +140,7 @@ export default function HeadAboveWater2026() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <Reveal>
               <div className="rounded-3xl overflow-hidden border" style={{ borderColor: "rgba(155,147,255,0.25)" }}>
-                <Image src={CAUSE_IMG} className="w-full aspect-[4/3] object-cover" fittingType="fill" />
+                <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/08ff53ca4_Screenshot2026-08-02at91620PM.png" className="w-full aspect-[4/3] object-cover" fittingType="fill" />
               </div>
             </Reveal>
             <div>
@@ -155,18 +155,18 @@ export default function HeadAboveWater2026() {
               </Reveal>
               <div className="mt-8 space-y-4">
                 {[
-                  { t: "Why awareness matters", d: "Dementia affects memory, thinking and behaviour. Early awareness leads to earlier support, better care, and stronger, more inclusive communities." },
-                  { t: "The role of caregivers", d: "Caregivers are the unseen heroes providing daily strength. SSR 2026 honours their dedication and connects them with resources and community." },
-                  { t: "Sport meets purpose", d: "By uniting athletes, healthcare organisations and communities, we channel the power of sport into social impact — on and off the water." },
-                  { t: "World Alzheimer's Month", d: "Timed with September's global awareness month, the regatta amplifies the call for a dementia-friendly society." }
-                ].map((b, i) => (
-                  <Reveal key={b.t} delay={i * 100}>
+                { t: "Why awareness matters", d: "Dementia affects memory, thinking and behaviour. Early awareness leads to earlier support, better care, and stronger, more inclusive communities." },
+                { t: "The role of caregivers", d: "Caregivers are the unseen heroes providing daily strength. SSR 2026 honours their dedication and connects them with resources and community." },
+                { t: "Sport meets purpose", d: "By uniting athletes, healthcare organisations and communities, we channel the power of sport into social impact — on and off the water." },
+                { t: "World Alzheimer's Month", d: "Timed with September's global awareness month, the regatta amplifies the call for a dementia-friendly society." }].
+                map((b, i) =>
+                <Reveal key={b.t} delay={i * 100}>
                     <div className="rounded-2xl p-5 border hover:border-opacity-60 transition-colors" style={{ background: "rgba(37,3,45,0.6)", borderColor: "rgba(155,147,255,0.2)" }}>
                       <h4 className="font-semibold text-white text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>{b.t}</h4>
                       <p className="mt-1.5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)", fontFamily: "Poppins, sans-serif" }}>{b.d}</p>
                     </div>
                   </Reveal>
-                ))}
+                )}
               </div>
             </div>
           </div>
@@ -203,21 +203,21 @@ export default function HeadAboveWater2026() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading align="center" eyebrow="2026 Quick Access" title="Everything you need, one tap away" />
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">
-            {QUICK_ACCESS.map((q, i) => (
-              <Reveal key={q.label} delay={i * 60}>
+            {QUICK_ACCESS.map((q, i) =>
+            <Reveal key={q.label} delay={i * 60}>
                 <Link to={q.to} className="group rounded-2xl p-5 sm:p-6 h-full flex flex-col items-start hover:-translate-y-1 transition-all duration-300 border" style={{ background: "rgba(37,3,45,0.45)", borderColor: "rgba(155,147,255,0.2)" }}
-                  onMouseEnter={e => e.currentTarget.style.borderColor = "rgba(155,147,255,0.5)"}
-                  onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(155,147,255,0.2)"}>
+              onMouseEnter={(e) => e.currentTarget.style.borderColor = "rgba(155,147,255,0.5)"}
+              onMouseLeave={(e) => e.currentTarget.style.borderColor = "rgba(155,147,255,0.2)"}>
                   <q.icon className="w-6 h-6 mb-3" style={{ color: LAVENDER }} />
                   <span className="text-sm font-semibold text-white leading-snug" style={{ fontFamily: "Poppins, sans-serif" }}>{q.label}</span>
                 </Link>
               </Reveal>
-            ))}
+            )}
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 }
 
 function HeroFact({ icon: Icon, label, value }) {
@@ -228,6 +228,6 @@ function HeroFact({ icon: Icon, label, value }) {
         <div className="text-[10px] uppercase tracking-widest" style={{ color: "rgba(155,147,255,0.7)", fontFamily: "Poppins, sans-serif" }}>{label}</div>
         <div className="text-sm font-semibold text-white" style={{ fontFamily: "Poppins, sans-serif" }}>{value}</div>
       </div>
-    </div>
-  );
+    </div>);
+
 }
