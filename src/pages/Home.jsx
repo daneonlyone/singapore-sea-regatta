@@ -9,7 +9,7 @@ import Countdown from "@/components/Countdown";
 import { Image } from "@/components/ui/image";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/eebc986ff_generated_b13211d1.png";
-const CAMPAIGN_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/6c893ed46_generated_71914506.png";
+const CAMPAIGN_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/08ff53ca4_Screenshot2026-08-02at91620PM.png";
 const RACE_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/765c3e88c_generated_746c96de.png";
 const FESTIVAL_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/71427b403_generated_6f71a2fa.png";
 
