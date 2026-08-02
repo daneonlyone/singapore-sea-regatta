@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import FeeCalculator from "@/components/FeeCalculator";
 
 const TIMELINE = [
   { month: "February", items: [{ d: "15", t: "Expression of Interest Opens" }, { d: "17", t: "Expression of Interest Closes" }] },
@@ -167,6 +168,9 @@ function RaceInformationInner() {
               </Reveal>
             );
           })}
+        </div>
+        <div className="mt-8">
+          <FeeCalculator />
         </div>
       </Section>
 
