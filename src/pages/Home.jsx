@@ -87,11 +87,11 @@ export default function Home() {
             <Reveal>
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden">
-                  <Image src={RACE_IMG} className="w-full h-full object-cover" fittingType="fill" />
+                  <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/81415c754_Singapore_Sea_Regatta_2025-1077.jpg" className="w-full h-full object-cover" fittingType="fill" />
                 </div>
                 <div className="absolute -bottom-6 -right-6 glass-blaze rounded-2xl p-5 max-w-[200px] hidden sm:block">
-                  <div className="text-3xl font-heading font-black text-gradient-ignite">3</div>
-                  <div className="text-xs text-foreground/70 mt-1">Editions of purpose-driven racing since 2024</div>
+                  <div className="text-3xl font-heading font-black text-gradient-ignite hidden">3</div>
+                  <div className="text-xs text-foreground/70 mt-1 hidden">Editions of purpose-driven racing since 2024</div>
                 </div>
               </div>
             </Reveal>
@@ -99,16 +99,16 @@ export default function Home() {
               <SectionHeading
                 eyebrow="The Master Brand"
                 title={<>One regatta. <span className="text-gradient-ignite">Many currents.</span></>}
-                description="Singapore Sea Regatta brings together dragon boat athletes, healthcare institutions, corporate partners, community organisations and members of the public — channelling the power of sport into health advocacy and social impact."
-              />
+                description="Singapore Sea Regatta brings together dragon boat athletes, healthcare institutions, corporate partners, community organisations and members of the public — channelling the power of sport into health advocacy and social impact." />
+              
               <Reveal delay={200}>
                 <div className="mt-8 grid grid-cols-2 gap-3">
-                  {["Dragon boat athletes", "Healthcare institutions", "Corporate partners", "Community organisations"].map((t) => (
-                    <div key={t} className="glass rounded-xl px-4 py-3 text-sm text-foreground/80 flex items-center gap-2">
+                  {["Dragon boat athletes", "Healthcare institutions", "Corporate partners", "Community organisations"].map((t) =>
+                  <div key={t} className="glass rounded-xl px-4 py-3 text-sm text-foreground/80 flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full gradient-blaze" />
                       {t}
                     </div>
-                  ))}
+                  )}
                 </div>
               </Reveal>
             </div>
@@ -176,8 +176,8 @@ export default function Home() {
             align="center"
             eyebrow="Two Experiences, One Event"
             title="The Race. The Festival."
-            description="A high-octane international dragon boat competition meets a vibrant public celebration of community, health and culture."
-          />
+            description="A high-octane international dragon boat competition meets a vibrant public celebration of community, health and culture." />
+          
           <div className="mt-12 grid md:grid-cols-2 gap-6">
             <DualPanel
               img={RACE_IMG}
@@ -185,16 +185,16 @@ export default function Home() {
               title="International Dragon Boat Competition"
               desc="Athletes and teams battle across DB12, DB22 and DB6 categories — special races, elite showdowns and high-energy competition on Marina Bay."
               to="/race-information"
-              cta="View Race Information"
-            />
+              cta="View Race Information" />
+            
             <DualPanel
               img={FESTIVAL_IMG}
               tag="Festival"
               title="A Celebration of Community"
               desc="Food, retail, wellness, performances, educational booths and family-friendly activities set against the stunning Marina Bay skyline."
               to="/ssr-festival"
-              cta="Explore SSR Festival"
-            />
+              cta="Explore SSR Festival" />
+            
           </div>
         </div>
       </section>
@@ -206,20 +206,20 @@ export default function Home() {
             align="center"
             eyebrow="Paddle With A Purpose"
             title={<>Three years. <span className="text-gradient-ignite">One mission.</span></>}
-            description="Each edition channels the energy of dragon boat racing into a health or community cause — building a legacy of impact on and off the water."
-          />
+            description="Each edition channels the energy of dragon boat racing into a health or community cause — building a legacy of impact on and off the water." />
+          
           <div className="mt-10 relative">
             {/* Oversized watermark year numerals */}
             <div className="absolute inset-x-0 -top-14 h-32 hidden md:grid grid-cols-3 gap-6 overflow-hidden pointer-events-none select-none" aria-hidden="true">
-              {timeline.map((e) => (
-                <span
-                  key={e.id}
-                  className="font-heading font-black leading-none text-[7rem] tracking-tighter opacity-20 translate-y-2"
-                  style={{ color: e.color_primary }}
-                >
+              {timeline.map((e) =>
+              <span
+                key={e.id}
+                className="font-heading font-black leading-none text-[7rem] tracking-tighter opacity-20 translate-y-2"
+                style={{ color: e.color_primary }}>
+                
                   {e.year}
                 </span>
-              ))}
+              )}
             </div>
             {/* Connecting rule */}
             <div className="absolute left-0 right-0 top-1/2 h-px bg-white/10 hidden md:block" />
@@ -232,23 +232,23 @@ export default function Home() {
                     <Link to={editionLink(e)} className="block group h-full">
                       <div
                         className="relative rounded-2xl p-6 h-full bg-[#080808] border transition-all duration-400 group-hover:-translate-y-1"
-                        style={{ borderColor: isCurrent ? "rgba(255,255,255,0.28)" : "rgba(255,255,255,0.12)" }}
-                      >
+                        style={{ borderColor: isCurrent ? "rgba(255,255,255,0.28)" : "rgba(255,255,255,0.12)" }}>
+                        
                         <div className="flex items-start justify-between gap-3 mb-3">
                           <span className="font-heading text-2xl font-bold" style={{ color }}>{e.year}</span>
-                          {isCurrent ? (
-                            <span className="text-[11px] font-medium px-3 py-1 rounded-full bg-white text-black">Current</span>
-                          ) : (
-                            <span className="text-[11px] font-medium px-3 py-1 rounded-full bg-white/10 text-foreground/70">Archive</span>
-                          )}
+                          {isCurrent ?
+                          <span className="text-[11px] font-medium px-3 py-1 rounded-full bg-white text-black">Current</span> :
+
+                          <span className="text-[11px] font-medium px-3 py-1 rounded-full bg-white/10 text-foreground/70">Archive</span>
+                          }
                         </div>
                         <h3 className="text-xl font-bold text-white">{e.campaign_short}</h3>
                         <p className="mt-2 text-sm text-foreground/70">{e.theme}</p>
                         <p className="mt-4 text-sm text-muted-foreground leading-relaxed line-clamp-3">{e.summary}</p>
                       </div>
                     </Link>
-                  </Reveal>
-                );
+                  </Reveal>);
+
               })}
             </div>
           </div>
@@ -262,8 +262,8 @@ export default function Home() {
             align="center"
             eyebrow="SSR At A Glance"
             title="The scale of the regatta"
-            description="Editable statistics — administrators can update these figures from the CMS as final numbers are confirmed."
-          />
+            description="Editable statistics — administrators can update these figures from the CMS as final numbers are confirmed." />
+          
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((s, i) => {
               const Icon = STAT_ICONS[s.label] || Trophy;
@@ -276,8 +276,8 @@ export default function Home() {
                     </div>
                     <div className="mt-1 text-sm text-muted-foreground">{s.label}</div>
                   </div>
-                </Reveal>
-              );
+                </Reveal>);
+
             })}
           </div>
           <p className="mt-6 text-center text-xs text-muted-foreground">Statistics shown are editable CMS placeholders.</p>
@@ -289,29 +289,29 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading align="center" eyebrow="Our Partners" title="Powered by a community" />
           <div className="mt-12 space-y-10">
-            {tiers.map(({ tier, items }, i) => (
-              <Reveal key={tier} delay={i * 100}>
+            {tiers.map(({ tier, items }, i) =>
+            <Reveal key={tier} delay={i * 100}>
                 <div>
                   <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4 text-center">{tier}</h4>
                   <div className="flex flex-wrap items-center justify-center gap-3">
-                    {items.map((s) => (
-                      <div key={s.id} className="glass rounded-xl px-6 py-4 min-w-[140px] text-center">
-                        {s.website ? (
-                          <a href={s.website} target="_blank" rel="noreferrer" className="text-sm font-semibold text-foreground/80 hover:text-white transition-colors">{s.name}</a>
-                        ) : (
-                          <span className="text-sm font-semibold text-foreground/80">{s.name}</span>
-                        )}
+                    {items.map((s) =>
+                  <div key={s.id} className="glass rounded-xl px-6 py-4 min-w-[140px] text-center">
+                        {s.website ?
+                    <a href={s.website} target="_blank" rel="noreferrer" className="text-sm font-semibold text-foreground/80 hover:text-white transition-colors">{s.name}</a> :
+
+                    <span className="text-sm font-semibold text-foreground/80">{s.name}</span>
+                    }
                       </div>
-                    ))}
+                  )}
                   </div>
                 </div>
               </Reveal>
-            ))}
+            )}
           </div>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 }
 
 function InfoTile({ icon: Icon, label, value }) {
@@ -321,8 +321,8 @@ function InfoTile({ icon: Icon, label, value }) {
         <Icon className="w-3 h-3" /> {label}
       </div>
       <div className="text-sm font-semibold text-white">{value}</div>
-    </div>
-  );
+    </div>);
+
 }
 
 function DualPanel({ img, tag, title, desc, to, cta }) {
@@ -341,8 +341,8 @@ function DualPanel({ img, tag, title, desc, to, cta }) {
           </span>
         </div>
       </Link>
-    </Reveal>
-  );
+    </Reveal>);
+
 }
 
 function editionLink(e) {
