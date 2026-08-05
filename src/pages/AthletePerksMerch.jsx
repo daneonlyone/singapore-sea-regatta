@@ -137,6 +137,7 @@ function Merchandise() {
                   <div className="p-5 flex flex-col flex-1">
                     <span className="text-[10px] uppercase tracking-widest" style={{ color: "#9b93ff" }}>{m.category}</span>
                     <h3 className="mt-1 font-bold text-white" style={{ fontFamily: "Poppins, sans-serif" }}>{m.name}</h3>
+                    {m.price && <div className="mt-1.5 text-sm font-semibold text-white">{m.price}</div>}
                     {m.description && <p className="mt-1.5 text-xs text-muted-foreground leading-relaxed line-clamp-3">{m.description}</p>}
                   </div>
                 </div>
