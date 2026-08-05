@@ -20,11 +20,17 @@ export default function Home() {
   const [editions, setEditions] = useState([]);
   const [stats, setStats] = useState([]);
   const [sponsors, setSponsors] = useState([]);
+  const [statsText, setStatsText] = useState({
+    eyebrow: "SSR At A Glance",
+    title: "Making waves at Marina Bay",
+    description: "This September, athletes, partners and the wider community come together for two unforgettable days of racing, purpose and connection."
+  });
 
   useEffect(() => {
     base44.entities.EventYear.list("order", 50).then(setEditions).catch(() => {});
     base44.entities.Statistic.list("order", 50).then(setStats).catch(() => {});
     base44.entities.Sponsor.list("order", 100).then(setSponsors).catch(() => {});
+    base44.entities.SiteText.filter({ key: "home_stats" }).then((r) => r[0] && setStatsText(r[0])).catch(() => {});
   }, []);
 
   const current = editions.find((e) => e.is_current) || editions[0];
@@ -258,9 +264,9 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             align="center"
-            eyebrow="SSR At A Glance"
-            title="The scale of the regatta"
-            description="Editable statistics — administrators can update these figures from the CMS as final numbers are confirmed." />
+            eyebrow={statsText.eyebrow}
+            title={statsText.title}
+            description={statsText.description} />
           
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((s, i) => {

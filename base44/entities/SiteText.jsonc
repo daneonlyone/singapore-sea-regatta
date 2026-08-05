@@ -1,0 +1,22 @@
+{
+  "name": "SiteText",
+  "type": "object",
+  "properties": {
+    "key": {
+      "type": "string",
+      "description": "Unique section key e.g. home_stats"
+    },
+    "eyebrow": {
+      "type": "string"
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "key"
+  ]
+}
