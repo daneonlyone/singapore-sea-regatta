@@ -9,7 +9,8 @@ const NAV = [
   { label: "Head Above Water 2026", to: "/head-above-water-2026" },
   { label: "Race Info", to: "/race-information" },
   { label: "SSR Festival", to: "/ssr-festival" },
-  { label: "Athlete Perks & Merch", to: "/athlete-perks-merch" }
+  { label: "Athlete Perks & Merch", to: "/athlete-perks-merch" },
+  { label: "About SSR", to: "/about" }
 ];
 
 const PREV_YEARS = [
