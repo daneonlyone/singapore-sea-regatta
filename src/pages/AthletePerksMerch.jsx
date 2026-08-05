@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import MerchGallery from "@/components/MerchGallery";
 
 const PERK_CATS = ["All", "Fitness", "Recovery", "Food & Beverage", "Wellness", "Retail", "Lifestyle"];
 
@@ -98,7 +99,6 @@ function PrivilegeProgramme() {
 
 function Merchandise() {
   const [items, setItems] = useState([]);
-  const [active, setActive] = useState({});
 
   useEffect(() => { base44.entities.Merchandise.list("order", 100).then(setItems).catch(() => {}); }, []);
 
@@ -130,25 +130,10 @@ function Merchandise() {
 
         <div className="mt-10 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((m, i) => {
-            const imgs = m.images && m.images.length ? m.images : [];
-            const idx = active[m.id] || 0;
             return (
               <Reveal key={m.id} delay={i * 60}>
                 <div className="glass rounded-2xl overflow-hidden h-full flex flex-col group hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
-                  <div className="relative aspect-square bg-gradient-to-br from-zinc-900 to-black flex items-center justify-center overflow-hidden">
-                    {imgs.length ? (
-                      <img src={imgs[idx]} alt={m.name} className="w-full h-full object-cover" />
-                    ) : (
-                      <ShoppingBag className="w-12 h-12 text-muted-foreground/40" />
-                    )}
-                    {imgs.length > 1 && (
-                      <div className="absolute inset-x-0 bottom-0 flex justify-center gap-1.5 p-2">
-                        {imgs.map((_, j) => (
-                          <button key={j} onClick={() => setActive({ ...active, [m.id]: j })} className={cn("w-1.5 h-1.5 rounded-full transition-all", idx === j ? "bg-primary w-4" : "bg-white/40")} />
-                        ))}
-                      </div>
-                    )}
-                  </div>
+                  <MerchGallery images={m.images || []} alt={m.name} />
                   <div className="p-5 flex flex-col flex-1">
                     <span className="text-[10px] uppercase tracking-widest" style={{ color: "#9b93ff" }}>{m.category}</span>
                     <h3 className="mt-1 font-bold text-white" style={{ fontFamily: "Poppins, sans-serif" }}>{m.name}</h3>
