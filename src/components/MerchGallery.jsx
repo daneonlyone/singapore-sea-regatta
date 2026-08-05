@@ -6,17 +6,23 @@ import { cn } from "@/lib/utils";
 // Swipeable image gallery for a merchandise card.
 export default function MerchGallery({ images = [], alt }) {
   const [idx, setIdx] = useState(0);
+  const [drag, setDrag] = useState(0);
   const startX = useRef(null);
 
   const count = images.length;
-  const go = (n) => setIdx((n + count) % count);
+  const go = (n) => setIdx(Math.min(Math.max(n, 0), count - 1));
 
   const onTouchStart = (e) => { startX.current = e.touches[0].clientX; };
+  const onTouchMove = (e) => {
+    if (startX.current === null || count < 2) return;
+    setDrag(e.touches[0].clientX - startX.current);
+  };
   const onTouchEnd = (e) => {
     if (startX.current === null || count < 2) return;
     const dx = e.changedTouches[0].clientX - startX.current;
     if (Math.abs(dx) > 40) go(dx < 0 ? idx + 1 : idx - 1);
     startX.current = null;
+    setDrag(0);
   };
 
   if (!count) {
@@ -31,9 +37,21 @@ export default function MerchGallery({ images = [], alt }) {
     <div
       className="relative aspect-square bg-gradient-to-br from-zinc-900 to-black overflow-hidden touch-pan-y select-none"
       onTouchStart={onTouchStart}
+      onTouchMove={onTouchMove}
       onTouchEnd={onTouchEnd}
     >
-      <Image src={images[idx]} alt={alt} className="w-full h-full" fittingType="fill" />
+      <div
+        className="flex h-full w-full"
+        style={{
+          transform: `translate3d(calc(${-idx * 100}% + ${drag}px), 0, 0)`,
+          transition: drag ? "none" : "transform 0.45s cubic-bezier(0.22, 1, 0.36, 1)",
+          willChange: "transform"
+        }}
+      >
+        {images.map((src, j) => (
+          <Image key={j} src={src} alt={alt} className="w-full h-full shrink-0" fittingType="fill" />
+        ))}
+      </div>
 
       {count > 1 && (
         <>
