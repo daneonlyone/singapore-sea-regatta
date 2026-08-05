@@ -7,12 +7,16 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { Image } from "@/components/ui/image";
 
+const DEFAULT_INTRO = "Imagine the thunderous roar of paddles slicing through water, the synchronized power of a dragon boat crew propelling their vessel forward with relentless determination. This is no ordinary race; it's a vibrant, adrenaline-charged celebration of strength, unity, and resilience. Welcome to the Singapore Sea Regatta, where the traditional sport of dragonboating transcends mere competition to become a dynamic platform for promoting crucial health messages. In SSR, the spirit of the dragonboat not only embodies physical fitness and teamwork but also serves as a beacon of hope and awareness for mental health, cancer prevention, and community well-being. Through the rhythmic harmony of paddling, SSR creates a powerful synergy, merging the thrill of the sport with life-saving health advocacy in an unparalleled, transformative experience.";
+
 const ABOUT_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/dcf6bf66e_generated_60c2473b.png";
 
 export default function AboutSSR() {
   const [team, setTeam] = useState([]);
+  const [intro, setIntro] = useState(null);
 
   useEffect(() => {base44.entities.TeamMember.list("order", 50).then(setTeam).catch(() => {});}, []);
+  useEffect(() => {base44.entities.SiteText.filter({ key: "about_what_is_ssr" }).then((r) => setIntro(r[0] || null)).catch(() => {});}, []);
 
   return (
     <div>
@@ -37,15 +41,9 @@ export default function AboutSSR() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <SectionHeading
-                eyebrow="What is SSR"
-                title={<>Sport with a <span className="text-gradient-ignite">heartbeat</span></>}
-                description="The Singapore Sea Regatta (SSR) is the nation's premier international dragon boat event, bringing together athletes and communities from around the world in a celebration of sport, resilience and unity." />
-              
-              <Reveal delay={200}>
-                <p className="mt-6 text-foreground/70 leading-relaxed">
-                  Born on the waters of Marina Bay, SSR uses the raw power and teamwork of dragon boat racing to champion health and community causes — from breast cancer awareness to mental health and dementia support. Every stroke carries purpose.
-                </p>
-              </Reveal>
+                eyebrow={intro?.eyebrow || "What is SSR"}
+                title={intro?.title || "Paddle with A Purpose"}
+                description={intro?.description || DEFAULT_INTRO} />
             </div>
             <Reveal>
               <div className="aspect-[4/3] rounded-3xl overflow-hidden">
