@@ -6,6 +6,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Countdown from "@/components/Countdown";
+import PartnersSection from "@/components/PartnersSection";
 import { Image } from "@/components/ui/image";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/eebc986ff_generated_b13211d1.png";
@@ -14,8 +15,6 @@ const RACE_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e
 const FESTIVAL_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/71427b403_generated_6f71a2fa.png";
 
 const STAT_ICONS = { Athletes: Users, "Participating Teams": Trophy, "Community Partners": Handshake, "Festival Visitors": Ticket };
-
-const TIER_ORDER = ["Title Sponsor", "Event Organiser", "Official Partners", "Community Partners", "Supporting Organisations"];
 
 export default function Home() {
   const [editions, setEditions] = useState([]);
@@ -30,7 +29,6 @@ export default function Home() {
 
   const current = editions.find((e) => e.is_current) || editions[0];
   const timeline = [...editions].sort((a, b) => a.order - b.order);
-  const tiers = TIER_ORDER.map((t) => ({ tier: t, items: sponsors.filter((s) => s.tier === t) })).filter((t) => t.items.length);
 
   return (
     <div>
@@ -285,31 +283,7 @@ export default function Home() {
       </section>
 
       {/* ===== PARTNERS ===== */}
-      <section className="relative py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading align="center" eyebrow="Our Partners" title="Powered by a community" />
-          <div className="mt-12 space-y-10">
-            {tiers.map(({ tier, items }, i) =>
-            <Reveal key={tier} delay={i * 100}>
-                <div>
-                  <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4 text-center">{tier}</h4>
-                  <div className="flex flex-wrap items-center justify-center gap-3">
-                    {items.map((s) =>
-                  <div key={s.id} className="glass rounded-xl px-6 py-4 min-w-[140px] text-center">
-                        {s.website ?
-                    <a href={s.website} target="_blank" rel="noreferrer" className="text-sm font-semibold text-foreground/80 hover:text-white transition-colors">{s.name}</a> :
-
-                    <span className="text-sm font-semibold text-foreground/80">{s.name}</span>
-                    }
-                      </div>
-                  )}
-                  </div>
-                </div>
-              </Reveal>
-            )}
-          </div>
-        </div>
-      </section>
+      <PartnersSection sponsors={sponsors} />
     </div>);
 
 }
