@@ -15,7 +15,8 @@
     },
     "logo": {
       "type": "string",
-      "format": "uri"
+      "format": "file",
+      "description": "Upload the sponsor logo image"
     },
     "website": {
       "type": "string",
