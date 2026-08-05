@@ -278,7 +278,7 @@ export default function Home() {
 
             })}
           </div>
-          <p className="mt-6 text-center text-xs text-muted-foreground">Statistics shown are editable CMS placeholders.</p>
+          <p className="mt-6 text-center text-xs text-muted-foreground hidden">Statistics shown are editable CMS placeholders.</p>
         </div>
       </section>
 
