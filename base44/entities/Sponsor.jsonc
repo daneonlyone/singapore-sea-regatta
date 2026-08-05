@@ -7,7 +7,11 @@
     },
     "tier": {
       "type": "string",
-      "description": "Title Sponsor, Event Organiser, Official Partners, Community Partners, Supporting Organisations"
+      "description": "Title Sponsor, Event Organiser, Official Partners, Corporate Sponsors, Fun Race Sponsors, Community Partners, Supporting Organisations, Other Sponsors"
+    },
+    "role": {
+      "type": "string",
+      "description": "Partner role label e.g. Audio Partner, VIP Hospitality, Champion Race Prize Sponsor"
     },
     "logo": {
       "type": "string",
