@@ -12,7 +12,7 @@ const ABOUT_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135
 export default function AboutSSR() {
   const [team, setTeam] = useState([]);
 
-  useEffect(() => { base44.entities.TeamMember.list("order", 50).then(setTeam).catch(() => {}); }, []);
+  useEffect(() => {base44.entities.TeamMember.list("order", 50).then(setTeam).catch(() => {});}, []);
 
   return (
     <div>
@@ -39,8 +39,8 @@ export default function AboutSSR() {
               <SectionHeading
                 eyebrow="What is SSR"
                 title={<>Sport with a <span className="text-gradient-ignite">heartbeat</span></>}
-                description="The Singapore Sea Regatta (SSR) is the nation's premier international dragon boat event, bringing together athletes and communities from around the world in a celebration of sport, resilience and unity."
-              />
+                description="The Singapore Sea Regatta (SSR) is the nation's premier international dragon boat event, bringing together athletes and communities from around the world in a celebration of sport, resilience and unity." />
+              
               <Reveal delay={200}>
                 <p className="mt-6 text-foreground/70 leading-relaxed">
                   Born on the waters of Marina Bay, SSR uses the raw power and teamwork of dragon boat racing to champion health and community causes — from breast cancer awareness to mental health and dementia support. Every stroke carries purpose.
@@ -49,7 +49,7 @@ export default function AboutSSR() {
             </div>
             <Reveal>
               <div className="aspect-[4/3] rounded-3xl overflow-hidden">
-                <Image src={ABOUT_IMG} className="w-full h-full object-cover" fittingType="fill" />
+                <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/09347cdea_DSC02625.JPG" className="w-full h-full object-cover" fittingType="fill" />
               </div>
             </Reveal>
           </div>
@@ -90,33 +90,33 @@ export default function AboutSSR() {
           {/* Increased space between cards to match the larger, centered layout */}
           <div className="mt-12 sm:mt-16 space-y-8 sm:space-y-12">
             {[
-              { y: "2024", n: "Pink Wave", c: "#EC4899", d: "The inaugural edition championed breast cancer awareness, uniting survivors, athletes and the community in a wave of solidarity." },
-              { y: "2025", n: "Rise Above The Waves", c: "#00B4D8", d: "The second edition rallied behind mental health awareness, with panel talks, wellness activations and outreach supporting youth resilience." },
-              { y: "2026", n: "Head Above Water", c: "#FF5C00", d: "Timed with World Alzheimer's Month, the 2026 edition shines a spotlight on dementia awareness and caregiver support.", current: true }
-            ].map((e, i) => (
-              <Reveal key={e.y} delay={i * 120}>
+            { y: "2024", n: "Pink Wave", c: "#EC4899", d: "The inaugural edition championed breast cancer awareness, uniting survivors, athletes and the community in a wave of solidarity." },
+            { y: "2025", n: "Rise Above The Waves", c: "#00B4D8", d: "The second edition rallied behind mental health awareness, with panel talks, wellness activations and outreach supporting youth resilience." },
+            { y: "2026", n: "Head Above Water", c: "#FF5C00", d: "Timed with World Alzheimer's Month, the 2026 edition shines a spotlight on dementia awareness and caregiver support.", current: true }].
+            map((e, i) =>
+            <Reveal key={e.y} delay={i * 120}>
                 
                 {/* 
-                  Centered Card Container: 
-                  Added flex-col, items-center, and text-center.
-                  Increased internal padding (p-8 mobile, p-12 desktop).
+                 Centered Card Container: 
+                 Added flex-col, items-center, and text-center.
+                 Increased internal padding (p-8 mobile, p-12 desktop).
                 */}
-                <div 
-                  className={`relative overflow-hidden rounded-3xl p-8 sm:p-12 flex flex-col items-center text-center transition-transform hover:-translate-y-1 ${
-                    e.current ? "glass-blaze border border-white/20 shadow-2xl" : "glass border border-white/5"
-                  }`}
-                >
+                <div
+                className={`relative overflow-hidden rounded-3xl p-8 sm:p-12 flex flex-col items-center text-center transition-transform hover:-translate-y-1 ${
+                e.current ? "glass-blaze border border-white/20 shadow-2xl" : "glass border border-white/5"}`
+                }>
+                
                   {/* Top Color Accent Bar (Balanced for centered layout) */}
-                  <div 
-                    className="absolute left-0 top-0 right-0 h-2 sm:h-3" 
-                    style={{ backgroundColor: e.c }} 
-                  />
+                  <div
+                  className="absolute left-0 top-0 right-0 h-2 sm:h-3"
+                  style={{ backgroundColor: e.c }} />
+                
 
                   {/* Year Typography (Centered & bottom margin added) */}
-                  <div 
-                    className="font-heading font-black text-6xl sm:text-7xl tracking-tighter drop-shadow-md mb-4 sm:mb-6" 
-                    style={{ color: e.c }}
-                  >
+                  <div
+                  className="font-heading font-black text-6xl sm:text-7xl tracking-tighter drop-shadow-md mb-4 sm:mb-6"
+                  style={{ color: e.c }}>
+                  
                     {e.y}
                   </div>
 
@@ -125,20 +125,20 @@ export default function AboutSSR() {
                     <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
                       {e.n}
                     </h3>
-                    {e.current && (
-                      <span 
-                        className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full text-white shadow-sm mt-2 sm:mt-0"
-                        style={{ backgroundColor: e.c }}
-                      >
+                    {e.current &&
+                  <span
+                    className="text-xs font-bold uppercase tracking-widest px-3 py-1 rounded-full text-white shadow-sm mt-2 sm:mt-0"
+                    style={{ backgroundColor: e.c }}>
+                    
                         Current
                       </span>
-                    )}
+                  }
                   </div>
                   
                   {/* 
-                    Description: 
-                    Constrained max-width for easier reading.
-                    Added pb-4/pb-8 for the requested extra space below the text.
+                   Description: 
+                   Constrained max-width for easier reading.
+                   Added pb-4/pb-8 for the requested extra space below the text.
                   */}
                   <p className="text-white/80 text-base sm:text-lg leading-relaxed font-medium max-w-2xl mx-auto pb-4 sm:pb-8">
                     {e.d}
@@ -146,7 +146,7 @@ export default function AboutSSR() {
                   
                 </div>
               </Reveal>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -156,8 +156,8 @@ export default function AboutSSR() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading align="center" eyebrow="The Organising Team" title="The people behind the paddles" description="A warm, dedicated team bringing SSR to life — roles shown as editable CMS entries." />
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
-            {team.map((m, i) => (
-              <Reveal key={m.id} delay={i * 80}>
+            {team.map((m, i) =>
+            <Reveal key={m.id} delay={i * 80}>
                 <div className="glass rounded-2xl p-6 text-center h-full hover:border-primary/30 transition-colors">
                   <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-ember/10 mx-auto mb-4 flex items-center justify-center font-heading font-bold text-white text-xl">
                     {m.role?.[0] || "?"}
@@ -167,7 +167,7 @@ export default function AboutSSR() {
                   {m.bio && <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{m.bio}</p>}
                 </div>
               </Reveal>
-            ))}
+            )}
           </div>
         </div>
       </section>
@@ -196,11 +196,11 @@ export default function AboutSSR() {
                 <Heart className="w-6 h-6 text-primary mx-auto mb-3" />
                 <h4 className="font-bold text-white">Social</h4>
                 <div className="flex items-center justify-center gap-2 mt-2">
-                  {SOCIALS.map(({ icon: Icon, href, label }) => (
-                    <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="w-9 h-9 rounded-lg glass flex items-center justify-center text-foreground/70 hover:text-white hover:border-primary/40 transition-colors">
+                  {SOCIALS.map(({ icon: Icon, href, label }) =>
+                  <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="w-9 h-9 rounded-lg glass flex items-center justify-center text-foreground/70 hover:text-white hover:border-primary/40 transition-colors">
                       <Icon className="w-4 h-4" />
                     </a>
-                  ))}
+                  )}
                 </div>
               </div>
             </Reveal>
@@ -214,6 +214,6 @@ export default function AboutSSR() {
           </Reveal>
         </div>
       </section>
-    </div>
-  );
+    </div>);
+
 }
