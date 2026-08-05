@@ -47,9 +47,11 @@ export default function PartnersSection({ sponsors }) {
           {rest.map((t, i) => (
             <Reveal key={t.tier} delay={i * 80}>
               <TierLabel>{t.tier}</TierLabel>
-              <div className="mt-5 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4">
+              <div className="mt-5 flex flex-wrap justify-center gap-3 sm:gap-4">
                 {t.items.map((s) => (
-                  <PartnerCard key={s.id} sponsor={s} />
+                  <div key={s.id} className="w-[calc(50%-0.5rem)] sm:w-56">
+                    <PartnerCard sponsor={s} />
+                  </div>
                 ))}
               </div>
             </Reveal>
