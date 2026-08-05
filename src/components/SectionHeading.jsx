@@ -12,7 +12,7 @@ export default function SectionHeading({ eyebrow, title, description, align = "l
         </div>
       }
       <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-[1.05]">{title}</h2>
-      {description && <p className="mt-4 text-muted-foreground text-base sm:text-lg leading-relaxed">{description}</p>}
+      {description && <p className="mt-4 text-muted-foreground text-base sm:text-lg leading-relaxed hidden">{description}</p>}
     </Reveal>);
 
 }
