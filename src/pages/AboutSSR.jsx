@@ -5,6 +5,7 @@ import { SOCIALS } from "@/components/socials";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import TeamMemberCard from "@/components/TeamMemberCard";
 import { Image } from "@/components/ui/image";
 
 const DEFAULT_INTRO = "Imagine the thunderous roar of paddles slicing through water, the synchronized power of a dragon boat crew propelling their vessel forward with relentless determination. This is no ordinary race; it's a vibrant, adrenaline-charged celebration of strength, unity, and resilience. Welcome to the Singapore Sea Regatta, where the traditional sport of dragonboating transcends mere competition to become a dynamic platform for promoting crucial health messages. In SSR, the spirit of the dragonboat not only embodies physical fitness and teamwork but also serves as a beacon of hope and awareness for mental health, cancer prevention, and community well-being. Through the rhythmic harmony of paddling, SSR creates a powerful synergy, merging the thrill of the sport with life-saving health advocacy in an unparalleled, transformative experience.";
@@ -153,17 +154,10 @@ export default function AboutSSR() {
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading align="center" eyebrow="The Organising Team" title="The people behind the paddles" description="A warm, dedicated team bringing SSR to life — roles shown as editable CMS entries." />
-          <div className="mt-12 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
             {team.map((m, i) =>
-            <Reveal key={m.id} delay={i * 80}>
-                <div className="glass rounded-2xl p-6 text-center h-full hover:border-primary/30 transition-colors">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/30 to-ember/10 mx-auto mb-4 flex items-center justify-center font-heading font-bold text-white text-xl">
-                    {m.role?.[0] || "?"}
-                  </div>
-                  <h4 className="font-bold text-white text-sm">{m.role}</h4>
-                  <p className="text-xs text-primary mt-0.5">{m.name}</p>
-                  {m.bio && <p className="mt-2 text-xs text-muted-foreground leading-relaxed">{m.bio}</p>}
-                </div>
+            <Reveal key={m.id} delay={i * 80} className="h-full">
+                <TeamMemberCard member={m} />
               </Reveal>
             )}
           </div>

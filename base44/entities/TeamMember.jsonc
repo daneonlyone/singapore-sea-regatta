@@ -13,7 +13,8 @@
     },
     "photo": {
       "type": "string",
-      "format": "uri"
+      "format": "file",
+      "description": "Upload the team member's photo (square works best)"
     },
     "order": {
       "type": "number",
