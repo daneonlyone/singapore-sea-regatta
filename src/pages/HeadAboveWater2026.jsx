@@ -1,4 +1,6 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { base44 } from "@/api/base44Client";
 import { ArrowRight, Calendar, Clock, MapPin, Users, Info, Ruler, FileText, ShoppingBag, Navigation, HelpCircle, Ticket } from "lucide-react";
 import { Image } from "@/components/ui/image";
 import Reveal from "@/components/Reveal";
@@ -25,6 +27,12 @@ const PLUM = "#25032d";
 const LAVENDER = "#9b93ff";
 
 export default function HeadAboveWater2026() {
+  const [goh, setGoh] = useState({});
+
+  useEffect(() => {
+    base44.entities.SiteText.filter({ key: "goh_2026" }).then((r) => r[0] && setGoh(r[0])).catch(() => {});
+  }, []);
+
   return (
     <div className="haw-theme" style={{ "--haw-plum": PLUM, "--haw-lavender": LAVENDER }}>
       {/* HERO — plum cinematic */}
@@ -180,9 +188,13 @@ export default function HeadAboveWater2026() {
             <div className="rounded-3xl overflow-hidden border" style={{ background: "rgba(37,3,45,0.7)", borderColor: "rgba(155,147,255,0.25)" }}>
               <div className="grid md:grid-cols-5 items-center">
                 <div className="md:col-span-2 relative aspect-square md:aspect-auto md:h-full min-h-[280px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(37,3,45,0.9), rgba(155,147,255,0.15))" }}>
+                  {goh.image ?
+                  <Image src={goh.image} className="absolute inset-0 w-full h-full" fittingType="fill" focalPointX={0.5} focalPointY={0.35} /> :
+
                   <div className="text-center p-8">
                     <div className="w-24 h-24 rounded-full mx-auto flex items-center justify-center font-heading font-black text-3xl text-white" style={{ background: `linear-gradient(135deg, ${PLUM}, ${LAVENDER})` }}>OYK</div>
                   </div>
+                  }
                 </div>
                 <div className="md:col-span-3 p-8 sm:p-10">
                   <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: LAVENDER, fontFamily: "Poppins, sans-serif" }}>Guest of Honour</span>
