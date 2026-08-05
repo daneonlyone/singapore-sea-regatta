@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import BoothDirectory from "@/components/BoothDirectory";
 import { Image } from "@/components/ui/image";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/71427b403_generated_6f71a2fa.png";
@@ -144,16 +145,7 @@ export default function SSRFestival() {
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Partners & Education Booths" title="Learn, discover, connect" description="Education booths from healthcare institutions, community partners and supporting organisations." />
-          <Reveal>
-            <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {["Education Booths", "Retail Booths", "Food & Beverage"].map((t, i) => (
-                <div key={t} className="glass rounded-2xl p-6">
-                  <h4 className="font-bold text-white">{t}</h4>
-                  <p className="mt-2 text-sm text-muted-foreground">Vendor directory to be announced. Expected release: August 2026.</p>
-                </div>
-              ))}
-            </div>
-          </Reveal>
+          <BoothDirectory />
         </div>
       </section>
 
