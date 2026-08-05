@@ -30,7 +30,7 @@ export default function PartnerCard({ sponsor, featured = false }) {
       {sponsor.logo ? (
         <Image
           src={sponsor.logo}
-          className={cn("mx-auto object-contain", featured ? "h-16" : "h-10")}
+          className={cn("mx-auto w-full", featured ? "h-20 max-w-[240px]" : "h-12 max-w-[160px]")}
           fittingType="fit" />
       ) : (
         <div className={cn(
