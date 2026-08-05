@@ -189,7 +189,7 @@ export default function HeadAboveWater2026() {
               <div className="grid md:grid-cols-5 items-center">
                 <div className="md:col-span-2 relative aspect-square md:aspect-auto md:h-full min-h-[280px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(37,3,45,0.9), rgba(155,147,255,0.15))" }}>
                   {goh.image ?
-                  <Image src={goh.image} className="absolute inset-0 w-full h-full" fittingType="fill" focalPointX={0.5} focalPointY={0.35} /> :
+                  <Image src={goh.image} className="absolute inset-0 w-full h-full" fittingType="fill" focalPointX={typeof goh.image_focal_x === "number" ? goh.image_focal_x : 0.5} focalPointY={typeof goh.image_focal_y === "number" ? goh.image_focal_y : 0.35} /> :
 
                   <div className="text-center p-8">
                     <div className="w-24 h-24 rounded-full mx-auto flex items-center justify-center font-heading font-black text-3xl text-white" style={{ background: `linear-gradient(135deg, ${PLUM}, ${LAVENDER})` }}>OYK</div>

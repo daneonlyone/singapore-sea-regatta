@@ -21,9 +21,10 @@
     },
     "images": {
       "type": "array",
+      "description": "Upload product images \u2014 add or remove entries freely",
       "items": {
         "type": "string",
-        "format": "uri"
+        "format": "file"
       }
     },
     "availability": {

@@ -19,6 +19,16 @@
       "type": "string",
       "format": "file",
       "description": "Optional section image \u2014 upload to show, clear to remove"
+    },
+    "image_focal_x": {
+      "type": "number",
+      "default": 0.5,
+      "description": "Horizontal crop position 0 (left) to 1 (right)"
+    },
+    "image_focal_y": {
+      "type": "number",
+      "default": 0.5,
+      "description": "Vertical crop position 0 (top) to 1 (bottom)"
     }
   },
   "required": [
