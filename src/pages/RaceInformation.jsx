@@ -223,7 +223,7 @@ function RaceInformationInner() {
           </Reveal>
           <Reveal delay={120}>
             <div className="grid sm:grid-cols-2 gap-3">
-              <RegButton label="SDBA Registration Portal" href="registration.sdba.org.sg" />
+              <RegButton label="SDBA Registration Portal" href="https://registration.sdba.org.sg" />
               <RegButton label="Registration Guide" href="https://docs.google.com/document/d/1C7Ilsd4aR3ZKhTwIpNeLOpcWrc42HOugzB4tMfd9D_s/edit?usp=sharing" />
               <RegButton label="Race Bulletin" href="https://docs.google.com/document/d/11GQwQWs28MSUgxf9_x90xVLc2JTETUOxrDdrYnEY1-0/edit?usp=sharing" />
               <RegButton label="Team Managers' Briefing" href="#" />
