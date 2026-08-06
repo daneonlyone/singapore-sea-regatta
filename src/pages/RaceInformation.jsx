@@ -8,8 +8,10 @@ import FeeCalculator from "@/components/FeeCalculator";
 
 const TIMELINE = [
   { month: "February", items: [{ d: "15", t: "Expression of Interest Opens" }, { d: "17", t: "Expression of Interest Closes" }] },
-  { month: "May", items: [{ d: "1", t: "Race Registration Opens" }, { d: "4", t: "Race Registration Closes" }, { d: "11–25", t: "Crew List Submission" }, { d: "26", t: "Jersey Size (Round 1) Collection Closes" }] },
-  { month: "August", items: [{ d: "9", t: "Crew List Closes" }, { d: "11", t: "Payment Opens" }, { d: "18", t: "Payment Closes" }, { d: "29", t: "Team Managers' Briefing" }] },
+  { month: "May", items: [{ d: "1", t: "Expression of Interest Closes" }] },
+  { month: "June", items: [{ d: "1", t: "Race Registration Opens" }] },
+  { month: "July", items: [{ d: "4", t: "Race Registration Closes" }, { d: "13", t: "Crew List Submission Opens" }, { d: "26", t: "Jersey Size (Round 1) Collection Closes" }] },
+  { month: "August", items: [{ d: "9", t: "Jersey Size (Round 2) Collection Closes" }, { d: "9", t: "Crew List Submission Closes" }, { d: "11", t: "Payment Opens" }, { d: "18", t: "Payment Closes" }, { d: "29", t: "Team Managers' Briefing" }] },
   { month: "September", items: [{ d: "5", t: "Race Day 1" }, { d: "6", t: "Race Day 2" }, { d: "6", t: "After Party" }] }
 ];
 
