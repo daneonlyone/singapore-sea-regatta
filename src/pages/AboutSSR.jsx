@@ -173,7 +173,7 @@ export default function AboutSSR() {
               <div className="glass rounded-2xl p-6 text-center h-full">
                 <Mail className="w-6 h-6 text-primary mx-auto mb-3" />
                 <h4 className="font-bold text-white">Email</h4>
-                <a href="mailto:admin@sgsearegatta.com" className="text-sm text-muted-foreground hover:text-white transition-colors">race@sgsearegatta.com</a>
+                <a href="mailto:admin@sgsearegatta.com" className="text-sm text-muted-foreground hover:text-white transition-colors">admin@sgsearegatta.com</a>
               </div>
             </Reveal>
             <Reveal delay={100}>
