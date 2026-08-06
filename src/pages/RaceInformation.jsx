@@ -9,7 +9,7 @@ import FeeCalculator from "@/components/FeeCalculator";
 const TIMELINE = [
   { month: "February", items: [{ d: "15", t: "Expression of Interest Opens" }, { d: "17", t: "Expression of Interest Closes" }] },
   { month: "May", items: [{ d: "1", t: "Race Registration Opens" }, { d: "4", t: "Race Registration Closes" }, { d: "11–25", t: "Crew List Submission" }, { d: "26", t: "Jersey Size (Round 1) Collection Closes" }] },
-  { month: "August", items: [{ d: "9", t: "Crew List Closes" }, { d: "11", t: "Payment Opens" }, { d: "23", t: "Payment Closes" }, { d: "29", t: "Team Managers' Briefing" }] },
+  { month: "August", items: [{ d: "9", t: "Crew List Closes" }, { d: "11", t: "Payment Opens" }, { d: "18", t: "Payment Closes" }, { d: "29", t: "Team Managers' Briefing" }] },
   { month: "September", items: [{ d: "5", t: "Race Day 1" }, { d: "6", t: "Race Day 2" }, { d: "6", t: "After Party" }] }
 ];
 
