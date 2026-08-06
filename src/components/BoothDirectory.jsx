@@ -3,9 +3,9 @@ import Reveal from "@/components/Reveal";
 
 const GROUPS = [
   {
-    title: "Partners / Educational Booths",
+    title: "Educational Talks",
     icon: GraduationCap,
-    items: ["IHH", "IGA", "NNI", "NNI Fund", "Brain Bank", "Yong En", "NTUC Health", "Dementia SG", "Thomson Medical", "MSF", "Easmed", "Red Cross", "PassionWave", "Parkway East Hospital"]
+    items: ["IHH", "IGA", "NNI", "NNI Fund", "Brain Bank", "Yong En", "NTUC Health", "Dementia SG", "Thomson Medical", "MSF", "Easmed", "Red Cross", "PassionWave"]
   },
   {
     title: "Retail Booths",
@@ -15,7 +15,7 @@ const GROUPS = [
   {
     title: "Food & Beverage",
     icon: Utensils,
-    items: ["Polar Puff", "House of Seafood", "XO Cafe", "Heng Heng Fish Farm"]
+    items: ["Polar Puff", "House of Seafood", "XO Cafe"]
   },
   {
     title: "Sports Recovery Zone",
