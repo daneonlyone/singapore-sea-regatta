@@ -204,8 +204,8 @@ function RaceInformationInner() {
         </div>
       </Section>
 
-      {/* REGISTRATION */}
-      <Section id="registration" eyebrow="Registration" title="Secure your spot">
+      {/* QUICK LINKS */}
+      <Section id="quick-links" eyebrow="Quick Links" title="Everything in one place">
         <div>
           <Reveal delay={120}>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
@@ -214,21 +214,6 @@ function RaceInformationInner() {
               <RegButton label="Race Bulletin" href="https://docs.google.com/document/d/11GQwQWs28MSUgxf9_x90xVLc2JTETUOxrDdrYnEY1-0/edit?usp=sharing" />
               <RegButton label="Team Managers' Briefing" href="#" />
             </div>
-          </Reveal>
-        </div>
-      </Section>
-
-      {/* DOCUMENTS & TRAVEL */}
-      <Section id="documents" eyebrow="Race Documents & Quick Links" title="Everything in one place">
-        <div id="travel" className="grid md:grid-cols-3 gap-4">
-          <Reveal>
-            <DocCard icon={MapPin} title="Getting to the Venue" body="Bayfront Event Space is accessible via Bayfront MRT (CC34/DT16) and multiple bus services. More details to be confirmed closer to race day." />
-          </Reveal>
-          <Reveal delay={100}>
-            <DocCard icon={FileText} title="Race Documents" body="Race Bulletin, Registration Guide and Team Managers' Briefing materials — all editable and downloadable from the CMS." />
-          </Reveal>
-          <Reveal delay={200}>
-            <DocCard icon={Mail} title="Race Enquiries" body="For any race-related questions, contact the race secretariat at race@sgsearegatta.com." />
           </Reveal>
         </div>
       </Section>
