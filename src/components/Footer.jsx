@@ -8,7 +8,7 @@ const QUICK = [
   { label: "Race Information", to: "/race-information" },
   { label: "SSR Festival", to: "/ssr-festival" },
   { label: "Athlete Perks & Merch", to: "/athlete-perks-merch" },
-  { label: "About SSR", to: "/about" }
+  { label: "About SSR", to: "/about-ssr" }
 ];
 
 const PREV = [
