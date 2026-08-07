@@ -71,7 +71,7 @@ export default function Home() {
                 Explore Head Above Water 2026
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/about" className="inline-flex items-center gap-2 glass text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/20 hover:-translate-y-0.5 transition-all">
+              <Link to="/about-ssr" className="inline-flex items-center gap-2 glass text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/20 hover:-translate-y-0.5 transition-all">
                 Discover Singapore Sea Regatta
               </Link>
             </div>
