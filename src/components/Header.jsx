@@ -120,7 +120,7 @@ export default function Header() {
           <Link to="/race-information" className="mobile-nav-item">Race Info</Link>
           <Link to="/ssr-festival" className="mobile-nav-item">SSR Festival</Link>
           <Link to="/athlete-perks-merch" className="mobile-nav-item">Athlete Perks & Merch</Link>
-          <Link to="/about" className="mobile-nav-item">About SSR</Link>
+          <Link to="/about-ssr" className="mobile-nav-item">About SSR</Link>
 
           <button
             className="mobile-nav-item flex items-center justify-between"
