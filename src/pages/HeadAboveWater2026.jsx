@@ -14,7 +14,7 @@ const QUICK_ACCESS = [
 { label: "Race Information", to: "/race-information", icon: Info },
 { label: "Race Categories", to: "/race-information#categories", icon: Ruler },
 { label: "Race Fees", to: "/race-information#fees", icon: Ticket },
-{ label: "Race Bulletin", to: "/race-information#documents", icon: FileText },
+{ label: "Race Bulletin", to: "/race-information#quick-links", icon: FileText },
 { label: "SSR Festival", to: "/ssr-festival", icon: Users },
 { label: "Athlete Privilege Programme", to: "/athlete-perks-merch#perks", icon: Users },
 { label: "Official Merchandise", to: "/athlete-perks-merch#merch", icon: ShoppingBag },
