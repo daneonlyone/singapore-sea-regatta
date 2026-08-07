@@ -54,7 +54,7 @@ const AuthenticatedApp = () => {
         <Route path="/athlete-perks-merch" element={<AthletePerksMerch />} />
         <Route path="/pink-wave-2024" element={<PinkWave2024 />} />
         <Route path="/rise-above-the-waves-2025" element={<RiseAboveTheWaves2025 />} />
-        <Route path="/about" element={<AboutSSR />} />
+        <Route path="/about-ssr" element={<AboutSSR />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
         <Route path="/terms" element={<TermsOfUse />} />
       </Route>
