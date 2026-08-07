@@ -115,7 +115,7 @@ export default function PastEdition({ year }) {
               </Reveal>
             ))}
           </div>
-          <p className="mt-4 text-center text-xs text-muted-foreground">Final figures to be confirmed in the CMS.</p>
+          <p className="mt-4 text-center text-xs text-muted-foreground">"—"</p>
         </div>
       </section>
 
