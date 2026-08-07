@@ -99,7 +99,7 @@ export default function PastEdition({ year }) {
       {/* IMPACT STATS */}
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading align="center" eyebrow="Impact" title="By the numbers" description="Statistics from this edition — editable in the CMS." />
+          <SectionHeading align="center" eyebrow="Impact" title="By the numbers" description="—" />
           <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
               { v: "—", l: "Athletes" },
