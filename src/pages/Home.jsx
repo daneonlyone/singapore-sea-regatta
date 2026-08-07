@@ -28,7 +28,7 @@ export default function Home() {
 
   useEffect(() => {
     base44.entities.EventYear.list("order", 50).then(setEditions).catch(() => {});
-    base44.entities.Statistic.list("order", 50).then(setStats).catch(() => {});
+    base44.entities.Statistic.filter({ year: "2026" }, "order", 50).then(setStats).catch(() => {});
     base44.entities.Sponsor.list("order", 100).then(setSponsors).catch(() => {});
     base44.entities.SiteText.filter({ key: "home_stats" }).then((r) => r[0] && setStatsText(r[0])).catch(() => {});
   }, []);

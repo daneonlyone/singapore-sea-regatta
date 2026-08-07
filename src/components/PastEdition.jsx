@@ -10,8 +10,10 @@ import { Image } from "@/components/ui/image";
 export default function PastEdition({ year }) {
   const [edition, setEdition] = useState(null);
   const [sponsors, setSponsors] = useState([]);
+  const [stats, setStats] = useState([]);
 
   useEffect(() => {
+    base44.entities.Statistic.filter({ year }, "order", 50).then(setStats).catch(() => {});
     base44.entities.EventYear.list("order", 50).then((all) => {
       setEdition(all.find((e) => e.year === year) || all[0]);
     }).catch(() => {});
@@ -99,18 +101,15 @@ export default function PastEdition({ year }) {
       {/* IMPACT STATS */}
       <section className="relative py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading align="center" eyebrow="Impact" title="By the numbers" description="—" />
+          <SectionHeading align="center" eyebrow="Impact" title="By the numbers" />
           <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {[
-              { v: "—", l: "Athletes" },
-              { v: "—", l: "Teams" },
-              { v: "—", l: "Partners" },
-              { v: "—", l: "Visitors" }
-            ].map((s, i) => (
-              <Reveal key={s.l} delay={i * 80}>
+            {stats.map((s, i) => (
+              <Reveal key={s.id} delay={i * 80}>
                 <div className="glass rounded-2xl p-6 text-center">
-                  <div className="text-3xl font-heading font-black" style={{ color: accent }}>{s.v}</div>
-                  <div className="mt-1 text-xs text-muted-foreground">{s.l}</div>
+                  <div className="text-3xl font-heading font-black" style={{ color: accent }}>
+                    {s.value?.toLocaleString()}{s.suffix || ""}
+                  </div>
+                  <div className="mt-1 text-xs text-muted-foreground">{s.label}</div>
                 </div>
               </Reveal>
             ))}
