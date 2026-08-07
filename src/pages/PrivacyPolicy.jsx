@@ -2,86 +2,82 @@ import LegalPage from "@/components/LegalPage";
 
 const SECTIONS = [
   {
-    heading: "Information We Collect",
+    heading: "1. Information We Collect",
     body: [
       "We may collect the following types of personal data:",
       [
-        "When you register for the Singapore Sea Regatta events;",
+        "When you register for Singapore Sea Regatta events, races, or competitions;",
+        "When you purchase tickets, event passes, or merchandise through our website;",
         "When you browse and/or use any of our services on our websites;",
-        "When you accept cookies on your devices;",
+        "When you accept cookies or tracking technologies on your devices;",
         "When you interact with us via phone calls, instant messaging, face-to-face meetings, social media platforms, and emails;",
-        "When you are contacted by, and respond to, our organising committees;",
-        "During photo or video capturing at events; or",
+        "When you are contacted by, and respond to, our organising committees, staff, or representatives;",
+        "During photo, audio, or video capturing at our events; or",
         "When you submit your personal data to us for any other reasons."
       ],
-      "If you provide personal data relating to a third party to us, you represent that you have obtained the consent of the third party to provide us with their personal data for the respective purposes mentioned in this policy.",
-      "You should ensure that all personal data submitted to us is accurate and complete."
+      "If you provide personal data relating to a third party (e.g., team members or minors), you represent and warrant that you have obtained the explicit consent of that third party (or parent/guardian) to share their data with us for the purposes outlined in this policy. You should ensure all personal data submitted is accurate and complete."
     ]
   },
   {
-    heading: "How We Use Your Information",
+    heading: "2. How We Use Your Information",
     body: [
       "We use your personal data for the following purposes:",
       [
-        "To process your registration for the SSR and to provide you with important information about the competition, such as schedule updates and race results;",
-        "To respond to your inquiries and requests and to offer you race-related support;",
-        "To enhance our website and the SSR experience;",
-        "To send you promotional materials about the SSR and other events or services that we offer;",
-        "Where necessary, for any investigation or proceedings; or",
-        "To comply with applicable laws and regulations."
+        "To process event registrations, manage race logistics, publish schedules/results, and issue event passes or purchased merchandise;",
+        "To respond to inquiries, provide participant support, and manage emergency situations during events;",
+        "To facilitate media coverage, marketing, and promotional activities related to the SSR;",
+        "To analyse website performance, improve user experience, and enhance regatta operations;",
+        "To process payments and prevent fraudulent transactions; or",
+        "To comply with legal obligations, regulatory requirements, or law enforcement requests."
       ]
     ]
   },
   {
-    heading: "Sharing Your Information",
+    heading: "3. Sharing Your Information",
     body: [
-      "We may share your personal data with third-party vendors who provide us with services, such as website hosting, email marketing, and event management. These vendors are obligated to use your information only for the purpose of providing these services.",
-      "We may also disclose your personal data if we are required to do so by law or if we believe that such disclosure is necessary to protect our rights, safety, or property, as well as those of others."
+      "We may share your personal data with trusted third parties to facilitate our operations, including:",
+      [
+        "Service Providers: Third-party vendors providing website hosting, payment processing, courier/shipping logistics, email communications, and timing/race management. These vendors are contractually bound to keep your data secure and use it solely for specified services.",
+        "Event Partners & Insurers: Co-organisers, medical personnel, and insurance providers where necessary for event safety and execution.",
+        "Legal Requirements: Public authorities or courts if required by law, regulation, or court order."
+      ]
     ]
   },
   {
-    heading: "Links to Other Websites",
+    heading: "4. Third-Party Links & Analytics",
     body: [
-      "The SSR website may contain links to external websites that we believe may be of interest to our users. However, these websites are operated and maintained by independent entities over which we have no control.",
-      "Once you navigate to an external website through a link provided on our website, you are subject to the terms of use and privacy policies of that external website. We are not responsible for the content, accuracy, or security of any external website.",
-      "We encourage you to review the Privacy Policy of any external website you visit before providing any personal information."
+      "The SSR website may contain links to third-party websites. SSR is not responsible for the privacy practices, security, or content of external sites. We encourage you to review their policies.",
+      "We use services like Google Analytics to analyse site traffic via cookies and web beacons. This data is aggregated and anonymous. You can disable cookies in your browser settings to opt out of tracking."
     ]
   },
   {
-    heading: "Terms of Use",
+    heading: "5. Data Security & Retention",
     body: [
-      "In addition to this Privacy Policy, we encourage you to review our Terms of Use, which establish the permitted uses, disclaimers of responsibility, and limitations of liability that govern your access to and use of our website."
+      "We implement reasonable administrative, technical, and physical safeguards to protect your personal data against unauthorised access, collection, use, disclosure, or modification. Personal data is retained only for as long as necessary to fulfill business or legal purposes. Once no longer required, data is securely destroyed or permanently anonymised."
     ]
   },
   {
-    heading: "Your Choices",
+    heading: "6. Your Rights (Access, Correction, & Opt-Out)",
     body: [
-      "You can opt out of receiving promotional emails from us, as well as request to access or delete your personal information by contacting us at the email address provided below."
+      "Under the PDPA, you have the right to:",
+      [
+        "Request access to your personal data held by us;",
+        "Request corrections to inaccurate or incomplete data; or",
+        "Withdraw consent for promotional communications or specific data processing activities."
+      ],
+      "To exercise these rights, please contact us via the contact details below."
     ]
   },
   {
-    heading: "Third Party Web Analytics",
+    heading: "7. Changes to This Policy",
     body: [
-      "We may use third party web analytics services, such as Google Analytics, to analyse how visitors use our websites. These service providers use technologies such as cookies, web server logs and web beacons to collect information (including IP address) for analytical purposes. However, we do not combine this information with personally identifiable information. You can prevent analytical tools from recognizing you on return visits to our websites by disabling cookies in your browser settings.",
-      "More information on the handling of user data by Google can be found in the Google Privacy Policy."
+      "SSR reserves the right to update this Privacy Policy at any time. Any changes will be posted on this page with an updated effective date. Continued use of our Services constitutes acceptance of the updated policy."
     ]
   },
   {
-    heading: "Data Security",
+    heading: "8. Contact Us",
     body: [
-      "We take measures to protect your personal data from unauthorized access, use, or disclosure. We retain your personal information only for as long as necessary to fulfill the purposes for which it was collected, and as permitted by law. Personal data that is no longer needed will be securely destroyed or anonymized."
-    ]
-  },
-  {
-    heading: "Changes to This Privacy Policy",
-    body: [
-      "We reserve the right to change or update this policy periodically, and any such changes will become effective when we post the revised policy on our website. You can check the effective date posted at the bottom of this policy to stay informed about any revisions. We encourage you to read this policy whenever you visit our website to ensure that you remain up-to-date with any changes."
-    ]
-  },
-  {
-    heading: "Contact Us",
-    body: [
-      "If you have any questions about this Privacy Policy or our data practices, please contact us at hello@sgsearegatta.com."
+      "For questions, feedback, or requests regarding your personal data and PDPA rights, please reach out to us at our official contact page."
     ]
   }
 ];
@@ -90,9 +86,9 @@ export default function PrivacyPolicy() {
   return (
     <LegalPage
       title="Privacy Policy"
-      intro="This Privacy Policy outlines how your Personal Data will be handled and managed in accordance with the Personal Data Protection Act 2012 (PDPA). The PDPA aims to protect the personal data of individuals. This policy describes how Singapore Sea Regatta (referred to as “SSR”, “we”, “us”, or “our”) collects, uses, and discloses your personal information when you interact with us through our website, register for our events, or engage with our services."
+      intro="This Privacy Policy outlines how your Personal Data will be handled and managed in accordance with the Personal Data Protection Act 2012 (PDPA) of Singapore. This policy describes how Singapore Sea Regatta (referred to as “SSR”, “we,” “us,” or “our”) collects, uses, and discloses your personal information when you interact with us through our website, register for our events, purchase products, or engage with our services."
       sections={SECTIONS}
-      effectiveDate="1 October 2024"
+      effectiveDate="August 1, 2026"
     />
   );
 }
