@@ -206,25 +206,9 @@ function RaceInformationInner() {
 
       {/* REGISTRATION */}
       <Section id="registration" eyebrow="Registration" title="Secure your spot">
-        <div className="grid lg:grid-cols-2 gap-6">
-          <Reveal>
-            <div className="glass rounded-2xl p-8 h-full">
-              <h3 className="text-xl font-bold text-white">Registration Details</h3>
-              <ul className="mt-5 space-y-4">
-                <RegRow label="Status" value="Expression of Interest Open" highlight />
-                <RegRow label="EOI Opens" value="15 February" />
-                <RegRow label="EOI Closes" value="17 February" />
-                <RegRow label="Race Registration Opens" value="1 May" />
-                <RegRow label="Race Registration Closes" value="4 June" />
-              </ul>
-              <div className="mt-6 flex items-center gap-2 text-sm text-muted-foreground">
-                <Mail className="w-4 h-4 text-primary" />
-                <a href="mailto:race@sgsearegatta.com" className="hover:text-white">race@sgsearegatta.com</a>
-              </div>
-            </div>
-          </Reveal>
+        <div>
           <Reveal delay={120}>
-            <div className="grid sm:grid-cols-2 gap-3">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">
               <RegButton label="SDBA Registration Portal" href="https://registration.sdba.org.sg" />
               <RegButton label="Registration Guide" href="https://docs.google.com/document/d/1C7Ilsd4aR3ZKhTwIpNeLOpcWrc42HOugzB4tMfd9D_s/edit?usp=sharing" />
               <RegButton label="Race Bulletin" href="https://docs.google.com/document/d/11GQwQWs28MSUgxf9_x90xVLc2JTETUOxrDdrYnEY1-0/edit?usp=sharing" />
@@ -307,15 +291,6 @@ function StickyNav() {
         ))}
       </div>
     </div>
-  );
-}
-
-function RegRow({ label, value, highlight }) {
-  return (
-    <li className="flex items-center justify-between gap-4 pb-3 border-b border-white/5">
-      <span className="text-sm text-muted-foreground">{label}</span>
-      <span className={cn("text-sm font-semibold", highlight ? "text-primary" : "text-white")}>{value}</span>
-    </li>
   );
 }
 
