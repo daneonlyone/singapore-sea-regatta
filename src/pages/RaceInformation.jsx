@@ -78,7 +78,7 @@ function RaceInformationInner() {
       </section>
 
       {/* STICKY SUB-NAV */}
-      <StickyNav />
+      {/* <StickyNav /> */}
 
       {/* EVENT TIMELINE */}
       <Section id="timeline" eyebrow="Event Timeline" title="Key dates at a glance">
