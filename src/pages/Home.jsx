@@ -4,6 +4,7 @@ import { ArrowRight, ArrowUpRight, Calendar, MapPin, Clock, ChevronDown, Users, 
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import HoverVideo from "@/components/HoverVideo";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import Countdown from "@/components/Countdown";
 import PartnersSection from "@/components/PartnersSection";
@@ -134,8 +135,8 @@ export default function Home() {
             <div className="relative rounded-[2rem] overflow-hidden glass-blaze">
               <div className="grid lg:grid-cols-2">
                 <div className="relative min-h-[420px] lg:min-h-[560px]">
-                  <Image src={CAMPAIGN_IMG} className="absolute inset-0 w-full h-full object-cover" fittingType="fill" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/40" />
+                  <HoverVideo src="https://media.base44.com/videos/public/6a635ab4e57d550e514135e7/3bb71379b_0809.mp4" poster={CAMPAIGN_IMG} className="absolute inset-0" />
+                  <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/40" />
                   <div className="absolute top-6 left-6 glass-blaze rounded-full px-4 py-1.5 text-xs font-semibold text-white">
                     IHH Healthcare × Singapore Sea Regatta
                   </div>
