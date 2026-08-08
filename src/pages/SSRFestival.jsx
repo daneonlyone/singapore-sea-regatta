@@ -105,7 +105,7 @@ export default function SSRFestival() {
                   <span className="mx-2 w-px h-6 bg-white/10" />
                   {FILTERS.map((f) => (
                     <button key={f} onClick={() => setFilter(f)} className={cn("px-3 py-1.5 rounded-full text-xs font-medium transition-all", filter === f ? "bg-white/15 text-white" : "text-muted-foreground hover:text-white")}>
-                      {f}
+                      {f === "Panel Talk" ? "Talks" : f}
                     </button>
                   ))}
                 </div>
