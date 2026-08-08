@@ -13,7 +13,7 @@ export default function PartnerCard({ sponsor, featured = false }) {
       {...linkProps}
       className={cn(
         "group relative block rounded-2xl text-center overflow-hidden transition-all duration-400 hover:-translate-y-1 bg-white border border-black/10",
-        featured ? "px-8 py-10 shadow-[0_0_28px_-6px_rgba(255,92,0,0.35)]" : "px-5 py-6 hover:border-primary/40"
+        featured ? "px-8 py-6 shadow-[0_0_28px_-6px_rgba(255,92,0,0.35)]" : "px-5 py-6 hover:border-primary/40"
       )}
     >
       <span className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -30,7 +30,7 @@ export default function PartnerCard({ sponsor, featured = false }) {
       {sponsor.logo ? (
         <Image
           src={sponsor.logo}
-          className={cn("mx-auto w-full", featured ? "h-20 max-w-[240px]" : "h-12 max-w-[160px]")}
+          className={cn("mx-auto w-full", featured ? "h-32 sm:h-40 max-w-[420px]" : "h-12 max-w-[160px]")}
           fittingType="fit" />
       ) : (
         <div className={cn(
