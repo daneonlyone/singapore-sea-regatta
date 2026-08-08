@@ -45,6 +45,11 @@ export default function AboutSSR() {
                 eyebrow={intro?.eyebrow || "What is SSR"}
                 title={intro?.title || "Paddle with A Purpose"}
                 description={intro?.description || DEFAULT_INTRO} />
+              <Reveal delay={100}>
+                <p className="mt-6 text-foreground/70 leading-relaxed">
+                  Imagine the thunderous roar of paddles slicing through water, the synchronized power of a dragon boat crew propelling their vessel forward with relentless determination. This is no ordinary race; it’s a vibrant, adrenaline-charged celebration of strength, unity, and resilience. Welcome to the Singapore Sea Regatta, where the traditional sport of dragonboating transcends mere competition to become a dynamic platform for promoting crucial health messages. In SSR, the spirit of the dragonboat not only embodies physical fitness and teamwork but also serves as a beacon of hope and awareness for mental health, cancer prevention, and community well-being. Through the rhythmic harmony of paddling, SSR creates a powerful synergy, merging the thrill of the sport with life-saving health advocacy in an unparalleled, transformative experience.
+                </p>
+              </Reveal>
             </div>
             <Reveal>
               <div className="aspect-[4/3] rounded-3xl overflow-hidden">
