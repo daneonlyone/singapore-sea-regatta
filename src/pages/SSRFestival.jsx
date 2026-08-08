@@ -19,11 +19,11 @@ export default function SSRFestival() {
 
   useEffect(() => { base44.entities.FestivalProgramme.list("order", 200).then(setProgramme).catch(() => {}); }, []);
   useEffect(() => {
-    const days = [...new Set(programme.map((p) => p.day))];
+    const days = [...new Set(programme.map((p) => p.day))].sort();
     if (days.length && !activeDay) setActiveDay(days[0]);
   }, [programme, activeDay]);
 
-  const days = useMemo(() => [...new Set(programme.map((p) => p.day))], [programme]);
+  const days = useMemo(() => [...new Set(programme.map((p) => p.day))].sort(), [programme]);
   const shown = useMemo(() => programme.filter((p) => p.day === activeDay && (filter === "All" || p.category === filter)), [programme, activeDay, filter]);
 
   return (
