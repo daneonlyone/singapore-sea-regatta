@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           {/* Previous years */}
-          <div className="lg:col-span-2">
+          <div className="hidden lg:col-span-2">
             <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Previous Years</h4>
             <ul className="space-y-2.5">
               {PREV.map((l) => (

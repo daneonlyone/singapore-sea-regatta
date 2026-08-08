@@ -62,7 +62,7 @@ export default function Header() {
               <NavItem key={item.to} item={item} active={loc.pathname === item.to} />
             ))}
 
-            <div className="relative group">
+            <div className="relative group hidden">
               <button className="flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:text-white transition-colors">
                 Previous Years
                 <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
@@ -123,13 +123,13 @@ export default function Header() {
           <Link to="/about-ssr" className="mobile-nav-item">About SSR</Link>
 
           <button
-            className="mobile-nav-item flex items-center justify-between"
+            className="mobile-nav-item hidden items-center justify-between"
             onClick={() => setMobilePrev(!mobilePrev)}
           >
             Previous Years
             <ChevronDown className={cn("w-4 h-4 transition-transform", mobilePrev && "rotate-180")} />
           </button>
-          <div className={cn("overflow-hidden transition-all duration-300", mobilePrev ? "max-h-60" : "max-h-0")}>
+          <div className={cn("hidden overflow-hidden transition-all duration-300", mobilePrev ? "max-h-60" : "max-h-0")}>
             <div className="pl-4 flex flex-col gap-1">
               {PREV_YEARS.map((y) => (
                 <Link key={y.year} to={y.to} className="flex items-center gap-2.5 py-2.5 px-3 rounded-lg hover:bg-white/5">

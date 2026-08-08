@@ -107,7 +107,7 @@ function Merchandise() {
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading eyebrow="Official SSR Merchandise" title="The 2026 collection" description="Premium race jerseys, apparel, accessories and limited-edition items — designed for athletes and supporters alike. Browse the collection here, then head to our official online store to purchase." />
 
-        <Reveal delay={100}>
+        <Reveal delay={100} className="hidden">
           <a
             href="https://www.sgsearegatta.com/merchandise"
             target="_blank"
