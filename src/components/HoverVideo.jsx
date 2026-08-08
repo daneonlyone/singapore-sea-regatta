@@ -6,10 +6,15 @@ export default function HoverVideo({ src, poster, className = "" }) {
   const ref = useRef(null);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(true);
+  const [unplayable, setUnplayable] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
+    const check = () => { if (el.readyState >= 2 && el.videoWidth === 0) setUnplayable(true); };
+    check();
+    const timer = setInterval(check, 1000);
+    setTimeout(() => clearInterval(timer), 6000);
     const obs = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) el.play().catch(() => {});
@@ -18,7 +23,7 @@ export default function HoverVideo({ src, poster, className = "" }) {
       { threshold: 0.35 }
     );
     obs.observe(el);
-    return () => obs.disconnect();
+    return () => { obs.disconnect(); clearInterval(timer); };
   }, []);
 
   const togglePlay = () => {
@@ -44,10 +49,15 @@ export default function HoverVideo({ src, poster, className = "" }) {
         loop
         playsInline
         preload="metadata"
+        onLoadedData={(e) => setUnplayable(e.currentTarget.videoWidth === 0)}
+        onError={() => setUnplayable(true)}
         onPlay={() => setPlaying(true)}
         onPause={() => setPlaying(false)}
         className="absolute inset-0 w-full h-full object-cover"
       />
+      {unplayable && poster && (
+        <img src={poster} alt="" className="absolute inset-0 w-full h-full object-cover z-10" />
+      )}
       <div className="absolute bottom-4 left-4 z-20 flex items-center gap-2 opacity-0 group-hover/video:opacity-100 transition-opacity duration-300">
         <button
           onClick={togglePlay}
