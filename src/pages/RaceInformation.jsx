@@ -68,7 +68,7 @@ function RaceInformationInner() {
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="flex items-center gap-4 mb-6">
-              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png" alt="Head Above Water" style={{ height: 64, objectFit: "contain" }} />
+              <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png" alt="Head Above Water" className="h-24 sm:h-28 lg:h-32 object-contain" />
             </div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>2026 · Head Above Water</span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Race Information</h1>
