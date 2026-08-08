@@ -12,8 +12,8 @@ export default function PartnerCard({ sponsor, featured = false }) {
     <Wrapper
       {...linkProps}
       className={cn(
-        "group relative block rounded-2xl text-center overflow-hidden transition-all duration-400 hover:-translate-y-1",
-        featured ? "glass-blaze px-8 py-10" : "glass px-5 py-6 hover:border-primary/40"
+        "group relative block rounded-2xl text-center overflow-hidden transition-all duration-400 hover:-translate-y-1 bg-white border border-black/10",
+        featured ? "px-8 py-10 shadow-[0_0_28px_-6px_rgba(255,92,0,0.35)]" : "px-5 py-6 hover:border-primary/40"
       )}
     >
       <span className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -34,7 +34,7 @@ export default function PartnerCard({ sponsor, featured = false }) {
           fittingType="fit" />
       ) : (
         <div className={cn(
-          "font-heading font-bold text-white leading-snug",
+          "font-heading font-bold text-neutral-900 leading-snug",
           featured ? "text-2xl sm:text-3xl" : "text-sm"
         )}>
           {sponsor.name}
