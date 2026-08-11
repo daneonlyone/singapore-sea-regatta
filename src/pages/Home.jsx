@@ -231,11 +231,13 @@ export default function Home() {
               {timeline.map((e, i) => {
                 const isCurrent = e.is_current;
                 const color = e.color_primary;
+                const Wrapper = isCurrent ? Link : "div";
+                const wrapperProps = isCurrent ? { to: editionLink(e) } : {};
                 return (
                   <Reveal key={e.id} delay={i * 150}>
-                    <Link to={editionLink(e)} className="block group h-full">
+                    <Wrapper {...wrapperProps} className="block group h-full">
                       <div
-                        className="relative rounded-2xl p-6 h-full bg-[#080808] border transition-all duration-400 group-hover:-translate-y-1"
+                        className={`relative rounded-2xl p-6 h-full bg-[#080808] border transition-all duration-400 ${isCurrent ? "group-hover:-translate-y-1" : ""}`}
                         style={{ borderColor: isCurrent ? "rgba(255,255,255,0.28)" : "rgba(255,255,255,0.12)" }}>
                         
                         <div className="flex items-start justify-between gap-3 mb-3">
@@ -250,7 +252,7 @@ export default function Home() {
                         <p className="mt-2 text-sm text-foreground/70">{e.theme}</p>
                         <p className="mt-4 text-sm text-muted-foreground leading-relaxed line-clamp-3">{e.summary}</p>
                       </div>
-                    </Link>
+                    </Wrapper>
                   </Reveal>);
 
               })}
