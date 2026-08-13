@@ -5,6 +5,7 @@ import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import BoothDirectory from "@/components/BoothDirectory";
+import FestivalMap from "@/components/FestivalMap";
 import { Image } from "@/components/ui/image";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/71427b403_generated_6f71a2fa.png";
@@ -77,15 +78,7 @@ export default function SSRFestival() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Festival Map" title="Find your way around" />
           <Reveal>
-            <div className="mt-8 max-w-2xl glass rounded-3xl p-3 sm:p-4 overflow-hidden">
-              <Image
-                src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/8042604f4_festivalmap.jpeg"
-                originWidth={1024}
-                originHeight={791}
-                fittingType="fit"
-                className="w-full rounded-2xl"
-                alt="SSR Festival site layout map at Bayfront Event Space" />
-            </div>
+            <FestivalMap />
           </Reveal>
         </div>
       </section>
