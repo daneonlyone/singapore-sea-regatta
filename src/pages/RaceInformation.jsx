@@ -140,6 +140,11 @@ function RaceInformationInner() {
                         <span className="text-[10px] text-muted-foreground uppercase tracking-wider">{c.division}</span>
                       </div>
                       <div className="text-sm text-white font-medium leading-snug">{c.name}</div>
+                      {c.start_time && (
+                        <div className="mt-1.5 flex items-center gap-1.5 text-xs font-mono text-muted-foreground">
+                          <Clock className="w-3 h-3" /> {c.start_time}
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
@@ -213,7 +218,7 @@ function RaceInformationInner() {
               <RegButton label="Registration Guide" href="https://docs.google.com/document/d/1C7Ilsd4aR3ZKhTwIpNeLOpcWrc42HOugzB4tMfd9D_s/edit?usp=sharing" />
               <RegButton label="Race Bulletin" href="https://docs.google.com/document/d/11GQwQWs28MSUgxf9_x90xVLc2JTETUOxrDdrYnEY1-0/edit?usp=sharing" />
               <RegButton label="Team Managers' Briefing" href="#" />
-              <RegButton label="2026 Race Schedule (Tentative)" href="https://media.base44.com/files/public/6a635ab4e57d550e514135e7/687d5855d_2026SSRRaceScheduleTentative-Asof30Jul.pdf" />
+              <RegButton label="2026 Race Schedule" href="https://media.base44.com/files/public/6a635ab4e57d550e514135e7/687d5855d_2026SSRRaceScheduleTentative-Asof30Jul.pdf" />
             </div>
           </Reveal>
         </div>
