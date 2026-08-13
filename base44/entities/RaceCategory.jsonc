@@ -37,6 +37,10 @@
       "type": "string",
       "description": "Full category name"
     },
+    "start_time": {
+      "type": "string",
+      "description": "First race start time e.g. 8:30 AM"
+    },
     "order": {
       "type": "number",
       "default": 0
