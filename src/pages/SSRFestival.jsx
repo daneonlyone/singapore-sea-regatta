@@ -77,12 +77,14 @@ export default function SSRFestival() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Festival Map" title="Find your way around" />
           <Reveal>
-            <div className="mt-8 glass rounded-3xl p-8 sm:p-12 flex items-center justify-center min-h-[300px]">
-              <div className="text-center">
-                <MapPin className="w-12 h-12 text-primary mx-auto mb-4 animate-pulse" />
-                <h3 className="text-xl font-bold text-white">Festival map coming soon</h3>
-                <p className="mt-2 text-sm text-muted-foreground">Expected release: August 2026</p>
-              </div>
+            <div className="mt-8 glass rounded-3xl p-3 sm:p-4 overflow-hidden">
+              <Image
+                src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/1ecb5d519_FestivalLayout.jpeg"
+                originWidth={1024}
+                originHeight={791}
+                fittingType="fit"
+                className="w-full rounded-2xl"
+                alt="SSR Festival site layout map at Bayfront Event Space" />
             </div>
           </Reveal>
         </div>
