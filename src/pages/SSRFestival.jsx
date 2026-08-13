@@ -77,7 +77,7 @@ export default function SSRFestival() {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Festival Map" title="Find your way around" />
           <Reveal>
-            <div className="mt-8 glass rounded-3xl p-3 sm:p-4 overflow-hidden">
+            <div className="mt-8 mx-auto max-w-2xl glass rounded-3xl p-3 sm:p-4 overflow-hidden">
               <Image
                 src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/9302da52b_ChatGPTImageAug13202603_38_00PM.png"
                 originWidth={1023}
