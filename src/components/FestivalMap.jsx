@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Download, Expand, X } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
-const MAP_SRC = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/8042604f4_festivalmap.jpeg";
+const MAP_SRC = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/79fd21117_ChatGPTImageAug13202603_38_00PM.png";
 const ALT = "SSR Festival site layout map at Bayfront Event Space";
 
 export default function FestivalMap() {
@@ -13,7 +13,7 @@ export default function FestivalMap() {
     <>
       <div className="mt-8 max-w-2xl glass rounded-3xl p-3 sm:p-4">
         <button onClick={() => setOpen(true)} className="group relative block w-full overflow-hidden rounded-2xl" aria-label="Expand festival map">
-          <Image src={MAP_SRC} originWidth={1024} originHeight={791} fittingType="fit" className="w-full rounded-2xl" alt={ALT} />
+          <Image src={MAP_SRC} originWidth={1023} originHeight={791} fittingType="fit" className="w-full rounded-2xl" alt={ALT} />
           <span className="absolute bottom-3 right-3 inline-flex items-center gap-1.5 glass-strong rounded-full px-3 py-1.5 text-xs font-semibold text-white opacity-0 group-hover:opacity-100 transition-opacity">
             <Expand className="w-3.5 h-3.5" /> Click to expand
           </span>
