@@ -79,8 +79,8 @@ export default function SSRFestival() {
           <Reveal>
             <div className="mt-8 glass rounded-3xl p-3 sm:p-4 overflow-hidden">
               <Image
-                src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/1ecb5d519_FestivalLayout.jpeg"
-                originWidth={1024}
+                src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/9302da52b_ChatGPTImageAug13202603_38_00PM.png"
+                originWidth={1023}
                 originHeight={791}
                 fittingType="fit"
                 className="w-full rounded-2xl"
