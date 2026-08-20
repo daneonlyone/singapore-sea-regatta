@@ -3,7 +3,7 @@ import { createPortal } from "react-dom";
 import { Download, Expand, X } from "lucide-react";
 import { Image } from "@/components/ui/image";
 
-const MAP_SRC = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/79fd21117_ChatGPTImageAug13202603_38_00PM.png";
+const MAP_SRC = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/c00c942bf_FestivalMap.jpg";
 const ALT = "SSR Festival site layout map at Bayfront Event Space";
 
 export default function FestivalMap() {
