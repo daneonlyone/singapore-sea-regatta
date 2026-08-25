@@ -7,8 +7,8 @@ const TIER_ORDER = [
   "Event Organiser",
   "Official Partners",
   "Corporate Sponsors",
-  "Presenting Partner – Premier Women's Race",
   "Fun Race Sponsors",
+  "Presenting Partner – Premier Women's Race",
   "Community Partners",
   "Supporting Organisations",
   "Other Sponsors"
