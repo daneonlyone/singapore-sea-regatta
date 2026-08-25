@@ -41,7 +41,7 @@ export default function PastEdition({ year }) {
       </div>
 
       {/* HERO */}
-      <section className="relative min-h-[80vh] flex items-end overflow-hidden">
+      <section id="hero" className="relative min-h-[80vh] flex items-end overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
           {edition.hero_image && <Image src={edition.hero_image} className="w-full h-full object-cover" fittingType="fill" />}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-black/60 to-black/30" />
@@ -72,7 +72,7 @@ export default function PastEdition({ year }) {
       </section>
 
       {/* OVERVIEW */}
-      <section className="relative py-20">
+      <section id="overview" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -99,7 +99,7 @@ export default function PastEdition({ year }) {
       </section>
 
       {/* IMPACT STATS */}
-      <section className="relative py-20">
+      <section id="impact" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading align="center" eyebrow="Impact" title="By the numbers" />
           <div className="mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
@@ -119,7 +119,7 @@ export default function PastEdition({ year }) {
       </section>
 
       {/* GALLERY */}
-      <section className="relative py-20">
+      <section id="gallery" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Photo & Video Highlights" title="Moments from the water" />
           <Reveal>
@@ -137,7 +137,7 @@ export default function PastEdition({ year }) {
 
       {/* PARTNERS */}
       {sponsors.length > 0 && (
-        <section className="relative py-20">
+        <section id="partners" className="relative py-20 scroll-mt-24">
           <div className="mx-auto max-w-7xl px-6">
             <SectionHeading align="center" eyebrow="Selected Partners" title="Who made it possible" />
             <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
@@ -150,7 +150,7 @@ export default function PastEdition({ year }) {
       )}
 
       {/* CTA to current */}
-      <section className="relative py-20">
+      <section id="next-edition" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6">
           <Reveal>
             <div className="glass-blaze rounded-3xl p-8 sm:p-12 text-center">

@@ -36,7 +36,7 @@ export default function HeadAboveWater2026() {
   return (
     <div className="haw-theme" style={{ "--haw-plum": PLUM, "--haw-lavender": LAVENDER }}>
       {/* HERO — plum cinematic */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section id="hero" className="relative min-h-[90vh] flex items-center overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
           <Image src={HERO_IMG} className="w-full h-full object-cover" fittingType="fill" />
           {/* Moonlit Plum overlay matching brand */}
@@ -104,7 +104,7 @@ export default function HeadAboveWater2026() {
       </section>
 
       {/* ABOUT THE 2026 EDITION */}
-      <section className="relative py-24" style={{ background: "linear-gradient(to bottom, #050505, rgba(37,3,45,0.3), #050505)" }}>
+      <section id="about" className="relative py-24 scroll-mt-24" style={{ background: "linear-gradient(to bottom, #050505, rgba(37,3,45,0.3), #050505)" }}>
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
@@ -139,7 +139,7 @@ export default function HeadAboveWater2026() {
       </section>
 
       {/* OUR CAUSE */}
-      <section className="relative py-24 overflow-hidden">
+      <section id="cause" className="relative py-24 overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
           <Image src={CAUSE_IMG} className="w-full h-full object-cover" fittingType="fill" />
           <div className="absolute inset-0" style={{ background: "rgba(37,3,45,0.9)" }} />
@@ -182,7 +182,7 @@ export default function HeadAboveWater2026() {
       </section>
 
       {/* GUEST OF HONOUR */}
-      <section className="relative py-24">
+      <section id="guest-of-honour" className="relative py-24 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6">
           <Reveal>
             <div className="rounded-3xl overflow-hidden border" style={{ background: "rgba(37,3,45,0.7)", borderColor: "rgba(155,147,255,0.25)" }}>
@@ -211,7 +211,7 @@ export default function HeadAboveWater2026() {
       </section>
 
       {/* QUICK ACCESS */}
-      <section className="relative py-24">
+      <section id="quick-access" className="relative py-24 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading align="center" eyebrow="2026 Quick Access" title="Everything you need, one tap away" />
           <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4">

@@ -30,7 +30,7 @@ export default function SSRFestival() {
   return (
     <div className="haw-theme">
       {/* HERO */}
-      <section className="relative min-h-[70vh] flex items-end overflow-hidden">
+      <section id="hero" className="relative min-h-[70vh] flex items-end overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
           <Image src={HERO_IMG} className="w-full h-full object-cover" fittingType="fill" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-black/60 to-black/40" />
@@ -48,7 +48,7 @@ export default function SSRFestival() {
       </section>
 
       {/* ABOUT FESTIVAL */}
-      <section className="relative py-20">
+      <section id="about" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="About SSR Festival" title="The heartbeat of the regatta" description="Whether you're here to cheer, chill, or connect, there's something for everyone in this celebration of community, health and fun." />
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -74,7 +74,7 @@ export default function SSRFestival() {
       </section>
 
       {/* FESTIVAL MAP */}
-      <section className="relative py-20">
+      <section id="festival-map" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Festival Map" title="Find your way around" />
           <Reveal>
@@ -84,7 +84,7 @@ export default function SSRFestival() {
       </section>
 
       {/* PROGRAMME */}
-      <section className="relative py-20">
+      <section id="programme" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Programme & Schedule" title="Two days of energy" />
           {days.length > 0 ? (
@@ -137,7 +137,7 @@ export default function SSRFestival() {
       </section>
 
       {/* PARTNERS & BOOTHS */}
-      <section className="relative py-20">
+      <section id="partners-booths" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Partners & Education Booths" title="Learn, discover, connect" description="Education booths from healthcare institutions, community partners and supporting organisations." />
           <BoothDirectory />
@@ -145,7 +145,7 @@ export default function SSRFestival() {
       </section>
 
       {/* TELEGRAM CTA */}
-      <section className="relative py-20">
+      <section id="telegram" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-6">
           <Reveal>
             <div className="glass-blaze rounded-3xl p-8 sm:p-12 text-center">

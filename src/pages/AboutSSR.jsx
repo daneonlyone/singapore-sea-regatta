@@ -22,7 +22,7 @@ export default function AboutSSR() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+      <section id="hero" className="relative min-h-[60vh] flex items-end overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
           <Image src={ABOUT_IMG} className="w-full h-full object-cover" fittingType="fill" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-black/60 to-black/30" />
@@ -37,7 +37,7 @@ export default function AboutSSR() {
       </section>
 
       {/* WHAT IS SSR */}
-      <section className="relative py-20">
+      <section id="what-is-ssr" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -61,7 +61,7 @@ export default function AboutSSR() {
       </section>
 
       {/* MISSION / VISION */}
-      <section className="relative py-20">
+      <section id="mission-vision" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid md:grid-cols-2 gap-6">
             <Reveal>
@@ -87,7 +87,7 @@ export default function AboutSSR() {
       </section>
 
       {/* SSR STORY */}
-      <section className="relative py-16 sm:py-24">
+      <section id="ssr-story" className="relative py-16 sm:py-24 scroll-mt-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6">
           <SectionHeading align="center" eyebrow="The SSR Story" title="Three editions, one current" />
           
@@ -156,7 +156,7 @@ export default function AboutSSR() {
       </section>
 
       {/* TEAM */}
-      <section className="relative py-20">
+      <section id="team" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading align="center" eyebrow="The Organising Team" title="The people behind the paddles" description="A warm, dedicated team bringing SSR to life — roles shown as editable CMS entries." />
           <div className="mt-12 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
@@ -170,7 +170,7 @@ export default function AboutSSR() {
       </section>
 
       {/* CONTACT */}
-      <section className="relative py-20">
+      <section id="contact" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading align="center" eyebrow="Get In Touch" title="Let's connect" />
           <div className="mt-10 grid sm:grid-cols-3 gap-4">

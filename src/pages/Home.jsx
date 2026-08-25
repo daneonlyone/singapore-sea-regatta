@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <div>
       {/* ===== HERO ===== */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section id="hero" className="relative min-h-screen flex items-center overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
           <Image src={HERO_IMG} className="w-full h-full object-cover" fittingType="fill" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
@@ -85,7 +85,7 @@ export default function Home() {
       </section>
 
       {/* ===== INTRODUCTION ===== */}
-      <section className="relative py-24 sm:py-32">
+      <section id="about" className="relative py-24 sm:py-32 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <Reveal>
@@ -121,7 +121,7 @@ export default function Home() {
       </section>
 
       {/* ===== 2026 FEATURE (dominant) ===== */}
-      <section className="relative py-20 sm:py-28">
+      <section id="head-above-water" className="relative py-20 sm:py-28 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="text-center mb-10">
@@ -174,7 +174,7 @@ export default function Home() {
       </section>
 
       {/* ===== RACE + FESTIVAL ===== */}
-      <section className="relative py-24">
+      <section id="experiences" className="relative py-24 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             align="center"
@@ -204,7 +204,7 @@ export default function Home() {
       </section>
 
       {/* ===== IMPACT TIMELINE ===== */}
-      <section className="relative py-24">
+      <section id="timeline" className="relative py-24 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             align="center"
@@ -262,7 +262,7 @@ export default function Home() {
       </section>
 
       {/* ===== SSR AT A GLANCE ===== */}
-      <section className="relative py-24">
+      <section id="at-a-glance" className="relative py-24 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading
             align="center"
@@ -291,7 +291,9 @@ export default function Home() {
       </section>
 
       {/* ===== PARTNERS ===== */}
-      <PartnersSection sponsors={sponsors} />
+      <div id="partners" className="scroll-mt-24">
+        <PartnersSection sponsors={sponsors} />
+      </div>
     </div>);
 
 }

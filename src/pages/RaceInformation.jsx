@@ -63,7 +63,7 @@ function RaceInformationInner() {
   return (
     <div>
       {/* HERO */}
-      <section className="relative pt-32 pb-12 overflow-hidden">
+      <section id="hero" className="relative pt-32 pb-12 overflow-hidden scroll-mt-24">
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(37,3,45,0.7) 0%, transparent 100%)" }} />
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
