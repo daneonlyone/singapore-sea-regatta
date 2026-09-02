@@ -158,10 +158,9 @@ function RaceInformationInner() {
       <Section id="fees" eyebrow="Race Fees" title="Transparent pricing" description="All prices are inclusive of GST where applicable.">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {fees.map((f, i) => {
-            const popular = f.label.includes("DB12");
             return (
               <Reveal key={f.id} delay={i * 80}>
-                <div className={cn("rounded-2xl p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/20", popular ? "glass-blaze" : "glass")}>
+                <div className="glass rounded-2xl p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/20">
                   <h3 className="font-bold text-white">{f.label}</h3>
                   <div className="mt-3 text-3xl font-heading font-black text-gradient-ignite">{f.amount}</div>
                   <div className="text-sm text-muted-foreground">{f.unit}</div>
