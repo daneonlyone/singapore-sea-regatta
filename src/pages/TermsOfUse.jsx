@@ -11,25 +11,25 @@ const SECTIONS = [
   {
     heading: "2. Registration",
     body: [
-      "To participate in the SSR competition, you may be required to register on our website and provide certain information. You agree to provide accurate, current, and complete information during the registration process and to update such information to keep it accurate, current, and complete. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Parents/Guardians of minors must ensure that all provided information is accurate."
+      "To participate in the SSR competition, you may be required to register on our website and provide certain information. You agree to provide accurate, current and complete information during the registration process and to update such information to keep it accurate, current and complete. You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. Parents/Guardians of minors must ensure that all provided information is accurate."
     ]
   },
   {
     heading: "3. Pricing and Payment",
     body: [
-      "All prices listed for registrations, event entries, tickets, or merchandise are in Singapore Dollars (SGD) unless stated otherwise. SSR reserves the right to adjust pricing at any time without prior notice. Full payment must be completed via our designated online payment gateways before any registration, entry, or order is processed and confirmed."
+      "All prices listed for registrations, event entries, tickets or merchandise are in Singapore Dollars (SGD) unless stated otherwise. SSR reserves the right to adjust pricing at any time without prior notice. Full payment must be completed via our designated online payment gateways before any registration, entry or order is processed and confirmed."
     ]
   },
   {
     heading: "4. Shipping and Delivery",
     body: [
-      "Physical items, merchandise, event kits, or entry passes purchased through our Services will be shipped to the delivery address provided during checkout. Shipping fees and estimated timelines are calculated at checkout. SSR is not responsible for shipping delays caused by third-party delivery carriers, postal services, customs clearance, or inaccurate address information provided by the user."
+      "Physical items, merchandise, event kits or entry passes purchased through our Services will be shipped to the delivery address provided during checkout. Shipping fees and estimated timelines are calculated at checkout. SSR is not responsible for shipping delays caused by third-party delivery carriers, postal services, customs clearance or inaccurate address information provided by the user."
     ]
   },
   {
     heading: "5. Risk of Product Loss and Confiscation",
     body: [
-      "All physical items purchased from SSR are made pursuant to a shipment contract. The risk of loss, damage, and title for such items pass to you upon our delivery to the shipping carrier. SSR shall not be held liable for any items lost, damaged, delayed, or confiscated by customs or government authorities during transit."
+      "All physical items purchased from SSR are made pursuant to a shipment contract. The risk of loss, damage and title for such items pass to you upon our delivery to the shipping carrier. SSR shall not be held liable for any items lost, damaged, delayed, or confiscated by customs or government authorities during transit."
     ]
   },
   {
@@ -41,7 +41,7 @@ const SECTIONS = [
   {
     heading: "7. Exchange and Refund",
     body: [
-      "All sales, registrations, ticket purchases, and merchandise orders are final. SSR strictly does not accept requests for refunds, exchanges, returns, or credit notes under any circumstances, including but not limited to participant non-attendance, scheduling conflicts, weather disruptions, event alterations, or a change of mind."
+      "All sales, registrations, ticket purchases and merchandise orders are final. SSR strictly does not accept requests for refunds, exchanges, returns or credit notes under any circumstances, including but not limited to participant non-attendance, scheduling conflicts, weather disruptions, event alterations, or a change of mind."
     ]
   },
   {
@@ -53,7 +53,7 @@ const SECTIONS = [
         "Interfering with or disrupting the Services or servers or networks connected to the Services;",
         "Impersonating any person or entity, or falsely stating or misrepresenting your affiliation with a person or entity;",
         "Collecting or storing personal data about other users without their explicit consent;",
-        "Transmitting spam, chain letters, or other unsolicited communications; or",
+        "Transmitting spam, chain letters or other unsolicited communications; or",
         "Engaging in any other conduct that SSR, in its sole discretion, determines to be inappropriate or harmful."
       ]
     ]
@@ -67,24 +67,24 @@ const SECTIONS = [
   {
     heading: "10. Intellectual Property",
     body: [
-      "All content, materials, and intellectual property rights associated with the Services — including text, graphics, logos, images, audio clips, video clips, and software — are owned or licensed by SSR and are protected by copyright, trademark, patent, trade secret, and other intellectual property laws. You may not modify, reproduce, distribute, display, or create derivative works of any content or materials provided through the Services without prior written consent from SSR."
+      "All content, materials and intellectual property rights associated with the Services — including text, graphics, logos, images, audio clips, video clips and software — are owned or licensed by SSR and are protected by copyright, trademark, patent, trade secret and other intellectual property laws. You may not modify, reproduce, distribute, display, or create derivative works of any content or materials provided through the Services without prior written consent from SSR."
     ]
   },
   {
     heading: "11. Limitation of Liability",
     body: [
-      "To the fullest extent permitted by applicable law, SSR and its organizers, staff, volunteers, and representatives shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:",
+      "To the fullest extent permitted by applicable law, SSR and its organizers, staff, volunteers and representatives shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:",
       [
         "Your access to or use of or inability to access or use the Services;",
         "Any conduct or content of any third party on or related to the Services; or",
-        "Unauthorised access, use, or alteration of your transmissions or content."
+        "Unauthorised access, use or alteration of your transmissions or content."
       ]
     ]
   },
   {
     heading: "12. Indemnification",
     body: [
-      "You agree to indemnify and hold SSR and its organisers, staff, volunteers and representatives harmless from any claims, losses, damages, liabilities, costs, or expenses (including reasonable legal fees) arising out of or relating to:",
+      "You agree to indemnify and hold SSR and its organisers, staff, volunteers and representatives harmless from any claims, losses, damages, liabilities, costs or expenses (including reasonable legal fees) arising out of or relating to:",
       [
         "Your access to or use of the Services;",
         "Your participation in the event;",
@@ -97,7 +97,7 @@ const SECTIONS = [
   {
     heading: "13. Media Consent",
     body: [
-      "By participating in SSR events, you consent to the capture and use of your image, voice, and likeness in photos and videos for promotional, marketing, and media purposes. Parents and legal guardians of minors consent to this on behalf of their children. SSR retains all rights to use and distribute these materials indefinitely without compensation to participants."
+      "By participating in SSR events, you consent to the capture and use of your image, voice and likeness in photos and videos for promotional, marketing and media purposes. Parents and legal guardians of minors consent to this on behalf of their children. SSR retains all rights to use and distribute these materials indefinitely without compensation to participants."
     ]
   },
   {
