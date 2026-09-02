@@ -77,7 +77,7 @@ const SECTIONS = [
   {
     heading: "8. Contact Us",
     body: [
-      "For questions, feedback, or requests regarding your personal data and PDPA rights, please reach out to us at our official contact page."
+      "For questions, feedback or requests regarding your personal data and PDPA rights, please reach out to us at our official contact page."
     ]
   }
 ];
