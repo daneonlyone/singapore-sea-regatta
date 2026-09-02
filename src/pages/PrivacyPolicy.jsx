@@ -86,7 +86,7 @@ export default function PrivacyPolicy() {
   return (
     <LegalPage
       title="Privacy Policy"
-      intro="This Privacy Policy outlines how your Personal Data will be handled and managed in accordance with the Personal Data Protection Act 2012 (PDPA) of Singapore. This policy describes how Singapore Sea Regatta (referred to as “SSR”, “we,” “us,” or “our”) collects, uses, and discloses your personal information when you interact with us through our website, register for our events, purchase products, or engage with our services."
+      intro="This Privacy Policy outlines how your Personal Data will be handled and managed in accordance with the Personal Data Protection Act 2012 (PDPA) of Singapore. This policy describes how Singapore Sea Regatta (referred to as “SSR”, “we,” “us,” or “our”) collects, uses and discloses your personal information when you interact with us through our website, register for our events, purchase products, or engage with our services."
       sections={SECTIONS}
       effectiveDate="August 1, 2026"
     />
