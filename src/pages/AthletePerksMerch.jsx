@@ -76,7 +76,7 @@ function PrivilegeProgramme() {
         <div className="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {filtered.map((p, i) => (
             <Reveal key={p.id} delay={i * 60}>
-              <div className="glass rounded-2xl p-6 h-full flex flex-col hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
+              <div className="glass card-lift rounded-2xl p-6 h-full flex flex-col">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-[10px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full" style={{ background: "rgba(155,147,255,0.15)", color: "#9b93ff" }}>{p.category}</span>
                   {p.website && <a href={p.website} target="_blank" rel="noreferrer" className="text-muted-foreground hover:text-primary"><ExternalLink className="w-4 h-4" /></a>}
@@ -132,7 +132,7 @@ function Merchandise() {
           {items.map((m, i) => {
             return (
               <Reveal key={m.id} delay={i * 60}>
-                <div className="glass rounded-2xl overflow-hidden h-full flex flex-col group hover:border-primary/30 hover:-translate-y-1 transition-all duration-300">
+                <div className="glass card-lift rounded-2xl overflow-hidden h-full flex flex-col group">
                   <MerchGallery images={m.images || []} alt={m.name} />
                   <div className="p-5 flex flex-col flex-1">
                     <span className="text-[10px] uppercase tracking-widest" style={{ color: "#9b93ff" }}>{m.category}</span>

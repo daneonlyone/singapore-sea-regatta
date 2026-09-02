@@ -3,7 +3,7 @@ import { Image } from "@/components/ui/image";
 // Square photo card for an organising team member.
 export default function TeamMemberCard({ member }) {
   return (
-    <div className="glass rounded-3xl overflow-hidden h-full flex flex-col hover:border-primary/30 transition-colors">
+    <div className="glass card-lift rounded-3xl overflow-hidden h-full flex flex-col">
       <div className="relative aspect-square w-full bg-gradient-to-br from-primary/20 to-ember/10">
         {member.photo ?
         <Image src={member.photo} className="w-full h-full" fittingType="fill" alt={member.name} /> :

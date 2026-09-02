@@ -114,7 +114,7 @@ export default function SSRFestival() {
                       <Reveal key={p.id} delay={i * 60}>
                         <div className="relative">
                           <span className="absolute -left-[18px] sm:-left-[22px] top-5 w-3 h-3 rounded-full gradient-blaze ring-4 ring-background" />
-                          <div className="glass rounded-2xl p-5 hover:border-primary/30 transition-colors">
+                          <div className="glass card-lift rounded-2xl p-5">
                             <div className="flex flex-wrap items-center gap-3">
                               <span className="font-mono text-sm font-bold text-primary">{p.start_time}{p.end_time ? `–${p.end_time}` : ""}</span>
                               <span className="text-[10px] uppercase tracking-widest px-2 py-0.5 rounded-full bg-white/10 text-foreground/70">{p.category}</span>

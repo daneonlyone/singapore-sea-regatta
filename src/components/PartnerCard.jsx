@@ -12,8 +12,10 @@ export default function PartnerCard({ sponsor, featured = false }) {
     <Wrapper
       {...linkProps}
       className={cn(
-        "group relative block rounded-2xl text-center overflow-hidden transition-all duration-400 hover:-translate-y-1 bg-white border border-black/10",
-        featured ? "px-8 py-6 shadow-[0_0_28px_-6px_rgba(255,92,0,0.35)] hover:shadow-[0_0_48px_-4px_rgba(155,147,255,0.85)] hover:border-[#9b93ff]" : "px-5 py-6 hover:border-primary/40"
+        "group relative block rounded-2xl text-center overflow-hidden bg-white border border-black/10",
+        featured
+          ? "px-8 py-6 transition-all duration-400 hover:-translate-y-1 shadow-[0_0_28px_-6px_rgba(255,92,0,0.35)] hover:shadow-[0_0_48px_-4px_rgba(155,147,255,0.85)] hover:border-[#9b93ff]"
+          : "px-5 py-6 card-lift"
       )}
     >
       <span className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

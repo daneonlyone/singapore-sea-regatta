@@ -160,7 +160,7 @@ function RaceInformationInner() {
           {fees.map((f, i) => {
             return (
               <Reveal key={f.id} delay={i * 80}>
-                <div className="glass rounded-2xl p-6 h-full flex flex-col transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl hover:shadow-primary/20">
+                <div className="glass card-lift rounded-2xl p-6 h-full flex flex-col">
                   <h3 className="font-bold text-white">{f.label}</h3>
                   <div className="mt-3 text-3xl font-heading font-black text-gradient-ignite">{f.amount}</div>
                   <div className="text-sm text-muted-foreground">{f.unit}</div>
