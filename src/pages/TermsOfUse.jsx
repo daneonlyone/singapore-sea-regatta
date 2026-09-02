@@ -124,7 +124,7 @@ export default function TermsOfUse() {
   return (
     <LegalPage
       title="Terms of Use"
-      intro="Thank you for visiting Singapore Sea Regatta (referred to as, “SSR”, “we,” “us,” or “our”) website. These Terms of Use (“Terms”) govern your access to and use of the SSR website, services, and events (collectively, the “Services”). By accessing or using our Services, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, you may not access or use the Services."
+      intro="Thank you for visiting Singapore Sea Regatta (referred to as, “SSR”, “we,” “us,” or “our”) website. These Terms of Use (“Terms”) govern your access to and use of the SSR website, services and events (collectively, the “Services”). By accessing or using our Services, you agree to comply with and be bound by these Terms. If you do not agree to these Terms, you may not access or use the Services."
       sections={SECTIONS}
       effectiveDate="August 1, 2026"
     />
