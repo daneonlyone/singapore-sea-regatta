@@ -38,7 +38,7 @@ const SECTIONS = [
       "We may share your personal data with trusted third parties to facilitate our operations, including:",
       [
         "Service Providers: Third-party vendors providing website hosting, payment processing, courier/shipping logistics, email communications and timing/race management. These vendors are contractually bound to keep your data secure and use it solely for specified services.",
-        "Event Partners & Insurers: Co-organisers, medical personnel, and insurance providers where necessary for event safety and execution.",
+        "Event Partners & Insurers: Co-organisers, medical personnel and insurance providers where necessary for event safety and execution.",
         "Legal Requirements: Public authorities or courts if required by law, regulation or court order."
       ]
     ]
