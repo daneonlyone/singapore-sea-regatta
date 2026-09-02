@@ -39,7 +39,7 @@ const SECTIONS = [
       [
         "Service Providers: Third-party vendors providing website hosting, payment processing, courier/shipping logistics, email communications and timing/race management. These vendors are contractually bound to keep your data secure and use it solely for specified services.",
         "Event Partners & Insurers: Co-organisers, medical personnel, and insurance providers where necessary for event safety and execution.",
-        "Legal Requirements: Public authorities or courts if required by law, regulation, or court order."
+        "Legal Requirements: Public authorities or courts if required by law, regulation or court order."
       ]
     ]
   },
