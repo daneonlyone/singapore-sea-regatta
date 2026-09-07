@@ -5,6 +5,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import PlaceholderPanel from "@/components/PlaceholderPanel";
+import PullUpChallenge from "@/components/PullUpChallenge";
 
 const ICONS = {
   "Funds Raised": Coins,
@@ -33,6 +34,10 @@ export default function ImpactSection({ year = "2026" }) {
         <SectionHeading align="center" eyebrow={text.eyebrow} title={text.title} description={text.description} />
 
         <div className="mt-12">
+          <PullUpChallenge year={year} />
+        </div>
+
+        <div className="mt-6">
           {metrics === null ? null : metrics.length === 0 ? (
             <PlaceholderPanel
               icon={HeartHandshake}
