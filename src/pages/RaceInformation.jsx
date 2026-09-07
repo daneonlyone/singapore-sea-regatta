@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { Calendar, Clock, FileText, Download, ChevronDown, CheckCircle2, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Calendar, Clock, Download, ChevronDown, CheckCircle2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
@@ -77,9 +78,15 @@ function RaceInformationInner() {
             <div className="flex items-center gap-4 mb-6">
               <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png" alt="Head Above Water" className="h-24 sm:h-28 lg:h-32 object-contain" />
             </div>
-            <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>2026 · Head Above Water</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff" }}>2026 · Head Above Water · Concluded</span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Race Information</h1>
-            <p className="mt-4 max-w-2xl text-foreground/70" style={{ fontFamily: "Poppins, sans-serif" }}>Everything athletes and team managers need — timelines, categories, fees, special races, registration and FAQs.</p>
+            <p className="mt-4 max-w-2xl text-foreground/70">
+              The full 2026 race programme, kept here as a record — timelines, categories, fees, special races and FAQs. Registration for this edition has closed;{" "}
+              <Link to="/results-2026#next-edition" className="text-white font-semibold underline decoration-primary/60 underline-offset-4 hover:decoration-primary">
+                register your interest for 2027
+              </Link>{" "}
+              to hear first when the next edition opens.
+            </p>
           </Reveal>
         </div>
       </section>
@@ -88,7 +95,7 @@ function RaceInformationInner() {
       {/* <StickyNav /> */}
 
       {/* EVENT TIMELINE */}
-      <Section id="timeline" eyebrow="Event Timeline" title="Key dates at a glance">
+      <Section id="timeline" eyebrow="Event Timeline" title="How the 2026 season ran" description="The key dates that shaped the 2026 edition, from expression of interest through to race weekend.">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
           {TIMELINE.map((m, i) => (
             <Reveal key={m.month} delay={i * 100}>
@@ -112,7 +119,7 @@ function RaceInformationInner() {
       </Section>
 
       {/* RACE CATEGORIES */}
-      <Section id="categories" eyebrow="Race Categories" title="Find your race" description="Filter by day, session, boat class or division. Categories are subject to change depending on final registration numbers.">
+      <Section id="categories" eyebrow="Race Categories" title="The 2026 race programme" description="Filter by day, session, boat class or division to see how the 2026 categories were run.">
         <Reveal>
           <div className="flex flex-wrap gap-2 mb-8">
             {TABS.map((t) => (
@@ -162,7 +169,7 @@ function RaceInformationInner() {
       </Section>
 
       {/* RACE FEES */}
-      <Section id="fees" eyebrow="Race Fees" title="Transparent pricing" description="All prices are inclusive of GST where applicable.">
+      <Section id="fees" eyebrow="Race Fees" title="2026 pricing" description="The fees that applied to the 2026 edition, inclusive of GST where applicable. 2027 pricing will be confirmed closer to the next edition.">
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {fees.map((f, i) => {
             return (
@@ -216,7 +223,7 @@ function RaceInformationInner() {
       </Section>
 
       {/* QUICK LINKS */}
-      <Section id="quick-links" eyebrow="Quick Links" title="Everything in one place">
+      <Section id="quick-links" eyebrow="Quick Links" title="2026 documents & portals" description="Reference material from the 2026 edition. Registration for 2026 has closed.">
         <div>
           <Reveal delay={120}>
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3">

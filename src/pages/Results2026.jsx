@@ -11,6 +11,8 @@ import PodiumCard from "@/components/PodiumCard";
 import PlaceholderPanel from "@/components/PlaceholderPanel";
 import ImpactSection from "@/components/ImpactSection";
 import NextEditionSection from "@/components/NextEditionSection";
+import SkeletonGrid from "@/components/SkeletonGrid";
+import { Image } from "@/components/ui/image";
 
 const STAT_ICONS = { Athletes: Users, "Participating Teams": Trophy, "Community Partners": Handshake, "Festival Visitors": Ticket };
 const FILTERS = ["All", "Special Races", "DB12", "DB22", "DB6"];
@@ -58,10 +60,11 @@ function Results2026Inner() {
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>
             <div className="mb-6">
-              <img
+              <Image
                 src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png"
-                alt="Head Above Water 2026"
-                className="h-24 sm:h-28 lg:h-32 object-contain"
+                alt="Head Above Water 2026 campaign logo"
+                fittingType="fit"
+                className="h-24 sm:h-28 lg:h-32 w-64"
               />
             </div>
             <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff" }}>
@@ -148,7 +151,7 @@ function Results2026Inner() {
           )}
 
           <div className="mt-10">
-            {results === null ? null : results.length === 0 ? (
+            {results === null ? <SkeletonGrid count={6} /> : results.length === 0 ? (
               <PlaceholderPanel
                 icon={Trophy}
                 title="Results coming soon"

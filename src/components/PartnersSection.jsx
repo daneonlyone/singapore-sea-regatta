@@ -14,7 +14,7 @@ const TIER_ORDER = [
   "Other Sponsors"
 ];
 
-export default function PartnersSection({ sponsors }) {
+export default function PartnersSection({ sponsors, cta }) {
   const tiers = TIER_ORDER
     .map((tier) => ({ tier, items: sponsors.filter((s) => s.tier === tier) }))
     .filter((t) => t.items.length);
@@ -30,6 +30,8 @@ export default function PartnersSection({ sponsors }) {
           eyebrow="Our Partners"
           title={<>Powered by a <span className="text-gradient-ignite">community</span></>}
           description="From title sponsor to community supporters — the organisations propelling Singapore Sea Regatta forward." />
+
+        {cta && <Reveal className="mt-8 text-center" delay={100}>{cta}</Reveal>}
 
         {title && (
           <Reveal className="mt-14">

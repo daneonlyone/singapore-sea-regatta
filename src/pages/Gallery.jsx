@@ -7,6 +7,7 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import GalleryGrid from "@/components/GalleryGrid";
 import PlaceholderPanel from "@/components/PlaceholderPanel";
+import SkeletonGrid from "@/components/SkeletonGrid";
 
 const CATS = ["All", "Races", "Festival", "Winners", "Candid"];
 
@@ -62,7 +63,7 @@ export default function Gallery() {
           )}
 
           <div className="mt-10">
-            {items === null ? null : items.length === 0 ? (
+            {items === null ? <SkeletonGrid count={9} height="h-56" /> : items.length === 0 ? (
               <PlaceholderPanel
                 icon={Images}
                 title="Gallery coming soon"

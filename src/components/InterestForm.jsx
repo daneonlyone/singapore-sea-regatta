@@ -71,6 +71,10 @@ export default function InterestForm() {
         {state === "saving" ? <Loader2 className="w-4 h-4 animate-spin" /> : <Send className="w-4 h-4" />}
         {state === "saving" ? "Sending..." : "Register My Interest"}
       </button>
+
+      <p className="mt-3 text-xs text-muted-foreground">
+        We'll only use these details to keep you posted on Singapore Sea Regatta 2027 — never shared with anyone else.
+      </p>
     </form>
   );
 }

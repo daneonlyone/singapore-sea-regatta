@@ -33,7 +33,7 @@ export default function Home() {
   const [statsText, setStatsText] = useState({
     eyebrow: "SSR At A Glance",
     title: "Making waves at Marina Bay",
-    description: "This September, athletes, partners and the wider community come together for two unforgettable days of racing, purpose and connection."
+    description: "This September, athletes, partners and the wider community came together for two unforgettable days of racing, purpose and connection."
   });
 
   useEffect(() => {
@@ -68,6 +68,9 @@ export default function Home() {
               SINGAPORE<br />
               <span className="text-gradient-ignite">SEA REGATTA</span>
             </h1>
+            <p className="mt-4 max-w-2xl text-base sm:text-lg font-medium text-white/80">
+              Singapore's premier international dragon boat race and community festival at Marina Bay.
+            </p>
           </Reveal>
           <Reveal delay={240}>
             <p className="mt-6 text-xl sm:text-2xl font-heading font-semibold text-white">Thank you for paddling with us.</p>
@@ -111,7 +114,7 @@ export default function Home() {
             </Reveal>
             <div>
               <SectionHeading
-                eyebrow="The Master Brand"
+                eyebrow="Who We Are"
                 title={<>One regatta. <span className="text-gradient-ignite">Many currents.</span></>}
                 description="Singapore Sea Regatta brings together dragon boat athletes, healthcare institutions, corporate partners, community organisations and members of the public — channelling the power of sport into health advocacy and social impact." />
               
@@ -241,13 +244,14 @@ export default function Home() {
               {timeline.map((e, i) => {
                 const isCurrent = e.is_current;
                 const color = e.color_primary;
-                const Wrapper = isCurrent ? Link : "div";
-                const wrapperProps = isCurrent ? { to: editionLink(e) } : {};
+                // Every edition — current and archived — links through to its own page.
+                const Wrapper = Link;
+                const wrapperProps = { to: editionLink(e) };
                 return (
                   <Reveal key={e.id} delay={i * 150}>
                     <Wrapper {...wrapperProps} className="block group h-full">
                       <div
-                        className={`relative rounded-2xl p-6 h-full bg-[#080808] border transition-all duration-400 ${isCurrent ? "group-hover:-translate-y-1" : ""}`}
+                        className="relative rounded-2xl p-6 h-full bg-[#080808] border transition-all duration-400 group-hover:-translate-y-1"
                         style={{ borderColor: isCurrent ? "rgba(255,255,255,0.28)" : "rgba(255,255,255,0.12)" }}>
                         
                         <div className="flex items-start justify-between gap-3 mb-3">
@@ -307,15 +311,17 @@ export default function Home() {
 
       {/* ===== PARTNERS ===== */}
       <div id="partners" className="scroll-mt-24">
-        <PartnersSection sponsors={sponsors} />
-        <div className="mx-auto max-w-7xl px-6 -mt-10 text-center">
-          <Link
-            to="/partners"
-            className="inline-flex items-center gap-2 glass text-white text-sm font-semibold px-5 py-3 rounded-xl hover:border-primary/40 hover:-translate-y-0.5 transition-all"
-          >
-            Partner with us in 2027 <ArrowUpRight className="w-4 h-4" />
-          </Link>
-        </div>
+        <PartnersSection
+          sponsors={sponsors}
+          cta={
+            <Link
+              to="/partners"
+              className="inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-primary/25 hover:-translate-y-0.5 transition-all"
+            >
+              Partner with us in 2027 <ArrowUpRight className="w-4 h-4" />
+            </Link>
+          }
+        />
       </div>
 
       {/* ===== 2027 EXPRESSION OF INTEREST ===== */}

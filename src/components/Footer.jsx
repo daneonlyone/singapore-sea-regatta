@@ -19,6 +19,8 @@ const PREV = [
   { label: "Pink Wave 2024", to: "/pink-wave-2024" }
 ];
 
+const QUICK_EXTRA = { label: "Register Interest for 2027", to: "/results-2026#next-edition" };
+
 export default function Footer() {
   return (
     <footer className="relative mt-24 border-t border-white/5 bg-black">
@@ -40,7 +42,7 @@ export default function Footer() {
           <div className="lg:col-span-3">
             <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
-              {QUICK.map((l) => (
+              {[...QUICK, QUICK_EXTRA].map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-sm text-foreground/70 hover:text-white transition-colors inline-flex items-center gap-1 group">
                     {l.label}
@@ -52,8 +54,8 @@ export default function Footer() {
           </div>
 
           {/* Previous years */}
-          <div className="hidden lg:col-span-2">
-            <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Previous Years</h4>
+          <div className="lg:col-span-2">
+            <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Previous Editions</h4>
             <ul className="space-y-2.5">
               {PREV.map((l) => (
                 <li key={l.to}>
