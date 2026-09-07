@@ -5,6 +5,8 @@ import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import FeeCalculator from "@/components/FeeCalculator";
+import ConcludedBanner from "@/components/ConcludedBanner";
+import usePageMeta from "@/hooks/use-page-meta";
 
 const TIMELINE = [
   { month: "February", items: [{ d: "15", t: "Expression of Interest Opens" }, { d: "17", t: "Expression of Interest Closes" }] },
@@ -18,8 +20,13 @@ const TIMELINE = [
 const TABS = ["Day 1", "Day 2", "Morning", "Afternoon", "DB12", "DB22", "DB6", "Open", "Women", "Mixed", "Invitational"];
 
 export default function RaceInformation() {
+  usePageMeta({
+    title: "Race Information 2026",
+    description: "Race categories, fees, timelines and FAQs for Head Above Water — the 2026 Singapore Sea Regatta at Marina Bay."
+  });
   return (
     <div className="haw-theme">
+      <ConcludedBanner year="2026" label="race programme" />
       <RaceInformationInner />
     </div>
   );
@@ -63,7 +70,7 @@ function RaceInformationInner() {
   return (
     <div>
       {/* HERO */}
-      <section id="hero" className="relative pt-32 pb-12 overflow-hidden scroll-mt-24">
+      <section id="hero" className="relative pt-12 pb-12 overflow-hidden scroll-mt-24">
         <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(37,3,45,0.7) 0%, transparent 100%)" }} />
         <div className="relative mx-auto max-w-7xl px-6">
           <Reveal>

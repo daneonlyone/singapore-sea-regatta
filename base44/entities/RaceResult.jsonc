@@ -1,0 +1,76 @@
+{
+  "name": "RaceResult",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string",
+      "description": "Edition year e.g. 2026"
+    },
+    "category_name": {
+      "type": "string",
+      "description": "Full race category name e.g. DB12 Open"
+    },
+    "boat": {
+      "type": "string",
+      "enum": [
+        "DB12",
+        "DB22",
+        "DB6"
+      ],
+      "description": "Boat class"
+    },
+    "division": {
+      "type": "string",
+      "description": "Open, Women, Mixed, Invitational, Premier, etc."
+    },
+    "is_special": {
+      "type": "boolean",
+      "default": false,
+      "description": "Tick for signature / special races"
+    },
+    "position": {
+      "type": "number",
+      "description": "1 = Champion, 2 = 2nd, 3 = 3rd"
+    },
+    "team_name": {
+      "type": "string",
+      "description": "Winning team / crew name"
+    },
+    "country": {
+      "type": "string",
+      "description": "Optional country or club"
+    },
+    "time": {
+      "type": "string",
+      "description": "Finish time e.g. 1:02.45"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "category_name",
+    "position",
+    "team_name"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

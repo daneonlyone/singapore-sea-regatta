@@ -1,0 +1,58 @@
+{
+  "name": "InterestSubmission",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "team_name": {
+      "type": "string",
+      "description": "Team, club or organisation"
+    },
+    "interest_type": {
+      "type": "string",
+      "enum": [
+        "Team Registration",
+        "Sponsorship",
+        "Festival Booth",
+        "Volunteering",
+        "General Updates"
+      ],
+      "description": "What they are interested in for 2027"
+    },
+    "message": {
+      "type": "string"
+    },
+    "edition": {
+      "type": "string",
+      "default": "2027",
+      "description": "Target edition"
+    }
+  },
+  "required": [
+    "name",
+    "email",
+    "interest_type"
+  ],
+  "rls": {
+    "create": null,
+    "read": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

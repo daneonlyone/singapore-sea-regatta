@@ -8,6 +8,9 @@ const QUICK = [
   { label: "Race Information", to: "/race-information" },
   { label: "SSR Festival", to: "/ssr-festival" },
   { label: "Athlete Perks & Merch", to: "/athlete-perks-merch" },
+  { label: "2026 Results & Recap", to: "/results-2026" },
+  { label: "Gallery", to: "/gallery" },
+  { label: "Partners & Sponsorship", to: "/partners" },
   { label: "About SSR", to: "/about-ssr" }
 ];
 
@@ -62,12 +65,12 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="lg:col-span-3">
-            <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Current Edition</h4>
+            <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Latest Edition</h4>
             <div className="space-y-3 text-sm text-foreground/70">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-primary mt-0.5 shrink-0" />
                 <div>
-                  <div className="text-white font-medium">5 – 6 September 2026</div>
+                  <div className="text-white font-medium">5 – 6 September 2026 · Concluded</div>
                   <div>Bayfront Event Space, Marina Bay</div>
                 </div>
               </div>

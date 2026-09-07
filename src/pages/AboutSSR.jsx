@@ -7,12 +7,19 @@ import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import TeamMemberCard from "@/components/TeamMemberCard";
 import { Image } from "@/components/ui/image";
+import usePageMeta from "@/hooks/use-page-meta";
 
 const DEFAULT_INTRO = "Imagine the thunderous roar of paddles slicing through water, the synchronized power of a dragon boat crew propelling their vessel forward with relentless determination. This is no ordinary race; it's a vibrant, adrenaline-charged celebration of strength, unity, and resilience. Welcome to the Singapore Sea Regatta, where the traditional sport of dragonboating transcends mere competition to become a dynamic platform for promoting crucial health messages. In SSR, the spirit of the dragonboat not only embodies physical fitness and teamwork but also serves as a beacon of hope and awareness for mental health, cancer prevention, and community well-being. Through the rhythmic harmony of paddling, SSR creates a powerful synergy, merging the thrill of the sport with life-saving health advocacy in an unparalleled, transformative experience.";
 
 const ABOUT_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/dcf6bf66e_generated_60c2473b.png";
 
 export default function AboutSSR() {
+  usePageMeta({
+    title: "About Singapore Sea Regatta",
+    description: "The story, mission and organising team behind Singapore Sea Regatta — dragon boat racing as a platform for health advocacy and community impact.",
+    image: ABOUT_IMG
+  });
+
   const [team, setTeam] = useState([]);
   const [intro, setIntro] = useState(null);
 
@@ -24,7 +31,7 @@ export default function AboutSSR() {
       {/* HERO */}
       <section id="hero" className="relative min-h-[60vh] flex items-end overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
-          <Image src={ABOUT_IMG} className="w-full h-full object-cover" fittingType="fill" />
+          <Image src={ABOUT_IMG} alt="Dragon boat crews racing at Marina Bay" className="w-full h-full object-cover" fittingType="fill" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-black/60 to-black/30" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 w-full pb-16 pt-28">
@@ -53,7 +60,7 @@ export default function AboutSSR() {
             </div>
             <Reveal>
               <div className="aspect-[4/3] rounded-3xl overflow-hidden">
-                <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/09347cdea_DSC02625.JPG" className="w-full h-full object-cover" fittingType="fill" />
+                <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/09347cdea_DSC02625.JPG" alt="Paddlers in action during a Singapore Sea Regatta heat" className="w-full h-full object-cover" fittingType="fill" />
               </div>
             </Reveal>
           </div>
@@ -204,8 +211,8 @@ export default function AboutSSR() {
           </div>
           <Reveal>
             <div className="mt-10 text-center">
-              <Link to="/head-above-water-2026" className="inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5 transition-all">
-                Explore Head Above Water 2026 <ArrowRight className="w-4 h-4" />
+              <Link to="/results-2026" className="inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5 transition-all">
+                See the 2026 Results &amp; Recap <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </Reveal>

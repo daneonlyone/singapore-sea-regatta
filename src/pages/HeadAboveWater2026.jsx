@@ -5,6 +5,8 @@ import { ArrowRight, Calendar, Clock, MapPin, Users, Info, Ruler, FileText, Shop
 import { Image } from "@/components/ui/image";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
+import ConcludedBanner from "@/components/ConcludedBanner";
+import usePageMeta from "@/hooks/use-page-meta";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/211fa28ed_background4x.png";
 const CAUSE_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/7f82390ed_generated_46f74eb8.png";
@@ -27,6 +29,12 @@ const PLUM = "#25032d";
 const LAVENDER = "#9b93ff";
 
 export default function HeadAboveWater2026() {
+  usePageMeta({
+    title: "Head Above Water 2026",
+    description: "IHH Healthcare × Singapore Sea Regatta 2026 — dragon boat racing at Marina Bay championing dementia awareness and caregiver support.",
+    image: HERO_IMG
+  });
+
   const [goh, setGoh] = useState({});
 
   useEffect(() => {
@@ -38,7 +46,7 @@ export default function HeadAboveWater2026() {
       {/* HERO — plum cinematic */}
       <section id="hero" className="relative min-h-[90vh] flex items-center overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
-          <Image src={HERO_IMG} className="w-full h-full object-cover" fittingType="fill" />
+          <Image src={HERO_IMG} alt="Head Above Water 2026 campaign artwork" className="w-full h-full object-cover" fittingType="fill" />
           {/* Moonlit Plum overlay matching brand */}
           <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(37,3,45,0.85) 0%, rgba(37,3,45,0.6) 50%, #050505 100%)" }} />
           <div className="absolute inset-0" style={{ background: "linear-gradient(to right, rgba(37,3,45,0.9) 0%, transparent 70%)" }} />
@@ -102,6 +110,10 @@ export default function HeadAboveWater2026() {
           </Reveal>
         </div>
       </section>
+
+      <div className="relative -mt-6 pb-4">
+        <ConcludedBanner year="2026" label="edition" />
+      </div>
 
       {/* ABOUT THE 2026 EDITION */}
       <section id="about" className="relative py-24 scroll-mt-24" style={{ background: "linear-gradient(to bottom, #050505, rgba(37,3,45,0.3), #050505)" }}>

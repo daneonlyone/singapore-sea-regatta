@@ -9,7 +9,8 @@ const NAV = [
   { label: "Head Above Water 2026", to: "/head-above-water-2026" },
   { label: "Race Info", to: "/race-information" },
   { label: "SSR Festival", to: "/ssr-festival" },
-  { label: "Athlete Perks & Merch", to: "/athlete-perks-merch" },
+  { label: "Results & Recap", to: "/results-2026" },
+  { label: "Gallery", to: "/gallery" },
   { label: "About SSR", to: "/about-ssr" }
 ];
 
@@ -86,10 +87,10 @@ export default function Header() {
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-2">
             <Link
-              to="/race-information"
+              to="/results-2026"
               className="hidden sm:inline-flex items-center gap-1.5 gradient-blaze text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
             >
-              View Race Information
+              2026 Results &amp; Recap
               <ArrowUpRight className="w-4 h-4" />
             </Link>
             <button
@@ -120,6 +121,9 @@ export default function Header() {
           <Link to="/race-information" className="mobile-nav-item">Race Info</Link>
           <Link to="/ssr-festival" className="mobile-nav-item">SSR Festival</Link>
           <Link to="/athlete-perks-merch" className="mobile-nav-item">Athlete Perks & Merch</Link>
+          <Link to="/results-2026" className="mobile-nav-item">Results & Recap</Link>
+          <Link to="/gallery" className="mobile-nav-item">Gallery</Link>
+          <Link to="/partners" className="mobile-nav-item">Partners</Link>
           <Link to="/about-ssr" className="mobile-nav-item">About SSR</Link>
 
           <button
@@ -143,8 +147,8 @@ export default function Header() {
             </div>
           </div>
 
-          <Link to="/race-information" className="mt-4 gradient-blaze text-white text-center font-semibold px-4 py-3.5 rounded-xl">
-            View Race Information
+          <Link to="/results-2026" className="mt-4 gradient-blaze text-white text-center font-semibold px-4 py-3.5 rounded-xl">
+            2026 Results &amp; Recap
           </Link>
         </div>
       </div>

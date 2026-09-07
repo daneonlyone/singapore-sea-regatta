@@ -1,0 +1,72 @@
+{
+  "name": "GalleryItem",
+  "type": "object",
+  "properties": {
+    "year": {
+      "type": "string",
+      "description": "Edition year e.g. 2026"
+    },
+    "title": {
+      "type": "string",
+      "description": "Short caption"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "Races",
+        "Festival",
+        "Candid",
+        "Winners"
+      ],
+      "description": "Gallery filter group"
+    },
+    "media_type": {
+      "type": "string",
+      "enum": [
+        "Photo",
+        "Video"
+      ],
+      "default": "Photo"
+    },
+    "image": {
+      "type": "string",
+      "format": "file",
+      "description": "Upload the photo (or a video thumbnail)"
+    },
+    "video_url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Optional YouTube / Vimeo link for videos"
+    },
+    "credit": {
+      "type": "string",
+      "description": "Optional photographer credit"
+    },
+    "order": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "year",
+    "category"
+  ],
+  "rls": {
+    "create": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "read": null,
+    "update": {
+      "user_condition": {
+        "role": "admin"
+      }
+    },
+    "delete": {
+      "user_condition": {
+        "role": "admin"
+      }
+    }
+  }
+}

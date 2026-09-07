@@ -7,6 +7,8 @@ import SectionHeading from "@/components/SectionHeading";
 import BoothDirectory from "@/components/BoothDirectory";
 import FestivalMap from "@/components/FestivalMap";
 import { Image } from "@/components/ui/image";
+import ConcludedBanner from "@/components/ConcludedBanner";
+import usePageMeta from "@/hooks/use-page-meta";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/71427b403_generated_6f71a2fa.png";
 const CAT_ICONS = { Performance: Music, Workshop: Sparkles, "Panel Talk": Heart, Wellness: Heart, Race: Calendar, Kids: Baby };
@@ -14,6 +16,12 @@ const CAT_ICONS = { Performance: Music, Workshop: Sparkles, "Panel Talk": Heart,
 const FILTERS = ["All", "Performance", "Workshop", "Panel Talk", "Wellness", "Race"];
 
 export default function SSRFestival() {
+  usePageMeta({
+    title: "SSR Festival 2026",
+    description: "Food, retail, wellness, performances and educational booths at the Singapore Sea Regatta Festival, Marina Bay.",
+    image: HERO_IMG
+  });
+
   const [programme, setProgramme] = useState([]);
   const [filter, setFilter] = useState("All");
   const [activeDay, setActiveDay] = useState(null);
@@ -32,7 +40,7 @@ export default function SSRFestival() {
       {/* HERO */}
       <section id="hero" className="relative min-h-[70vh] flex items-end overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
-          <Image src={HERO_IMG} className="w-full h-full object-cover" fittingType="fill" />
+          <Image src={HERO_IMG} alt="Crowds enjoying the SSR Festival zone at Marina Bay" className="w-full h-full object-cover" fittingType="fill" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-black/60 to-black/40" />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6 w-full pb-16 pt-28">
@@ -46,6 +54,10 @@ export default function SSRFestival() {
           </Reveal>
         </div>
       </section>
+
+      <div className="relative -mt-8 pb-4">
+        <ConcludedBanner year="2026" label="festival" />
+      </div>
 
       {/* ABOUT FESTIVAL */}
       <section id="about" className="relative py-20 scroll-mt-24">

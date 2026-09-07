@@ -5,15 +5,26 @@ import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import { Image } from "@/components/ui/image";
+import GalleryGrid from "@/components/GalleryGrid";
+import PlaceholderPanel from "@/components/PlaceholderPanel";
+import usePageMeta from "@/hooks/use-page-meta";
 
 // Reusable retrospective layout for archived editions. Styled per-edition via the EventYear record.
 export default function PastEdition({ year }) {
   const [edition, setEdition] = useState(null);
   const [sponsors, setSponsors] = useState([]);
   const [stats, setStats] = useState([]);
+  const [media, setMedia] = useState([]);
+
+  usePageMeta({
+    title: edition ? `${edition.campaign_short || edition.campaign_name} ${year}` : `${year} Archive`,
+    description: edition?.summary,
+    image: edition?.hero_image
+  });
 
   useEffect(() => {
     base44.entities.Statistic.filter({ year }, "order", 50).then(setStats).catch(() => {});
+    base44.entities.GalleryItem.filter({ year }, "order", 60).then(setMedia).catch(() => {});
     base44.entities.EventYear.list("order", 50).then((all) => {
       setEdition(all.find((e) => e.year === year) || all[0]);
     }).catch(() => {});
@@ -43,7 +54,7 @@ export default function PastEdition({ year }) {
       {/* HERO */}
       <section id="hero" className="relative min-h-[80vh] flex items-end overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
-          {edition.hero_image && <Image src={edition.hero_image} className="w-full h-full object-cover" fittingType="fill" />}
+          {edition.hero_image && <Image src={edition.hero_image} alt={`${edition.campaign_short || edition.campaign_name} ${edition.year} hero`} className="w-full h-full object-cover" fittingType="fill" />}
           <div className="absolute inset-0 bg-gradient-to-t from-background via-black/60 to-black/30" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent" />
         </div>
@@ -123,13 +134,22 @@ export default function PastEdition({ year }) {
         <div className="mx-auto max-w-7xl px-6">
           <SectionHeading eyebrow="Photo & Video Highlights" title="Moments from the water" />
           <Reveal>
-            <div className="mt-8 grid grid-cols-2 md:grid-cols-3 gap-3">
-              {[1,2,3,4,5,6].map((n) => (
-                <div key={n} className="aspect-[4/3] rounded-2xl glass overflow-hidden flex items-center justify-center group hover:border-primary/30 transition-colors">
-                  <Image src={edition.hero_image} className="w-full h-full object-cover opacity-60 group-hover:opacity-80 transition-opacity" fittingType="fill" />
-                  <div className="absolute inset-0 flex items-center justify-center text-xs text-white/50">Gallery coming soon</div>
-                </div>
-              ))}
+            <div className="mt-8">
+              {media.length > 0 ? (
+                <>
+                  <GalleryGrid items={media} />
+                  <div className="mt-6 text-center">
+                    <Link to="/gallery" className="inline-flex items-center gap-2 glass text-white text-sm font-semibold px-5 py-3 rounded-xl hover:border-primary/40 transition-all">
+                      View the full gallery <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
+                </>
+              ) : (
+                <PlaceholderPanel
+                  title="Highlights coming soon"
+                  body={`Photos and videos from the ${year} edition will appear here once our team has finished curating them.`}
+                />
+              )}
             </div>
           </Reveal>
         </div>
@@ -154,11 +174,11 @@ export default function PastEdition({ year }) {
         <div className="mx-auto max-w-5xl px-6">
           <Reveal>
             <div className="glass-blaze rounded-3xl p-8 sm:p-12 text-center">
-              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Current Edition</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.25em] text-primary">Latest Edition</span>
               <h3 className="mt-3 text-3xl font-bold text-white">Head Above Water 2026</h3>
-              <p className="mt-2 text-foreground/70 max-w-md mx-auto">The Singapore Sea Regatta continues. Join us at the next edition.</p>
-              <Link to="/head-above-water-2026" className="mt-6 inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5 transition-all">
-                Explore Head Above Water 2026 <ArrowRight className="w-4 h-4" />
+              <p className="mt-2 text-foreground/70 max-w-md mx-auto">The Singapore Sea Regatta continues — see how the 2026 edition finished, then join us in 2027.</p>
+              <Link to="/results-2026" className="mt-6 inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5 transition-all">
+                See the 2026 Results &amp; Recap <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </Reveal>

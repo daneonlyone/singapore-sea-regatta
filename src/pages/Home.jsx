@@ -5,8 +5,12 @@ import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
-import Countdown from "@/components/Countdown";
+import RecapPanel from "@/components/RecapPanel";
+import ImpactSection from "@/components/ImpactSection";
+import NextEditionSection from "@/components/NextEditionSection";
 import PartnersSection from "@/components/PartnersSection";
+import LazySection from "@/components/LazySection";
+import usePageMeta from "@/hooks/use-page-meta";
 import { Image } from "@/components/ui/image";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/eebc986ff_generated_b13211d1.png";
@@ -17,6 +21,12 @@ const FESTIVAL_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514
 const STAT_ICONS = { Athletes: Users, "Participating Teams": Trophy, "Community Partners": Handshake, "Festival Visitors": Ticket };
 
 export default function Home() {
+  usePageMeta({
+    title: "Paddle With A Purpose",
+    description: "Singapore's premier international dragon boat race and community festival. Head Above Water 2026 has concluded — explore the results, gallery and 2026 impact at Marina Bay.",
+    image: HERO_IMG
+  });
+
   const [editions, setEditions] = useState([]);
   const [stats, setStats] = useState([]);
   const [sponsors, setSponsors] = useState([]);
@@ -41,7 +51,7 @@ export default function Home() {
       {/* ===== HERO ===== */}
       <section id="hero" className="relative min-h-screen flex items-center overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
-          <Image src={HERO_IMG} className="w-full h-full object-cover" fittingType="fill" />
+          <Image src={HERO_IMG} alt="Dragon boat crews racing on Marina Bay at the Singapore Sea Regatta" className="w-full h-full object-cover" fittingType="fill" />
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-background" />
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-transparent to-black/40" />
         </div>
@@ -50,7 +60,7 @@ export default function Home() {
           <Reveal>
             <span className="inline-flex items-center gap-2 glass px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-[0.2em] text-white">
               <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
-              Marina Bay · Singapore
+              2026 Edition Concluded · Marina Bay
             </span>
           </Reveal>
           <Reveal delay={120}>
@@ -60,19 +70,19 @@ export default function Home() {
             </h1>
           </Reveal>
           <Reveal delay={240}>
-            <p className="mt-6 text-xl sm:text-2xl font-heading font-semibold text-white">Paddle With A Purpose</p>
+            <p className="mt-6 text-xl sm:text-2xl font-heading font-semibold text-white">Thank you for paddling with us.</p>
             <p className="mt-3 max-w-xl text-base sm:text-lg text-foreground/70 leading-relaxed">
-              Singapore's premier international dragon boat race and community festival — uniting sport, health and purpose at Marina Bay.
+              Head Above Water 2026 is a wrap — two days of racing, festival and purpose at Marina Bay. Relive the champions, the moments and the impact we made together.
             </p>
           </Reveal>
           <Reveal delay={360}>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link to="/head-above-water-2026" className="group btn-haw inline-flex items-center gap-2 text-white font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5">
-                Explore Head Above Water 2026
+              <Link to="/results-2026" className="group btn-haw inline-flex items-center gap-2 text-white font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5">
+                See the 2026 Results &amp; Recap
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link to="/about-ssr" className="inline-flex items-center gap-2 glass text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/20 hover:-translate-y-0.5 transition-all">
-                Discover Singapore Sea Regatta
+              <Link to="/gallery" className="inline-flex items-center gap-2 glass text-white font-semibold px-6 py-3.5 rounded-xl hover:border-white/20 hover:-translate-y-0.5 transition-all">
+                Browse the Gallery
               </Link>
             </div>
           </Reveal>
@@ -91,7 +101,7 @@ export default function Home() {
             <Reveal>
               <div className="relative">
                 <div className="aspect-[4/5] rounded-3xl overflow-hidden">
-                  <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/81415c754_Singapore_Sea_Regatta_2025-1077.jpg" className="w-full h-full object-cover" fittingType="fill" />
+                  <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/81415c754_Singapore_Sea_Regatta_2025-1077.jpg" alt="Paddlers celebrating at the Singapore Sea Regatta" className="w-full h-full object-cover" fittingType="fill" />
                 </div>
                 
 
@@ -134,7 +144,7 @@ export default function Home() {
             <div className="relative rounded-[2rem] overflow-hidden glass-blaze">
               <div className="grid lg:grid-cols-2">
                 <div className="relative min-h-[420px] lg:min-h-[560px]">
-                  <Image src={CAMPAIGN_IMG} className="absolute inset-0 w-full h-full object-cover" fittingType="fill" />
+                  <Image src={CAMPAIGN_IMG} alt="Head Above Water 2026 campaign key visual" className="absolute inset-0 w-full h-full object-cover" fittingType="fill" />
                   <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/80 via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-black/40" />
                   <div className="absolute top-6 left-6 glass-blaze rounded-full px-4 py-1.5 text-xs font-semibold text-white">
                     IHH Healthcare × Singapore Sea Regatta
@@ -155,7 +165,7 @@ export default function Home() {
                   </div>
 
                   <div className="mt-8">
-                    <Countdown />
+                    <RecapPanel />
                   </div>
 
                   <div className="mt-8 flex flex-wrap gap-3">
@@ -290,10 +300,28 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== IMPACT ===== */}
+      <LazySection>
+        <ImpactSection year="2026" />
+      </LazySection>
+
       {/* ===== PARTNERS ===== */}
       <div id="partners" className="scroll-mt-24">
         <PartnersSection sponsors={sponsors} />
+        <div className="mx-auto max-w-7xl px-6 -mt-10 text-center">
+          <Link
+            to="/partners"
+            className="inline-flex items-center gap-2 glass text-white text-sm font-semibold px-5 py-3 rounded-xl hover:border-primary/40 hover:-translate-y-0.5 transition-all"
+          >
+            Partner with us in 2027 <ArrowUpRight className="w-4 h-4" />
+          </Link>
+        </div>
       </div>
+
+      {/* ===== 2027 EXPRESSION OF INTEREST ===== */}
+      <LazySection minHeight={600}>
+        <NextEditionSection />
+      </LazySection>
     </div>);
 
 }
@@ -313,7 +341,7 @@ function DualPanel({ img, tag, title, desc, to, cta }) {
   return (
     <Reveal>
       <Link to={to} className="group block relative rounded-3xl overflow-hidden h-[440px]">
-        <Image src={img} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" fittingType="fill" />
+        <Image src={img} alt={`${tag} — ${title}`} className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" fittingType="fill" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
         <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-3xl" />
         <div className="absolute bottom-0 left-0 right-0 p-8">

@@ -1,7 +1,10 @@
 import Reveal from "@/components/Reveal";
+import usePageMeta from "@/hooks/use-page-meta";
 
 // Shared layout for legal pages: title, effective date, and titled sections.
 export default function LegalPage({ title, intro, sections, effectiveDate }) {
+  usePageMeta({ title, description: typeof intro === "string" ? intro.slice(0, 160) : undefined });
+
   return (
     <div className="pt-32 pb-24">
       <div className="mx-auto max-w-3xl px-6">

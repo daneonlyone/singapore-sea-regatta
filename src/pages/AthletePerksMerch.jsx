@@ -5,10 +5,16 @@ import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import MerchGallery from "@/components/MerchGallery";
+import usePageMeta from "@/hooks/use-page-meta";
 
 const PERK_CATS = ["All", "Fitness", "Recovery", "Food & Beverage", "Wellness", "Retail", "Lifestyle"];
 
 export default function AthletePerksMerch() {
+  usePageMeta({
+    title: "Athlete Perks & Merchandise",
+    description: "Official Singapore Sea Regatta 2026 merchandise and the athlete privilege programme — exclusive offers across fitness, recovery, food and wellness partners."
+  });
+
   return (
     <div className="haw-theme">
       {/* HERO */}
