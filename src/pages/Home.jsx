@@ -7,7 +7,6 @@ import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import RecapPanel from "@/components/RecapPanel";
 import ImpactSection from "@/components/ImpactSection";
-import NextEditionSection from "@/components/NextEditionSection";
 import PartnersSection from "@/components/PartnersSection";
 import LazySection from "@/components/LazySection";
 import usePageMeta from "@/hooks/use-page-meta";
@@ -323,11 +322,6 @@ export default function Home() {
           }
         />
       </div>
-
-      {/* ===== 2027 EXPRESSION OF INTEREST ===== */}
-      <LazySection minHeight={600}>
-        <NextEditionSection />
-      </LazySection>
     </div>);
 
 }

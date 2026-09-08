@@ -17,8 +17,7 @@ const NAV = [
 const MORE = [
   { label: "About SSR", to: "/about-ssr", note: "Our story, mission and team" },
   { label: "Athlete Perks & Merch", to: "/athlete-perks-merch", note: "Privileges and official merchandise" },
-  { label: "Partners & Sponsorship", to: "/partners", note: "Partner with us in 2027" },
-  { label: "Register Interest for 2027", to: "/results-2026#next-edition", note: "Crews, sponsors, booths, volunteers" }
+  { label: "Partners & Sponsorship", to: "/partners", note: "Partner with us in 2027" }
 ];
 
 const PREV_YEARS = [

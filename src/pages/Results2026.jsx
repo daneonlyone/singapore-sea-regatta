@@ -10,7 +10,6 @@ import AnimatedCounter from "@/components/AnimatedCounter";
 import PodiumCard from "@/components/PodiumCard";
 import PlaceholderPanel from "@/components/PlaceholderPanel";
 import ImpactSection from "@/components/ImpactSection";
-import NextEditionSection from "@/components/NextEditionSection";
 import SkeletonGrid from "@/components/SkeletonGrid";
 import { Image } from "@/components/ui/image";
 
@@ -85,12 +84,6 @@ function Results2026Inner() {
                 Browse the Gallery
                 <ArrowUpRight className="w-4 h-4 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </Link>
-              <a
-                href="#next-edition"
-                className="inline-flex items-center gap-2 glass text-white font-semibold px-5 py-3 rounded-xl hover:border-white/20 transition-all"
-              >
-                Register interest for 2027
-              </a>
             </div>
           </Reveal>
         </div>
@@ -173,7 +166,6 @@ function Results2026Inner() {
       </section>
 
       <ImpactSection year="2026" />
-      <NextEditionSection />
     </div>
   );
 }
