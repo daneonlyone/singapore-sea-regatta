@@ -14,11 +14,6 @@ const QUICK = [
   { label: "Partners & Sponsorship", to: "/partners" }
 ];
 
-const PAST_EDITIONS = [
-  { label: "Pink Wave 2024", to: "/pink-wave-2024" },
-  { label: "Rise Above The Waves 2025", to: "/rise-above-the-waves-2025" }
-];
-
 export default function Footer() {
   return (
     <footer className="relative mt-24 border-t border-white/5 bg-black">
@@ -41,18 +36,6 @@ export default function Footer() {
             <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Quick Links</h4>
             <ul className="space-y-2.5">
               {QUICK.map((l) => (
-                <li key={l.to}>
-                  <Link to={l.to} className="text-sm text-foreground/70 hover:text-white transition-colors inline-flex items-center gap-1 group">
-                    {l.label}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-
-            <h4 className="text-xs uppercase tracking-widest text-muted-foreground mt-8 mb-4">Past Editions</h4>
-            <ul className="space-y-2.5">
-              {PAST_EDITIONS.map((l) => (
                 <li key={l.to}>
                   <Link to={l.to} className="text-sm text-foreground/70 hover:text-white transition-colors inline-flex items-center gap-1 group">
                     {l.label}
