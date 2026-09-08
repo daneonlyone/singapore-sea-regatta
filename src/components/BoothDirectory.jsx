@@ -35,7 +35,7 @@ export default function BoothDirectory() {
               {g.title}
             </h4>
             <div className="mt-4 flex flex-wrap gap-2">
-              {g.items.map((n) => (
+              {[...g.items].sort((a, b) => a.localeCompare(b, undefined, { sensitivity: "base" })).map((n) => (
                 <span key={n} className="text-xs font-medium px-3 py-1.5 rounded-full bg-white/[0.06] border border-white/10 text-foreground/85">{n}</span>
               ))}
             </div>
