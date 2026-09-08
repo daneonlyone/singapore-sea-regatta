@@ -243,14 +243,15 @@ export default function Home() {
               {timeline.map((e, i) => {
                 const isCurrent = e.is_current;
                 const color = e.color_primary;
-                // Every edition — current and archived — links through to its own page.
-                const Wrapper = Link;
-                const wrapperProps = { to: editionLink(e) };
+                // Only the current edition links through; archives are static.
+                const link = editionLink(e);
+                const Wrapper = link ? Link : "div";
+                const wrapperProps = link ? { to: link } : {};
                 return (
                   <Reveal key={e.id} delay={i * 150}>
                     <Wrapper {...wrapperProps} className="block group h-full">
                       <div
-                        className="relative rounded-2xl p-6 h-full bg-[#080808] border transition-all duration-400 group-hover:-translate-y-1"
+                        className={`relative rounded-2xl p-6 h-full bg-[#080808] border transition-all duration-400 ${link ? "group-hover:-translate-y-1" : ""}`}
                         style={{ borderColor: isCurrent ? "rgba(255,255,255,0.28)" : "rgba(255,255,255,0.12)" }}>
                         
                         <div className="flex items-start justify-between gap-3 mb-3">
@@ -358,7 +359,6 @@ function DualPanel({ img, tag, title, desc, to, cta }) {
 }
 
 function editionLink(e) {
-  if (e.year === "2024") return "/pink-wave-2024";
-  if (e.year === "2025") return "/rise-above-the-waves-2025";
-  return "/head-above-water-2026";
+  if (e.year === "2026") return "/head-above-water-2026";
+  return null;
 }
