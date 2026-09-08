@@ -16,19 +16,12 @@ const NAV = [
 // Secondary destinations — grouped so every page stays reachable on desktop.
 const MORE = [
   { label: "About SSR", to: "/about-ssr", note: "Our story, mission and team" },
-  { label: "Athlete Perks & Merch", to: "/athlete-perks-merch", note: "Privileges and official merchandise" },
-  { label: "Partners & Sponsorship", to: "/partners", note: "Partner with us in 2027" }
-];
-
-const PREV_YEARS = [
-  { year: "2025", name: "Rise Above The Waves", to: "/rise-above-the-waves-2025", color: "#00B4D8" },
-  { year: "2024", name: "Pink Wave", to: "/pink-wave-2024", color: "#EC4899" }
+  { label: "Athlete Perks & Merch", to: "/athlete-perks-merch", note: "Privileges and official merchandise" }
 ];
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [mobilePrev, setMobilePrev] = useState(false);
   const toggleRef = useRef(null);
   const loc = useLocation();
 
@@ -39,7 +32,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  useEffect(() => { setOpen(false); setMobilePrev(false); }, [loc.pathname]);
+  useEffect(() => { setOpen(false); }, [loc.pathname]);
 
   // Escape closes the mobile menu and returns focus to the toggle button.
   useEffect(() => {
@@ -92,19 +85,6 @@ export default function Header() {
                       <div className="text-muted-foreground text-xs">{m.note}</div>
                     </Link>
                   ))}
-
-                  <div className="mt-2 pt-2 border-t border-white/10">
-                    <div className="px-3 pb-1 text-[10px] uppercase tracking-[0.2em] text-muted-foreground">Previous Editions</div>
-                    {PREV_YEARS.map((y) => (
-                      <Link key={y.year} to={y.to} className="flex items-center gap-2.5 py-2.5 px-3 rounded-lg hover:bg-white/5">
-                        <span className="w-1 h-8 rounded-full" style={{ background: y.color }} />
-                        <div>
-                          <div className="text-white text-sm font-medium">{y.name}</div>
-                          <div className="text-muted-foreground text-xs">{y.year} Archive</div>
-                        </div>
-                      </Link>
-                    ))}
-                  </div>
                 </div>
               </div>
             </div>
@@ -156,29 +136,6 @@ export default function Header() {
           {MORE.map((m) => (
             <Link key={m.to} to={m.to} className="mobile-nav-item" tabIndex={open ? 0 : -1}>{m.label}</Link>
           ))}
-
-          <button
-            className="mobile-nav-item flex items-center justify-between"
-            onClick={() => setMobilePrev(!mobilePrev)}
-            aria-expanded={mobilePrev}
-            tabIndex={open ? 0 : -1}
-          >
-            Previous Editions
-            <ChevronDown className={cn("w-4 h-4 transition-transform", mobilePrev && "rotate-180")} />
-          </button>
-          <div className={cn("overflow-hidden transition-all duration-300", mobilePrev ? "max-h-60" : "max-h-0")}>
-            <div className="pl-4 flex flex-col gap-1">
-              {PREV_YEARS.map((y) => (
-                <Link key={y.year} to={y.to} className="flex items-center gap-2.5 py-2.5 px-3 rounded-lg hover:bg-white/5" tabIndex={open && mobilePrev ? 0 : -1}>
-                  <span className="w-1 h-8 rounded-full" style={{ background: y.color }} />
-                  <div>
-                    <div className="text-white text-sm font-medium">{y.name}</div>
-                    <div className="text-muted-foreground text-xs">{y.year} Archive</div>
-                  </div>
-                </Link>
-              ))}
-            </div>
-          </div>
 
           <Link to="/results-2026" className="mt-4 gradient-blaze text-white text-center font-semibold px-4 py-3.5 rounded-xl" tabIndex={open ? 0 : -1}>
             2026 Results &amp; Recap

@@ -10,13 +10,7 @@ const QUICK = [
   { label: "Athlete Perks & Merch", to: "/athlete-perks-merch" },
   { label: "2026 Results & Recap", to: "/results-2026" },
   { label: "Gallery", to: "/gallery" },
-  { label: "Partners & Sponsorship", to: "/partners" },
   { label: "About SSR", to: "/about-ssr" }
-];
-
-const PREV = [
-  { label: "Rise Above The Waves 2025", to: "/rise-above-the-waves-2025" },
-  { label: "Pink Wave 2024", to: "/pink-wave-2024" }
 ];
 
 export default function Footer() {
@@ -51,20 +45,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Previous years */}
-          <div className="lg:col-span-2">
-            <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Previous Editions</h4>
-            <ul className="space-y-2.5">
-              {PREV.map((l) => (
-                <li key={l.to}>
-                  <Link to={l.to} className="text-sm text-foreground/70 hover:text-white transition-colors">{l.label}</Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
           {/* Contact */}
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 lg:col-start-9">
             <h4 className="text-xs uppercase tracking-widest text-muted-foreground mb-4">Latest Edition</h4>
             <div className="space-y-3 text-sm text-foreground/70">
               <div className="flex items-start gap-2">
