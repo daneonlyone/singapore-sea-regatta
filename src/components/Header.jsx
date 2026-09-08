@@ -73,7 +73,11 @@ export default function Header() {
             ))}
 
             <div className="relative group">
-              <button className="flex items-center gap-1 px-2.5 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:text-white transition-colors">
+              <button
+                className="flex items-center gap-1 px-2.5 py-2 rounded-lg text-sm font-medium text-foreground/70 hover:text-white transition-colors"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
                 More
                 <ChevronDown className="w-3.5 h-3.5 transition-transform group-hover:rotate-180" />
               </button>
@@ -93,10 +97,10 @@ export default function Header() {
           {/* CTA + mobile toggle */}
           <div className="flex items-center gap-2">
             <Link
-              to="/results-2026"
+              to="/partners"
               className="hidden sm:inline-flex items-center gap-1.5 gradient-blaze text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-lg shadow-primary/25 hover:shadow-primary/40 hover:-translate-y-0.5 transition-all duration-300"
             >
-              2026 Results &amp; Recap
+              Partner With Us in 2027
               <ArrowUpRight className="w-4 h-4" />
             </Link>
             <button
@@ -137,8 +141,8 @@ export default function Header() {
             <Link key={m.to} to={m.to} className="mobile-nav-item" tabIndex={open ? 0 : -1}>{m.label}</Link>
           ))}
 
-          <Link to="/results-2026" className="mt-4 gradient-blaze text-white text-center font-semibold px-4 py-3.5 rounded-xl" tabIndex={open ? 0 : -1}>
-            2026 Results &amp; Recap
+          <Link to="/partners" className="mt-4 gradient-blaze text-white text-center font-semibold px-4 py-3.5 rounded-xl" tabIndex={open ? 0 : -1}>
+            Partner With Us in 2027
           </Link>
         </nav>
       </div>

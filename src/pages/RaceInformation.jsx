@@ -81,8 +81,7 @@ function RaceInformationInner() {
             <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff" }}>2026 · Head Above Water · Concluded</span>
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Race Information</h1>
             <p className="mt-4 max-w-2xl text-foreground/70">
-              The full 2026 race programme, kept here as a record — timelines, categories, fees, special races and FAQs. Registration for this edition has closed;{" "}
-              Stay tuned for the next edition.
+              The full 2026 race programme, kept here as a record — timelines, categories, fees, special races and FAQs. Registration for this edition has closed; stay tuned for the next edition.
             </p>
           </Reveal>
         </div>
@@ -123,6 +122,7 @@ function RaceInformationInner() {
               <button
                 key={t}
                 onClick={() => setActive(t)}
+                aria-pressed={active === t}
                 className={cn("px-4 py-2 rounded-full text-sm font-medium transition-all", active === t ? "text-white shadow-lg" : "glass text-foreground/70 hover:text-white")}
                 style={active === t ? { background: "linear-gradient(90deg, #25032d, #9b93ff)", boxShadow: "0 4px 18px rgba(155,147,255,0.35)" } : {}}
               >

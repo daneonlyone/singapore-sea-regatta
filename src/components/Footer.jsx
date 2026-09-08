@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, MapPin, ArrowUpRight } from "lucide-react";
+import { Mail, MapPin, ArrowUpRight, Send } from "lucide-react";
 import Logo from "@/components/Logo";
 import { SOCIALS } from "@/components/socials";
 
@@ -10,7 +10,13 @@ const QUICK = [
   { label: "Athlete Perks & Merch", to: "/athlete-perks-merch" },
   { label: "2026 Results & Recap", to: "/results-2026" },
   { label: "Gallery", to: "/gallery" },
-  { label: "About SSR", to: "/about-ssr" }
+  { label: "About SSR", to: "/about-ssr" },
+  { label: "Partners & Sponsorship", to: "/partners" }
+];
+
+const PAST_EDITIONS = [
+  { label: "Pink Wave 2024", to: "/pink-wave-2024" },
+  { label: "Rise Above The Waves 2025", to: "/rise-above-the-waves-2025" }
 ];
 
 export default function Footer() {
@@ -43,6 +49,18 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
+
+            <h4 className="text-xs uppercase tracking-widest text-muted-foreground mt-8 mb-4">Past Editions</h4>
+            <ul className="space-y-2.5">
+              {PAST_EDITIONS.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="text-sm text-foreground/70 hover:text-white transition-colors inline-flex items-center gap-1 group">
+                    {l.label}
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Contact */}
@@ -61,6 +79,15 @@ export default function Footer() {
                 <a href="mailto:admin@sgsearegatta.com" className="hover:text-white transition-colors">admin@sgsearegatta.com</a>
               </div>
             </div>
+            <a
+              href="https://t.me/SGSeaRegatta"
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-2 gradient-blaze text-white text-sm font-semibold px-4 py-2.5 rounded-xl shadow-lg shadow-primary/25 hover:-translate-y-0.5 transition-all"
+            >
+              <Send className="w-4 h-4" aria-hidden="true" />
+              Join our Telegram channel
+            </a>
             <div className="flex items-center gap-3 mt-5">
               {SOCIALS.map(({ icon: Icon, href, label }) => (
                 <a key={label} href={href} target="_blank" rel="noreferrer" aria-label={label} className="w-10 h-10 rounded-xl glass flex items-center justify-center text-foreground/70 hover:text-white hover:border-primary/40 transition-colors">

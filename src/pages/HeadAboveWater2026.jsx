@@ -53,7 +53,7 @@ export default function HeadAboveWater2026() {
         </div>
 
         {/* Decorative star sparks matching brand aesthetic */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none overflow-hidden" aria-hidden="true">
           <span className="absolute top-[22%] left-[38%] text-white/30 text-2xl">✦</span>
           <span className="absolute top-[18%] right-[28%] text-white/20 text-lg">✦</span>
           <span className="absolute bottom-[30%] left-[20%] text-white/15 text-xl">✦</span>
@@ -77,15 +77,15 @@ export default function HeadAboveWater2026() {
               
               <span className="hidden sm:block h-px w-16" style={{ background: "linear-gradient(to right, rgba(155,147,255,0.6), transparent)" }} />
               <h1 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl leading-[0.9] tracking-tight text-white">
-                2026<br />
-                <span style={{ color: "#9b93ff" }}>Campaign</span>
+                Head Above Water<br />
+                <span style={{ color: "#9b93ff" }}>2026</span>
               </h1>
             </div>
           </Reveal>
 
           <Reveal delay={240}>
-            <p className="mt-2 max-w-xl text-lg leading-relaxed" style={{ color: "rgba(155,147,255,0.85)", fontFamily: "Poppins, sans-serif" }}>
-              Feel the electric roar as crews smash through the surf — a high-octane charge to champion dementia awareness and caregiver support.
+            <p className="mt-2 max-w-xl text-lg leading-relaxed" style={{ color: "rgba(155,147,255,0.85)" }}>
+              Crews smashed through the surf across two days at Marina Bay — a high-octane charge that championed dementia awareness and caregiver support.
             </p>
           </Reveal>
           <Reveal delay={320}>
@@ -123,24 +123,24 @@ export default function HeadAboveWater2026() {
               <SectionHeading
                 eyebrow="The 2026 Edition"
                 title={<>More than a race. <span style={{ color: LAVENDER }}>A movement.</span></>}
-                description="The IHH Healthcare × Singapore Sea Regatta unites global athletes, healthcare institutions and corporate partners in a celebration of sport, resilience and unity." />
+                description="The IHH Healthcare × Singapore Sea Regatta brought together global athletes, healthcare institutions and corporate partners in a celebration of sport, resilience and unity." />
               
-              <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.55)", fontFamily: "Poppins, sans-serif" }}>
-                Beyond fierce competition across all age categories, the regatta features a vibrant festival footprint — wellness activations, recovery zones, and the exclusive SSR Athlete Privilege Programme.
+              <p className="mt-4 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>
+                Beyond fierce competition across all age categories, the regatta delivered a vibrant festival footprint — wellness activations, recovery zones, and the exclusive SSR Athlete Privilege Programme.
               </p>
             </div>
             <div className="lg:col-span-7">
               <Reveal>
                 <div className="grid sm:grid-cols-3 gap-4">
                   {[
-                  { n: "01", t: "International Racing", d: "Dragon boat crews competing across DB12, DB22 and DB6 categories over two days." },
+                  { n: "01", t: "International Racing", d: "Dragon boat crews competed across DB12, DB22 and DB6 categories over two days." },
                   { n: "02", t: "Public Festival", d: "Food, retail, wellness, performances and family-friendly activities at Marina Bay." },
-                  { n: "03", t: "Health Advocacy", d: "Dementia awareness and caregiver support at the heart of the 2026 campaign." }].
+                  { n: "03", t: "Health Advocacy", d: "Dementia awareness and caregiver support sat at the heart of the 2026 campaign." }].
                   map((c) =>
                   <div key={c.n} className="rounded-2xl p-5 border" style={{ background: "rgba(37,3,45,0.55)", borderColor: "rgba(155,147,255,0.2)" }}>
                       <div className="text-sm font-bold mb-2 font-mono" style={{ color: LAVENDER }}>{c.n}</div>
-                      <h4 className="font-bold text-white text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>{c.t}</h4>
-                      <p className="mt-1.5 text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.55)", fontFamily: "Poppins, sans-serif" }}>{c.d}</p>
+                      <h4 className="font-bold text-white text-sm">{c.t}</h4>
+                      <p className="mt-1.5 text-xs leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>{c.d}</p>
                     </div>
                   )}
                 </div>
@@ -153,37 +153,37 @@ export default function HeadAboveWater2026() {
       {/* OUR CAUSE */}
       <section id="cause" className="relative py-24 overflow-hidden scroll-mt-24">
         <div className="absolute inset-0">
-          <Image src={CAUSE_IMG} className="w-full h-full object-cover" fittingType="fill" />
+          <Image src={CAUSE_IMG} alt="" aria-hidden="true" className="w-full h-full object-cover" fittingType="fill" />
           <div className="absolute inset-0" style={{ background: "rgba(37,3,45,0.9)" }} />
         </div>
         <div className="relative z-10 mx-auto max-w-7xl px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <Reveal>
               <div className="rounded-3xl overflow-hidden border" style={{ borderColor: "rgba(155,147,255,0.25)" }}>
-                <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/7f3c834c5_webhero_4x-8.png" className="w-full aspect-[4/3] object-cover" fittingType="fill" />
+                <Image src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/7f3c834c5_webhero_4x-8.png" alt="Head Above Water 2026 campaign artwork for dementia awareness and caregiver support" className="w-full aspect-[4/3] object-cover" fittingType="fill" />
               </div>
             </Reveal>
             <div>
               <Reveal>
-                <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: LAVENDER, fontFamily: "Poppins, sans-serif" }}>Our Cause</span>
+                <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: LAVENDER }}>Our Cause</span>
                 <h2 className="mt-3 text-3xl sm:text-4xl font-extrabold text-white">Dementia Awareness &amp; Caregiver Support</h2>
               </Reveal>
               <Reveal delay={150}>
-                <p className="mt-5 leading-relaxed text-sm" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "Poppins, sans-serif" }}>
-                  As Singapore ages, dementia challenges entire families and communities. Through SSR 2026, we spark vital conversations, build empathy, and foster a truly dementia-friendly society.
+                <p className="mt-5 leading-relaxed text-sm" style={{ color: "rgba(255,255,255,0.75)" }}>
+                  As Singapore ages, dementia challenges entire families and communities. Through SSR 2026, we sparked vital conversations, built empathy, and pushed towards a truly dementia-friendly society.
                 </p>
               </Reveal>
               <div className="mt-8 space-y-4">
                 {[
                 { t: "Why awareness matters", d: "Dementia affects memory, thinking and behaviour. Early awareness leads to earlier support, better care, and stronger, more inclusive communities." },
-                { t: "The role of caregivers", d: "Caregivers are the unseen heroes providing daily strength. SSR 2026 honours their dedication and connects them with resources and community." },
+                { t: "The role of caregivers", d: "Caregivers are the unseen heroes providing daily strength. SSR 2026 honoured their dedication and connected them with resources and community." },
                 { t: "Sport meets purpose", d: "By uniting athletes, healthcare organisations and communities, we channel the power of sport into social impact — on and off the water." },
-                { t: "World Alzheimer's Month", d: "Timed with September's global awareness month, the regatta amplifies the call for a dementia-friendly society." }].
+                { t: "World Alzheimer's Month", d: "Timed with September's global awareness month, the regatta amplified the call for a dementia-friendly society." }].
                 map((b, i) =>
                 <Reveal key={b.t} delay={i * 100}>
                     <div className="rounded-2xl p-5 border hover:border-opacity-60 transition-colors" style={{ background: "rgba(37,3,45,0.6)", borderColor: "rgba(155,147,255,0.2)" }}>
-                      <h4 className="font-semibold text-white text-sm" style={{ fontFamily: "Poppins, sans-serif" }}>{b.t}</h4>
-                      <p className="mt-1.5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.6)", fontFamily: "Poppins, sans-serif" }}>{b.d}</p>
+                      <h4 className="font-semibold text-white text-sm">{b.t}</h4>
+                      <p className="mt-1.5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.72)" }}>{b.d}</p>
                     </div>
                   </Reveal>
                 )}
@@ -201,7 +201,7 @@ export default function HeadAboveWater2026() {
               <div className="grid md:grid-cols-5 items-center">
                 <div className="md:col-span-2 relative aspect-square md:aspect-auto md:h-full min-h-[280px] flex items-center justify-center" style={{ background: "linear-gradient(135deg, rgba(37,3,45,0.9), rgba(155,147,255,0.15))" }}>
                   {goh.image ?
-                  <Image src={goh.image} className="absolute inset-0 w-full h-full" fittingType="fill" focalPointX={typeof goh.image_focal_x === "number" ? goh.image_focal_x : 0.5} focalPointY={typeof goh.image_focal_y === "number" ? goh.image_focal_y : 0.35} /> :
+                  <Image src={goh.image} alt="Mr Ong Ye Kung, Minister for Health, Guest of Honour at the 2026 Singapore Sea Regatta" className="absolute inset-0 w-full h-full" fittingType="fill" focalPointX={typeof goh.image_focal_x === "number" ? goh.image_focal_x : 0.5} focalPointY={typeof goh.image_focal_y === "number" ? goh.image_focal_y : 0.35} /> :
 
                   <div className="text-center p-8">
                     <div className="w-24 h-24 rounded-full mx-auto flex items-center justify-center font-heading font-black text-3xl text-white" style={{ background: `linear-gradient(135deg, ${PLUM}, ${LAVENDER})` }}>OYK</div>
@@ -209,11 +209,11 @@ export default function HeadAboveWater2026() {
                   }
                 </div>
                 <div className="md:col-span-3 p-8 sm:p-10">
-                  <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: LAVENDER, fontFamily: "Poppins, sans-serif" }}>Guest of Honour</span>
+                  <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: LAVENDER }}>Guest of Honour</span>
                   <h2 className="mt-3 text-3xl font-bold text-white">Mr Ong Ye Kung</h2>
-                  <p className="font-medium" style={{ color: LAVENDER, fontFamily: "Poppins, sans-serif" }}>Minister for Health</p>
-                  <p className="mt-5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.65)", fontFamily: "Poppins, sans-serif" }}>
-                    We are honoured to welcome Minister Ong Ye Kung, who graces the opening ceremony and paddles in the Minister's Cup alongside healthcare workers. His participation symbolises solidarity with patients and their families, reinforcing the shared commitment to health and community.
+                  <p className="font-medium" style={{ color: LAVENDER }}>Minister for Health</p>
+                  <p className="mt-5 text-sm leading-relaxed" style={{ color: "rgba(255,255,255,0.75)" }}>
+                    We were honoured to welcome Minister Ong Ye Kung, who graced the opening ceremony and paddled in the Minister's Cup alongside healthcare workers. His participation symbolised solidarity with patients and their families, reinforcing the shared commitment to health and community.
                   </p>
                 </div>
               </div>
@@ -233,7 +233,7 @@ export default function HeadAboveWater2026() {
               onMouseEnter={(e) => e.currentTarget.style.borderColor = "rgba(155,147,255,0.5)"}
               onMouseLeave={(e) => e.currentTarget.style.borderColor = "rgba(155,147,255,0.2)"}>
                   <q.icon className="w-6 h-6 mb-3" style={{ color: LAVENDER }} />
-                  <span className="text-sm font-semibold text-white leading-snug" style={{ fontFamily: "Poppins, sans-serif" }}>{q.label}</span>
+                  <span className="text-sm font-semibold text-white leading-snug">{q.label}</span>
                 </Link>
               </Reveal>
             )}
@@ -249,8 +249,8 @@ function HeroFact({ icon: Icon, label, value }) {
     <div className="rounded-xl px-4 py-2.5 flex items-center gap-2.5 border" style={{ background: "rgba(37,3,45,0.65)", borderColor: "rgba(155,147,255,0.3)" }}>
       <Icon className="w-4 h-4" style={{ color: "#9b93ff" }} />
       <div>
-        <div className="text-[10px] uppercase tracking-widest" style={{ color: "rgba(155,147,255,0.7)", fontFamily: "Poppins, sans-serif" }}>{label}</div>
-        <div className="text-sm font-semibold text-white" style={{ fontFamily: "Poppins, sans-serif" }}>{value}</div>
+        <div className="text-[10px] uppercase tracking-widest" style={{ color: "rgba(155,147,255,0.7)" }}>{label}</div>
+        <div className="text-sm font-semibold text-white">{value}</div>
       </div>
     </div>);
 

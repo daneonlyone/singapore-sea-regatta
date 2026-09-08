@@ -48,9 +48,9 @@ export default function SSRFestival() {
             <div className="mb-5">
               <img src="https://media.base44.com/images/public/6a635ab4e57d550e514135e7/53dba10dd_White.png" alt="Head Above Water" className="h-24 sm:h-28 lg:h-32 object-contain" />
             </div>
-            <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff", fontFamily: "Poppins, sans-serif" }}>Head Above Water 2026</span>
+            <span className="text-xs font-semibold uppercase tracking-[0.25em]" style={{ color: "#9b93ff" }}>Head Above Water 2026</span>
             <h1 className="mt-3 text-5xl sm:text-6xl lg:text-7xl font-black">SSR Festival</h1>
-            <p className="mt-4 max-w-xl text-foreground/70" style={{ fontFamily: "Poppins, sans-serif" }}>Where energy meets purpose. Set against the Marina Bay skyline, the Festival Zone is the heart of SSR — food, retail, wellness, performances and so much more.</p>
+            <p className="mt-4 max-w-xl text-foreground/70">Where energy meets purpose. Set against the Marina Bay skyline, the Festival Zone was the heart of SSR 2026 — food, retail, wellness, performances and so much more.</p>
           </Reveal>
         </div>
       </section>
@@ -62,7 +62,7 @@ export default function SSRFestival() {
       {/* ABOUT FESTIVAL */}
       <section id="about" className="relative py-20 scroll-mt-24">
         <div className="mx-auto max-w-7xl px-6">
-          <SectionHeading eyebrow="About SSR Festival" title="The heartbeat of the regatta" description="Whether you're here to cheer, chill, or connect, there's something for everyone in this celebration of community, health and fun." />
+          <SectionHeading eyebrow="About SSR Festival" title="The heartbeat of the regatta" description="Whether you came to cheer, chill, or connect, there was something for everyone in this celebration of community, health and fun." />
           <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-3">
             {[
               { icon: Utensils, t: "Food & Beverage" },
@@ -104,14 +104,14 @@ export default function SSRFestival() {
               <Reveal>
                 <div className="mt-8 flex flex-wrap gap-2 items-center">
                   {days.map((d) => (
-                    <button key={d} onClick={() => setActiveDay(d)} className={cn("px-4 py-2 rounded-full text-sm font-medium transition-all", activeDay === d ? "text-white" : "glass text-foreground/70 hover:text-white")}
+                    <button key={d} onClick={() => setActiveDay(d)} aria-pressed={activeDay === d} className={cn("px-4 py-2 rounded-full text-sm font-medium transition-all", activeDay === d ? "text-white" : "glass text-foreground/70 hover:text-white")}
                     style={activeDay === d ? { background: "linear-gradient(90deg, #25032d, #9b93ff)", boxShadow: "0 4px 16px rgba(155,147,255,0.3)" } : {}}>
                       {d}
                     </button>
                   ))}
                   <span className="mx-2 w-px h-6 bg-white/10" />
                   {FILTERS.map((f) => (
-                    <button key={f} onClick={() => setFilter(f)} className={cn("px-3 py-1.5 rounded-full text-xs font-medium transition-all", filter === f ? "bg-white/15 text-white" : "text-muted-foreground hover:text-white")}>
+                    <button key={f} onClick={() => setFilter(f)} aria-pressed={filter === f} className={cn("px-3 py-1.5 rounded-full text-xs font-medium transition-all", filter === f ? "bg-white/15 text-white" : "text-muted-foreground hover:text-white")}>
                       {f === "Panel Talk" ? "Talks" : f}
                     </button>
                   ))}
@@ -143,7 +143,9 @@ export default function SSRFestival() {
               </div>
             </>
           ) : (
-            <Reveal><ComingSoon label="Festival programme" date="August 2026" /></Reveal>
+            <Reveal>
+              <ConcludedProgramme />
+            </Reveal>
           )}
         </div>
       </section>
@@ -163,7 +165,7 @@ export default function SSRFestival() {
             <div className="glass-blaze rounded-3xl p-8 sm:p-12 text-center">
               <Send className="w-10 h-10 text-primary mx-auto mb-4" />
               <h3 className="text-2xl font-bold text-white">Follow our Telegram channel</h3>
-              <p className="mt-2 text-foreground/70 max-w-md mx-auto">For the latest deals and happenings at the IHH×SSR Festival.</p>
+              <p className="mt-2 text-foreground/70 max-w-md mx-auto">Be first to hear about the next edition, plus deals and happenings at the IHH×SSR Festival.</p>
               <a href="https://t.me/SGSeaRegatta" target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 text-white font-semibold px-6 py-3 rounded-xl hover:-translate-y-0.5 transition-all"
                     style={{ background: "linear-gradient(90deg, #25032d, #9b93ff)", boxShadow: "0 4px 20px rgba(155,147,255,0.35)" }}>
                 Join Telegram Channel <Send className="w-4 h-4" />
@@ -176,12 +178,14 @@ export default function SSRFestival() {
   );
 }
 
-function ComingSoon({ label, date }) {
+function ConcludedProgramme() {
   return (
     <div className="glass rounded-2xl p-10 text-center">
-      <Sparkles className="w-10 h-10 text-primary mx-auto mb-4 animate-pulse" />
-      <h3 className="text-xl font-bold text-white">{label}</h3>
-      <p className="mt-2 text-sm text-muted-foreground">Coming soon · Expected release: {date}</p>
+      <Sparkles className="w-10 h-10 text-primary mx-auto mb-4" aria-hidden="true" />
+      <h3 className="text-xl font-bold text-white">The 2026 festival programme has wrapped</h3>
+      <p className="mt-2 text-sm text-muted-foreground max-w-md mx-auto">
+        Two days of performances, workshops and wellness at Marina Bay are now behind us — relive the weekend in the gallery.
+      </p>
     </div>
   );
 }

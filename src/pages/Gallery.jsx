@@ -14,7 +14,8 @@ const CATS = ["All", "Races", "Festival", "Winners", "Candid"];
 export default function Gallery() {
   usePageMeta({
     title: "Gallery",
-    description: "Photos and videos from every Singapore Sea Regatta edition — racing, festival moments, champions and candid shots from Marina Bay."
+    description: "Photos and videos from every Singapore Sea Regatta edition — racing, festival moments, champions and candid shots from Marina Bay.",
+    image: "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/81415c754_Singapore_Sea_Regatta_2025-1077.jpg"
   });
 
   const [items, setItems] = useState(null);
@@ -89,6 +90,7 @@ function FilterRow({ label, options, value, onChange }) {
         <button
           key={o}
           onClick={() => onChange(o)}
+          aria-pressed={value === o}
           className={cn(
             "px-3.5 py-1.5 rounded-full text-xs font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
             value === o ? "gradient-blaze text-white shadow-lg shadow-primary/25" : "glass text-foreground/70 hover:text-white"

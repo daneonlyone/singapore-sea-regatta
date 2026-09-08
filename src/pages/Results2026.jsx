@@ -19,7 +19,8 @@ const FILTERS = ["All", "Special Races", "DB12", "DB22", "DB6"];
 export default function Results2026() {
   usePageMeta({
     title: "2026 Results & Recap",
-    description: "Champions, podiums and final numbers from Head Above Water — the 2026 Singapore Sea Regatta at Marina Bay."
+    description: "Champions, podiums and final numbers from Head Above Water — the 2026 Singapore Sea Regatta at Marina Bay.",
+    image: "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/3f961171a_generated_image.png"
   });
 
   return (
@@ -130,6 +131,7 @@ function Results2026Inner() {
                   <button
                     key={f}
                     onClick={() => setFilter(f)}
+                    aria-pressed={filter === f}
                     className={cn(
                       "px-4 py-2 rounded-full text-sm font-medium transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
                       filter === f ? "text-white shadow-lg" : "glass text-foreground/70 hover:text-white"

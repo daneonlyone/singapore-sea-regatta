@@ -1,19 +1,20 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, ArrowUpRight, Calendar, MapPin, Clock, ChevronDown, Users, Trophy, Handshake, Ticket } from "lucide-react";
+import SkeletonGrid from "@/components/SkeletonGrid";
+import HomePartners from "@/components/HomePartners";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import RecapPanel from "@/components/RecapPanel";
 import ImpactSection from "@/components/ImpactSection";
-import PartnersSection from "@/components/PartnersSection";
 import LazySection from "@/components/LazySection";
 import usePageMeta from "@/hooks/use-page-meta";
 import { Image } from "@/components/ui/image";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/eebc986ff_generated_b13211d1.png";
-const CAMPAIGN_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/08ff53ca4_Screenshot2026-08-02at91620PM.png";
+const CAMPAIGN_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/3f961171a_generated_image.png";
 const RACE_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/765c3e88c_generated_746c96de.png";
 const FESTIVAL_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/71427b403_generated_6f71a2fa.png";
 
@@ -27,8 +28,7 @@ export default function Home() {
   });
 
   const [editions, setEditions] = useState([]);
-  const [stats, setStats] = useState([]);
-  const [sponsors, setSponsors] = useState([]);
+  const [stats, setStats] = useState(null);
   const [statsText, setStatsText] = useState({
     eyebrow: "SSR At A Glance",
     title: "Making waves at Marina Bay",
@@ -37,8 +37,7 @@ export default function Home() {
 
   useEffect(() => {
     base44.entities.EventYear.list("order", 50).then(setEditions).catch(() => {});
-    base44.entities.Statistic.filter({ year: "2026" }, "order", 50).then(setStats).catch(() => {});
-    base44.entities.Sponsor.list("order", 100).then(setSponsors).catch(() => {});
+    base44.entities.Statistic.filter({ year: "2026" }, "order", 50).then(setStats).catch(() => setStats([]));
     base44.entities.SiteText.filter({ key: "home_stats" }).then((r) => r[0] && setStatsText(r[0])).catch(() => {});
   }, []);
 
@@ -226,7 +225,11 @@ export default function Home() {
           
           <div className="mt-10 relative">
             {/* Oversized watermark year numerals */}
-            <div className="absolute inset-x-0 -top-14 h-32 hidden md:grid grid-cols-3 gap-6 overflow-hidden pointer-events-none select-none" aria-hidden="true">
+            <div
+              className="absolute inset-x-0 -top-14 h-32 hidden md:grid gap-6 overflow-hidden pointer-events-none select-none"
+              style={{ gridTemplateColumns: `repeat(${Math.max(timeline.length, 1)}, minmax(0, 1fr))` }}
+              aria-hidden="true"
+            >
               {timeline.map((e) =>
               <span
                 key={e.id}
@@ -284,6 +287,11 @@ export default function Home() {
             title={statsText.title}
             description={statsText.description} />
           
+          {stats === null ? (
+            <div className="mt-12">
+              <SkeletonGrid count={4} className="grid grid-cols-2 lg:grid-cols-4 gap-4" height="h-36" />
+            </div>
+          ) : (
           <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((s, i) => {
               const Icon = STAT_ICONS[s.label] || Trophy;
@@ -300,7 +308,7 @@ export default function Home() {
 
             })}
           </div>
-          
+          )}
         </div>
       </section>
 
@@ -311,17 +319,9 @@ export default function Home() {
 
       {/* ===== PARTNERS ===== */}
       <div id="partners" className="scroll-mt-24">
-        <PartnersSection
-          sponsors={sponsors}
-          cta={
-            <Link
-              to="/partners"
-              className="inline-flex items-center gap-2 gradient-blaze text-white font-semibold px-6 py-3.5 rounded-xl shadow-lg shadow-primary/25 hover:-translate-y-0.5 transition-all"
-            >
-              Partner with us in 2027 <ArrowUpRight className="w-4 h-4" />
-            </Link>
-          }
-        />
+        <LazySection>
+          <HomePartners />
+        </LazySection>
       </div>
     </div>);
 
