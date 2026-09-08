@@ -82,10 +82,7 @@ function RaceInformationInner() {
             <h1 className="mt-3 text-4xl sm:text-5xl lg:text-6xl font-black">Race Information</h1>
             <p className="mt-4 max-w-2xl text-foreground/70">
               The full 2026 race programme, kept here as a record — timelines, categories, fees, special races and FAQs. Registration for this edition has closed;{" "}
-              <Link to="/results-2026#next-edition" className="text-white font-semibold underline decoration-primary/60 underline-offset-4 hover:decoration-primary">
-                register your interest for 2027
-              </Link>{" "}
-              to hear first when the next edition opens.
+              Stay tuned for the next edition.
             </p>
           </Reveal>
         </div>
