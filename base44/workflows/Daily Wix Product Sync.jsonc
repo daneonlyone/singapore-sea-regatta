@@ -1,0 +1,45 @@
+{
+  "name": "Daily Wix Product Sync",
+  "trigger": {
+    "condition": null,
+    "config": {
+      "trigger_type": "scheduled",
+      "events": [],
+      "schedule_mode": "recurring",
+      "cron_expression": "0 4 * * *",
+      "one_time_date": null,
+      "timezone": "Asia/Singapore",
+      "interval_value": null,
+      "interval_unit": null,
+      "interval_anchor": null,
+      "ends_type": "never",
+      "ends_on_date": null,
+      "ends_after_count": null
+    }
+  },
+  "description": "Pulls the Wix store catalog into the app once a day so the Official Store page stays in sync.",
+  "definition": {
+    "document": {
+      "dsl": "1.0.0",
+      "name": "daily_wix_product_sync",
+      "version": "1.0",
+      "namespace": "base44"
+    },
+    "do": [
+      {
+        "sync_products": {
+          "call": "invoke_backend_function",
+          "with": {
+            "function_name": "syncWixProducts",
+            "args": {}
+          },
+          "then": "end",
+          "x-base44": {
+            "title": "Sync Wix products",
+            "description": "Refresh the catalog"
+          }
+        }
+      }
+    ]
+  }
+}

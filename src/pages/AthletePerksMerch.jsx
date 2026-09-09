@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import { Search, MapPin, Clock, ExternalLink, ShoppingBag } from "lucide-react";
+import { Link } from "react-router-dom";
 import { cn } from "@/lib/utils";
 import { base44 } from "@/api/base44Client";
 import Reveal from "@/components/Reveal";
@@ -112,6 +113,13 @@ function Merchandise() {
     <section id="merch" className="relative py-20 scroll-mt-24">
       <div className="mx-auto max-w-7xl px-6">
         <SectionHeading eyebrow="Official SSR Merchandise" title="The 2026 collection" description="Premium race jerseys, apparel, accessories and limited-edition items — designed for athletes and supporters alike. Browse the collection here, then head to our official online store to purchase." />
+
+        <Reveal delay={80}>
+          <Link to="/store" className="group mt-6 inline-flex items-center gap-2 btn-haw text-white text-sm font-semibold px-5 py-3 rounded-xl">
+            <ShoppingBag className="w-4 h-4" />
+            Shop the Official Store
+          </Link>
+        </Reveal>
 
         <Reveal delay={100} className="hidden">
           <a
