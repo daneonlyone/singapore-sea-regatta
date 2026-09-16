@@ -38,6 +38,12 @@ export default function ImpactSection({ year = "2026" }) {
           <PullUpChallenge year={year} />
         </div>
 
+        {year === "2026" && (
+          <div className="mt-6">
+            <PvpaMilestoneCard />
+          </div>
+        )}
+
         <div className="mt-6">
           {metrics === null ? null : metrics.length === 0 ? (
             <PlaceholderPanel
