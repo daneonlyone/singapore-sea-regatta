@@ -38,7 +38,8 @@ export default function ImpactSection({ year = "2026" }) {
           <PullUpChallenge year={year} />
         </div>
 
-        {year === "2026" && (
+        {/* PVPA milestone — hidden for now */}
+        {false && year === "2026" && (
           <div className="mt-6">
             <PvpaMilestoneCard />
           </div>

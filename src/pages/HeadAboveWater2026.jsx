@@ -194,8 +194,8 @@ export default function HeadAboveWater2026() {
         </div>
       </section>
 
-      {/* PVPA 2026 RECOGNITION */}
-      <PvpaRecognitionSection />
+      {/* PVPA 2026 RECOGNITION — hidden for now */}
+      {false && <PvpaRecognitionSection />}
 
       {/* GUEST OF HONOUR */}
       <section id="guest-of-honour" className="relative py-24 scroll-mt-24">
