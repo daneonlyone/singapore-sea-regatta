@@ -6,6 +6,7 @@ import SectionHeading from "@/components/SectionHeading";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import PlaceholderPanel from "@/components/PlaceholderPanel";
 import PullUpChallenge from "@/components/PullUpChallenge";
+import PvpaMilestoneCard from "@/components/pvpa/PvpaMilestoneCard";
 
 const ICONS = {
   "Funds Raised": Coins,

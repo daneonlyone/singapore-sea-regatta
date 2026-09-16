@@ -6,6 +6,7 @@ import { Image } from "@/components/ui/image";
 import Reveal from "@/components/Reveal";
 import SectionHeading from "@/components/SectionHeading";
 import ConcludedBanner from "@/components/ConcludedBanner";
+import PvpaRecognitionSection from "@/components/pvpa/PvpaRecognitionSection";
 import usePageMeta from "@/hooks/use-page-meta";
 
 const HERO_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/211fa28ed_background4x.png";
@@ -192,6 +193,9 @@ export default function HeadAboveWater2026() {
           </div>
         </div>
       </section>
+
+      {/* PVPA 2026 RECOGNITION */}
+      <PvpaRecognitionSection />
 
       {/* GUEST OF HONOUR */}
       <section id="guest-of-honour" className="relative py-24 scroll-mt-24">
