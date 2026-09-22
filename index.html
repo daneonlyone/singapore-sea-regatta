@@ -62,17 +62,6 @@
     </script>
   </head>
   <body>
-    <script>
-      // Apply the saved theme before first paint to avoid a flash. Default: dark.
-      (function () {
-        try {
-          var t = localStorage.getItem("ssr-theme");
-          var r = document.documentElement;
-          if (t === "light") { r.classList.remove("dark"); r.classList.add("light"); }
-          else { r.classList.add("dark"); r.classList.remove("light"); }
-        } catch (e) {}
-      })();
-    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

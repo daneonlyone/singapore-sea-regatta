@@ -8,7 +8,7 @@ export default function Logo({ className, height = 40 }) {
     <img
       src={LOGO_URL}
       alt="IHH Healthcare — Singapore Sea Regatta"
-      className={cn("h-auto w-auto logo-lockup", className)}
+      className={cn("h-auto w-auto", className)}
       style={{ height }}
     />
   );
