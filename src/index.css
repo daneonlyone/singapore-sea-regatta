@@ -37,7 +37,85 @@
     --glass: rgba(20, 20, 20, 0.55);
     --glass-border: rgba(255, 255, 255, 0.08);
   }
+
+  /* SSR "Daybreak" — light theme (opt-in via html.light) */
+  html.light {
+    --background: 44 20% 96%;        /* #F6F5F1 warm off-white */
+    --foreground: 24 12% 9%;         /* #1A1714 warm near-black */
+    --card: 0 0% 100%;
+    --card-foreground: 24 12% 9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 12% 9%;
+    --primary: 19 85% 40%;           /* #C2410C deep blaze */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 40 18% 92%;
+    --secondary-foreground: 24 12% 12%;
+    --muted: 40 16% 92%;
+    --muted-foreground: 24 6% 32%;   /* #57534E */
+    --accent: 32 88% 37%;            /* #B45309 deep gold */
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 74% 42%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 42 16% 87%;            /* #E5E2DB */
+    --input: 42 16% 87%;
+    --ring: 19 85% 40%;
+    --ember: 0 74% 42%;
+    --blaze: 19 85% 40%;
+    --gold: 32 88% 37%;
+    --glass: rgba(255, 255, 255, 0.78);
+    --glass-border: rgba(26, 23, 20, 0.10);
+  }
+
+  /* Light equivalents of the Head Above Water purple tokens */
+  html.light .haw-theme {
+    --primary: 247 55% 46%;
+    --primary-foreground: 0 0% 100%;
+    --ring: 247 55% 46%;
+    --accent: 247 45% 40%;
+    --accent-foreground: 0 0% 100%;
+    --blaze: 247 55% 46%;
+    --gold: 247 45% 40%;
+  }
 }
+
+/* Light mode: retune utilities and hardcoded dark-only classes site-wide. */
+html.light body { background: hsl(var(--background)); }
+html.light h1, html.light h2, html.light h3, html.light h4, html.light h5 { color: hsl(var(--foreground)); }
+html.light .text-white { color: hsl(var(--foreground)); }
+html.light .hover\:text-white:hover { color: hsl(var(--primary)); }
+html.light .bg-black { background-color: hsl(var(--background)); }
+html.light .bg-white\/5 { background-color: rgba(26, 23, 20, 0.04); }
+html.light .hover\:bg-white\/5:hover { background-color: rgba(26, 23, 20, 0.05); }
+html.light .border-white\/5 { border-color: hsl(var(--border)); }
+html.light .border-white\/10 { border-color: hsl(var(--border)); }
+
+html.light .glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  box-shadow: 0 1px 2px rgba(26, 23, 20, 0.05);
+}
+html.light .glass-strong {
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(26, 23, 20, 0.12);
+  box-shadow: 0 8px 24px -12px rgba(26, 23, 20, 0.22);
+}
+html.light .glass-blaze {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid hsl(var(--primary) / 0.25);
+  box-shadow: 0 8px 26px -14px rgba(26, 23, 20, 0.28);
+}
+/* Cards need firmer definition in light mode than the dark glow treatment. */
+html.light .card-lift:hover {
+  border-color: hsl(var(--primary) / 0.45);
+  box-shadow: 0 16px 30px -16px rgba(26, 23, 20, 0.3), 0 4px 10px -6px hsl(var(--primary) / 0.22);
+}
+/* The lockup only ships as white artwork — invert it so it reads on light. */
+html.light .logo-lockup { filter: invert(1); }
+html.light .mobile-nav-item { color: hsl(var(--muted-foreground)); }
+html.light .mobile-nav-item:hover { background: rgba(26, 23, 20, 0.05); color: hsl(var(--primary)); }
+html.light ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+html.light ::-webkit-scrollbar-thumb { background: #d6d2ca; }
+html.light ::-webkit-scrollbar-thumb:hover { background: hsl(var(--primary)); }
 
 @layer base {
   * {
