@@ -18,7 +18,14 @@ const CAMPAIGN_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514
 const RACE_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/765c3e88c_generated_746c96de.png";
 const FESTIVAL_IMG = "https://media.base44.com/images/public/6a635ab4e57d550e514135e7/71427b403_generated_6f71a2fa.png";
 
-const STAT_ICONS = { Athletes: Users, "Participating Teams": Trophy, "Community Partners": Handshake, "Festival Visitors": Ticket };
+const STAT_ICONS = {
+  Athletes: Users,
+  "Participating Teams": Trophy,
+  Partners: Handshake,
+  "Community Partners": Handshake,
+  "Festival Visitors": Ticket,
+  "Estimated Festival Visitors": Ticket
+};
 
 export default function Home() {
   usePageMeta({
@@ -32,7 +39,7 @@ export default function Home() {
   const [statsText, setStatsText] = useState({
     eyebrow: "SSR At A Glance",
     title: "Making waves at Marina Bay",
-    description: "This September, athletes, partners and the wider community came together for two unforgettable days of racing, purpose and connection."
+    description: "This September, athletes, partners and the wider community came together at Marina Bay for two unforgettable days of racing, purpose and connection. Here's what it added up to."
   });
 
   useEffect(() => {
@@ -155,7 +162,7 @@ export default function Home() {
                 <div className="p-8 sm:p-12 lg:p-14 flex flex-col justify-center">
                   <h3 className="text-2xl sm:text-3xl font-bold text-white">Dementia Awareness & Caregiver Support</h3>
                   <p className="mt-3 text-foreground/70 leading-relaxed">
-                    Timed with World Alzheimer's Month, the 2026 edition shines a powerful spotlight on dementia awareness and the vital role of caregivers — uniting athletes, healthcare institutions and communities on the waters of Marina Bay.
+                    Timed with World Alzheimer's Month, the 2026 edition shone a powerful spotlight on dementia awareness and the vital role of caregivers — uniting athletes, healthcare institutions and communities on the waters of Marina Bay.
                   </p>
 
                   <div className="mt-8 grid grid-cols-2 gap-4">

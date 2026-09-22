@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 
 const SITE = "Singapore Sea Regatta";
-const ORIGIN = "https://sgsearegatta.com";
+// Canonical URLs must point at the live app, not the old Wix site (which is
+// noindex) — otherwise the two sites form a canonical loop.
+const ORIGIN = "https://sgsearegatta.base44.app";
 
 function upsert(key, keyValue, content) {
   if (!content) return;
