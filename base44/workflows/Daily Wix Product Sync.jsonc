@@ -6,7 +6,7 @@
       "trigger_type": "scheduled",
       "events": [],
       "schedule_mode": "recurring",
-      "cron_expression": "0 4 * * *",
+      "cron_expression": "0 12 * * *",
       "one_time_date": null,
       "timezone": "Asia/Singapore",
       "interval_value": null,
